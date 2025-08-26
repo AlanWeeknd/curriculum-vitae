@@ -147,7 +147,7 @@
     <div class="left">
       <img src="https://via.placeholder.com/130" alt="Foto Alan Ulises Sánchez Briones">
       <h1>Alan Ulises Sánchez Briones</h1>
-      <p>Desarrollador Full-Stack · Experiencia en Web, Móvil y APIs</p>
+      <p id="job-title">Desarrollador Full-Stack · Experiencia en Web, Móvil y APIs</p>
 
       <a href="mailto:alan.sanchez150918@gmail.com">✉ alan.sanchez150918@gmail.com</a>
       <a href="tel:+525536093998">📞 5536093998</a>
@@ -155,14 +155,14 @@
       <a href="https://github.com/AlanWeeknd" target="_blank">GitHub</a>
 
       <h3>Educación / Education</h3>
-      <ul>
-        <li>Ingeniería en Desarrollo y Gestión de Software — Título en trámite / Software Development and Management Engineering — Degree in process</li>
-        <li>TSU en Desarrollo de Software Multiplataforma — Título y cédula profesional / Multiplatform Software Development TSU — Degree & professional license</li>
-        <li>Preparatoria — Soporte y Mantenimiento de Equipo de Cómputo — Cédula profesional / High School — Computer Support & Maintenance — Professional license</li>
+      <ul id="education-list">
+        <li>Ingeniería en Desarrollo y Gestión de Software — Título en trámite</li>
+        <li>TSU en Desarrollo de Software Multiplataforma — Título y cédula profesional</li>
+        <li>Preparatoria — Soporte y Mantenimiento de Equipo de Cómputo — Cédula profesional</li>
       </ul>
 
       <h3>Habilidades / Skills</h3>
-      <div>
+      <div id="skills-list">
         <span class="badge">HTML</span>
         <span class="badge">CSS</span>
         <span class="badge">JavaScript</span>
@@ -177,12 +177,12 @@
       </div>
 
       <h3>Intereses / Interests</h3>
-      <ul>
-        <li>Música / Music</li>
-        <li>Lectura / Reading</li>
-        <li>Tecnología / Technology</li>
-        <li>Videojuegos / Video Games</li>
-        <li>Diseño / Design</li>
+      <ul id="interests-list">
+        <li>Música</li>
+        <li>Lectura</li>
+        <li>Tecnología</li>
+        <li>Videojuegos</li>
+        <li>Diseño</li>
       </ul>
     </div>
 
@@ -194,10 +194,10 @@
         <button onclick="window.print()">Imprimir / PDF</button>
       </div>
 
-      <h2 id="perfil-title">Perfil / Profile</h2>
+      <h2 id="perfil-title">Perfil</h2>
       <p id="perfil-text">Desarrollador con formación técnica y universitaria en desarrollo de software. Experiencia práctica en proyectos académicos y personales, incluyendo desarrollo web, aplicaciones móviles, integraciones API, gestión de proyectos y bases de datos. Proactivo, con capacidad de aprendizaje rápido y adaptación a nuevas tecnologías.</p>
 
-      <h2 id="proyectos-title">Proyectos / Projects</h2>
+      <h2 id="proyectos-title">Proyectos</h2>
 
       <div class="project" id="project1">
         <strong>Integración Jira ⇄ ITSM</strong>
@@ -260,17 +260,33 @@
   </footer>
 
 <script>
-function setLanguage(lang) {
-  if(lang==='es'){
-    document.getElementById('perfil-title').innerText = 'Perfil / Profile';
-    document.getElementById('perfil-text').innerText = 'Desarrollador con formación técnica y universitaria en desarrollo de software. Experiencia práctica en proyectos académicos y personales, incluyendo desarrollo web, aplicaciones móviles, integraciones API, gestión de proyectos y bases de datos. Proactivo, con capacidad de aprendizaje rápido y adaptación a nuevas tecnologías.';
-    document.getElementById('proyectos-title').innerText = 'Proyectos / Projects';
-  } else {
-    document.getElementById('perfil-title').innerText = 'Profile';
-    document.getElementById('perfil-text').innerText = 'Developer with technical and university background in software development. Practical experience in academic and personal projects, including web development, mobile applications, API integrations, project management, and databases. Proactive, quick learner, adaptable to new technologies.';
-    document.getElementById('proyectos-title').innerText = 'Projects';
-  }
+function setLanguage(lang){
+  const educationES = [
+    "Ingeniería en Desarrollo y Gestión de Software — Título en trámite",
+    "TSU en Desarrollo de Software Multiplataforma — Título y cédula profesional",
+    "Preparatoria — Soporte y Mantenimiento de Equipo de Cómputo — Cédula profesional"
+  ];
+  const educationEN = [
+    "Software Development and Management Engineering — Degree in process",
+    "Multiplatform Software Development TSU — Degree & professional license",
+    "High School — Computer Support & Maintenance — Professional license"
+  ];
+  const perfilES = "Desarrollador con formación técnica y universitaria en desarrollo de software. Experiencia práctica en proyectos académicos y personales, incluyendo desarrollo web, aplicaciones móviles, integraciones API, gestión de proyectos y bases de datos. Proactivo, con capacidad de aprendizaje rápido y adaptación a nuevas tecnologías.";
+  const perfilEN = "Developer with technical and university background in software development. Practical experience in academic and personal projects, including web development, mobile applications, API integrations, project management, and databases. Proactive, quick learner, adaptable to new technologies.";
+
+  const projectsES = ["Proyectos"];
+  const projectsEN = ["Projects"];
+
+  document.getElementById('education-list').innerHTML = lang==='es' ?
+    educationES.map(e => `<li>${e}</li>`).join('') :
+    educationEN.map(e => `<li>${e}</li>`).join('');
+
+  document.getElementById('perfil-title').innerText = lang==='es' ? "Perfil" : "Profile";
+  document.getElementById('perfil-text').innerText = lang==='es' ? perfilES : perfilEN;
+
+  document.getElementById('proyectos-title').innerText = lang==='es' ? "Proyectos" : "Projects";
 }
 </script>
 </body>
 </html>
+
