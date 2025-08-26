@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Currículum Vitae - Alan Ulises Sánchez Briones</title>
 <style>
+  /* Estilos generales */
   body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: #f4f6f8;
@@ -20,13 +21,24 @@
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.08);
   }
+
+  /* Header */
   header {
     text-align: center;
     margin-bottom: 20px;
+    position: relative;
+  }
+  header img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #0b3d91;
+    margin-bottom: 12px;
   }
   header h1 {
     font-size: 28px;
-    margin: 0;
+    margin: 6px 0;
     color: #0b3d91;
   }
   header p {
@@ -34,6 +46,8 @@
     margin: 4px 0;
     color: #444;
   }
+
+  /* Contacto */
   .contact {
     margin: 10px 0;
     font-size: 14px;
@@ -42,8 +56,14 @@
   .contact a {
     color: #0b3d91;
     text-decoration: none;
-    margin: 0 8px;
+    margin: 0 10px;
+    transition: color 0.3s;
   }
+  .contact a:hover {
+    color: #1f5cbf;
+  }
+
+  /* Secciones */
   .section {
     margin-top: 24px;
   }
@@ -60,9 +80,13 @@
   li {
     margin-bottom: 8px;
   }
+
+  /* Proyectos y educación */
   .project, .education-item {
     margin-bottom: 14px;
   }
+
+  /* Skills / badges */
   .skills .badge {
     display: inline-block;
     margin: 4px 6px 4px 0;
@@ -72,12 +96,30 @@
     border-radius: 20px;
     font-size: 13px;
   }
+
+  /* Footer */
   footer {
     text-align: center;
     font-size: 13px;
     color: #666;
     margin-top: 24px;
   }
+
+  /* Impresión */
+  @media print {
+    body {
+      background: #fff;
+    }
+    .container {
+      box-shadow: none;
+      padding: 15px;
+    }
+    header img {
+      border: none;
+    }
+  }
+
+  /* Responsive */
   @media (max-width:600px) {
     .container {
       padding: 20px;
@@ -88,14 +130,21 @@
     .section h2 {
       font-size: 18px;
     }
+    header img {
+      width: 100px;
+      height: 100px;
+    }
   }
 </style>
 </head>
 <body>
   <div class="container">
     <header>
+      <!-- Foto de perfil -->
+      <img src="https://via.placeholder.com/130" alt="Foto Alan Ulises Sánchez Briones">
       <h1>Alan Ulises Sánchez Briones</h1>
       <p>Ingeniería en Desarrollo y Gestión de Software (título en trámite) · TSU en Desarrollo de Software Multiplataforma</p>
+
       <div class="contact">
         <a href="mailto:alan.sanchez150918@gmail.com">✉ alan.sanchez150918@gmail.com</a> |
         <a href="tel:+525536093998">📞 5536093998</a> |
@@ -124,9 +173,9 @@
 
     <div class="section">
       <h2>Proyectos / Projects</h2>
-      
+
       <div class="project">
-        <strong>Integración Jira ⇄ ITSM</strong> — Estadía / Proyecto de Ingeniería
+        <strong>Integración Jira ⇄ ITSM</strong>
         <ul>
           <li>Integración bidireccional entre herramienta de administración de proyectos y módulo de gestión de cambios de ITSM.</li>
           <li>Sincronización de RFCs con manejo de duplicados.</li>
@@ -162,7 +211,6 @@
         <strong>Integración WhatsApp vía API REST (2ª fase)</strong>
         <ul>
           <li>Diseño de endpoints y flujo de envío/recepción de mensajes en ITSM.</li>
-          <li>Herramientas: APIs REST, integración con herramienta ITSM.</li>
         </ul>
       </div>
 
@@ -170,7 +218,6 @@
         <strong>Web de control de cero desperdicio</strong>
         <ul>
           <li>Dashboard y formularios para registro y visualización de métricas.</li>
-          <li>Herramientas: HTML, JavaScript.</li>
         </ul>
       </div>
 
