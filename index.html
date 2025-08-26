@@ -24,13 +24,10 @@
     box-shadow:0 8px 20px rgba(0,0,0,0.15);
   }
 
-  .left-column img {
-    width:150px; height:150px;
-    border-radius:50%; object-fit:cover;
-    border:4px solid #fff; margin-bottom:15px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  .left-column h1 {
+    font-size:22px;
+    margin-bottom:15px;
   }
-  .left-column img:hover { transform: scale(1.05); box-shadow:0 5px 20px rgba(0,0,0,0.3); }
 
   .contact a {
     display:block; color:#fff; text-decoration:none; margin:6px 0;
@@ -106,7 +103,7 @@
 <div class="container">
   <!-- Columna izquierda -->
   <div class="left-column">
-    <img src="https://via.placeholder.com/150" alt="Foto Alan Ulises Sánchez Briones">
+    <h1>ALAN ULISES SÁNCHEZ BRIONES</h1>
     <p id="job-title">Desarrollador Full-Stack · Experiencia en Web, Móvil y APIs</p>
     <div class="contact">
       <a href="mailto:alan.sanchez150918@gmail.com">✉ alan.sanchez150918@gmail.com</a>
@@ -153,8 +150,7 @@
     <div class="section">
       <h2 id="edu-title">Educación</h2>
       <ul id="education-list">
-        <li>Ingeniería en Desarrollo y Gestión de Software — Título y cédula profesional</li>
-        <li>TSU en Desarrollo de Software Multiplataforma — Título y cédula profesional</li>
+        <li>Ingeniería en Desarrollo y Gestión de Software — Título en trámite</li>
         <li>Técnico Profesional en Soporte y Mantenimiento de Equipo de Cómputo — Título y cédula profesional</li>
       </ul>
     </div>
@@ -170,7 +166,7 @@
         <ul></ul>
       </div>
       <div class="project" id="project3">
-        <strong>Generación de página web / Tienda en línea</strong>
+        <strong>Generación de sistema web / Citas médicas</strong>
         <ul></ul>
       </div>
       <div class="project" id="project4">
@@ -207,31 +203,31 @@
     es:{
       job:"Desarrollador Full-Stack · Experiencia en Web, Móvil y APIs",
       perfil:"Desarrollador con formación técnica y universitaria en desarrollo de software. Experiencia práctica en proyectos académicos y personales, incluyendo desarrollo web, aplicaciones móviles, integraciones API, gestión de proyectos y bases de datos. Proactivo, con capacidad de aprendizaje rápido y adaptación a nuevas tecnologías.",
-      education:["Ingeniería en Desarrollo y Gestión de Software — Título y cédula profesional","TSU en Desarrollo de Software Multiplataforma — Título y cédula profesional","Técnico Profesional en Soporte y Mantenimiento de Equipo de Cómputo — Título y cédula profesional"],
+      education:["Ingeniería en Desarrollo y Gestión de Software — Título en trámite","Técnico Profesional en Soporte y Mantenimiento de Equipo de Cómputo — Título y cédula profesional"],
       interests:["Música","Lectura","Tecnología","Videojuegos","Diseño"],
       projects:[
-        {title:"Integración Jira ⇄ ITSM",items:["Integración bidireccional entre herramienta de administración de proyectos y módulo de gestión de cambios de ITSM.","Sincronización de RFCs con manejo de duplicados.","Herramientas: Jira, ngrok, Postman, APIs REST, Node.js/Express."]},
-        {title:"Aplicación móvil tipo Uber para personas con discapacidad",items:["Desarrollo de app móvil con geolocalización, registro de usuarios y comunicación en tiempo real.","Herramientas: Flutter, Firebase (Auth & Realtime/Firestore)."]},
-        {title:"Generación de página web / Tienda en línea",items:["Tienda en línea para citas médicas con frontend (HTML/CSS/JS) y backend (PHP + MySQL).","Sistemas de gestión de usuarios y reservas integradas con base de datos."]},
-        {title:"Portal inmobiliario (Proyecto escolar)",items:["Portal con CRUD de inmuebles y panel administrativo.","Herramientas: Laravel 8, PHP, MySQL."]},
-        {title:"Integración WhatsApp vía API REST",items:["Diseño de endpoints y flujo para envío/recepción de mensajes y automatización de notificaciones en ITSM."]},
-        {title:"Web de control de cero desperdicio",items:["Dashboard y formularios para registro y visualización de métricas relacionadas con desperdicios."]},
-        {title:"Videojuego (Proyecto escolar)",items:["Desarrollo y publicación de videojuego utilizando Unity (C#)."]}
+        {title:"Integración Jira ⇄ ITSM",items:[]},
+        {title:"Aplicación móvil tipo Uber para personas con discapacidad",items:[]},
+        {title:"Generación de sistema web / Citas médicas",items:["Sistema web para gestión de citas médicas con frontend (HTML/CSS/JS) y backend (PHP + MySQL).","Gestión de usuarios y reservas integradas con base de datos."]},
+        {title:"Portal inmobiliario (Proyecto escolar)",items:[]},
+        {title:"Integración WhatsApp vía API REST",items:[]},
+        {title:"Web de control de cero desperdicio",items:[]},
+        {title:"Videojuego (Proyecto escolar)",items:[]}
       ]
     },
     en:{
       job:"Full-Stack Developer · Web, Mobile & API Experience",
       perfil:"Developer with technical and university training in software development. Practical experience in academic and personal projects, including web development, mobile applications, API integrations, project management, and databases. Proactive, quick learner, and adaptable to new technologies.",
-      education:["Software Development and Management Engineering — Degree & Professional License","Multiplatform Software Development TSU — Degree & Professional License","Professional Technician in Computer Support & Maintenance — Degree & Professional License"],
+      education:["Software Development and Management Engineering — Degree in progress","Professional Technician in Computer Support & Maintenance — Degree & Professional License"],
       interests:["Music","Reading","Technology","Video Games","Design"],
       projects:[
-        {title:"Jira ⇄ ITSM Integration",items:["Bidirectional integration between project management tool and ITSM change management module.","RFC synchronization with duplicate handling.","Tools: Jira, ngrok, Postman, REST APIs, Node.js/Express."]},
-        {title:"Uber-like Mobile App for people with disabilities",items:["Mobile app development with geolocation, user registration and real-time communication.","Tools: Flutter, Firebase (Auth & Realtime/Firestore)."]},
-        {title:"Web Page / Online Store",items:["Online store for medical appointments with frontend (HTML/CSS/JS) and backend (PHP + MySQL).","User and booking management systems integrated with database."]},
-        {title:"Real Estate Portal (School Project)",items:["Portal with CRUD of properties and admin panel.","Tools: Laravel 8, PHP, MySQL."]},
-        {title:"WhatsApp API REST Integration",items:["Endpoint and flow design for sending/receiving messages and automating notifications in ITSM."]},
-        {title:"Zero Waste Control Web",items:["Dashboard and forms for recording and visualizing waste-related metrics."]},
-        {title:"Video Game (School Project)",items:["Development and publishing of a video game using Unity (C#)."]}
+        {title:"Jira ⇄ ITSM Integration",items:[]},
+        {title:"Uber-like Mobile App for people with disabilities",items:[]},
+        {title:"Web system / Medical appointments",items:["Web system for medical appointment management with frontend (HTML/CSS/JS) and backend (PHP + MySQL).","User and booking management systems integrated with database."]},
+        {title:"Real Estate Portal (School Project)",items:[]},
+        {title:"WhatsApp API REST Integration",items:[]},
+        {title:"Zero Waste Control Web",items:[]},
+        {title:"Video Game (School Project)",items:[]}
       ]
     }
   };
