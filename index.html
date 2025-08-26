@@ -12,7 +12,6 @@
     padding: 0;
     color: #333;
   }
-
   .container {
     max-width: 900px;
     margin: 20px auto;
@@ -104,6 +103,24 @@
     margin-bottom: 14px;
   }
 
+  /* Botones */
+  .buttons {
+    margin-bottom: 15px;
+  }
+  .buttons button {
+    background: #0b3d91;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    margin: 0 5px 5px 0;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  .buttons button:hover {
+    background: #1f5cbf;
+  }
+
   footer {
     text-align: center;
     font-size: 12px;
@@ -115,6 +132,7 @@
     body { background: #fff; }
     .container { box-shadow: none; display: block; }
     .left, .right { width: 100%; padding: 15px; }
+    .buttons { display: none; }
   }
 
   @media (max-width: 800px) {
@@ -136,14 +154,14 @@
       <a href="https://www.linkedin.com/in/alan-ulises-sanchez-briones-7533621b0/" target="_blank">LinkedIn</a>
       <a href="https://github.com/AlanWeeknd" target="_blank">GitHub</a>
 
-      <h3>Educación</h3>
+      <h3>Educación / Education</h3>
       <ul>
-        <li>Ingeniería en Desarrollo y Gestión de Software — Título en trámite</li>
-        <li>TSU en Desarrollo de Software Multiplataforma — Título y cédula profesional</li>
-        <li>Preparatoria — Soporte y Mantenimiento de Equipo de Cómputo — Cédula profesional</li>
+        <li>Ingeniería en Desarrollo y Gestión de Software — Título en trámite / Software Development and Management Engineering — Degree in process</li>
+        <li>TSU en Desarrollo de Software Multiplataforma — Título y cédula profesional / Multiplatform Software Development TSU — Degree & professional license</li>
+        <li>Preparatoria — Soporte y Mantenimiento de Equipo de Cómputo — Cédula profesional / High School — Computer Support & Maintenance — Professional license</li>
       </ul>
 
-      <h3>Habilidades</h3>
+      <h3>Habilidades / Skills</h3>
       <div>
         <span class="badge">HTML</span>
         <span class="badge">CSS</span>
@@ -158,24 +176,30 @@
         <span class="badge">MongoDB</span>
       </div>
 
-      <h3>Intereses</h3>
+      <h3>Intereses / Interests</h3>
       <ul>
-        <li>Música</li>
-        <li>Lectura</li>
-        <li>Tecnología</li>
-        <li>Videojuegos</li>
-        <li>Diseño</li>
+        <li>Música / Music</li>
+        <li>Lectura / Reading</li>
+        <li>Tecnología / Technology</li>
+        <li>Videojuegos / Video Games</li>
+        <li>Diseño / Design</li>
       </ul>
     </div>
 
     <!-- Columna derecha -->
     <div class="right">
-      <h2>Perfil / Profile</h2>
-      <p>Desarrollador con formación técnica y universitaria en desarrollo de software. Experiencia práctica en proyectos académicos y personales, incluyendo desarrollo web, aplicaciones móviles, integraciones API, gestión de proyectos y bases de datos. Proactivo, con capacidad de aprendizaje rápido y adaptación a nuevas tecnologías.</p>
+      <div class="buttons">
+        <button onclick="setLanguage('es')">ES</button>
+        <button onclick="setLanguage('en')">EN</button>
+        <button onclick="window.print()">Imprimir / PDF</button>
+      </div>
 
-      <h2>Proyectos / Projects</h2>
+      <h2 id="perfil-title">Perfil / Profile</h2>
+      <p id="perfil-text">Desarrollador con formación técnica y universitaria en desarrollo de software. Experiencia práctica en proyectos académicos y personales, incluyendo desarrollo web, aplicaciones móviles, integraciones API, gestión de proyectos y bases de datos. Proactivo, con capacidad de aprendizaje rápido y adaptación a nuevas tecnologías.</p>
 
-      <div class="project">
+      <h2 id="proyectos-title">Proyectos / Projects</h2>
+
+      <div class="project" id="project1">
         <strong>Integración Jira ⇄ ITSM</strong>
         <ul>
           <li>Integración bidireccional entre herramienta de administración de proyectos y módulo de gestión de cambios de ITSM.</li>
@@ -184,7 +208,7 @@
         </ul>
       </div>
 
-      <div class="project">
+      <div class="project" id="project2">
         <strong>Aplicación móvil tipo Uber</strong>
         <ul>
           <li>Desarrollo de app móvil con geolocalización, registro de usuarios y comunicación en tiempo real.</li>
@@ -192,7 +216,7 @@
         </ul>
       </div>
 
-      <div class="project">
+      <div class="project" id="project3">
         <strong>Generación de página web / Tienda en línea</strong>
         <ul>
           <li>Tienda en línea para citas médicas con frontend (HTML/CSS/JS) y backend (PHP + MySQL).</li>
@@ -200,7 +224,7 @@
         </ul>
       </div>
 
-      <div class="project">
+      <div class="project" id="project4">
         <strong>Portal inmobiliario (Proyecto escolar)</strong>
         <ul>
           <li>Portal con CRUD de inmuebles y panel administrativo.</li>
@@ -208,37 +232,45 @@
         </ul>
       </div>
 
-      <div class="project">
+      <div class="project" id="project5">
         <strong>Integración WhatsApp vía API REST</strong>
         <ul>
-          <li>Diseño de endpoints y flujo de envío/recepción de mensajes en ITSM.</li>
+          <li>Diseño de endpoints y flujo para envío/recepción de mensajes y automatización de notificaciones en ITSM.</li>
         </ul>
       </div>
 
-      <div class="project">
+      <div class="project" id="project6">
         <strong>Web de control de cero desperdicio</strong>
         <ul>
-          <li>Dashboard y formularios para registro y visualización de métricas.</li>
+          <li>Dashboard y formularios para registro y visualización de métricas relacionadas con desperdicios.</li>
         </ul>
       </div>
 
-      <div class="project">
+      <div class="project" id="project7">
         <strong>Videojuego (Proyecto escolar)</strong>
         <ul>
-          <li>Desarrollo de videojuego con Unity (C#).</li>
+          <li>Desarrollo y publicación de videojuego utilizando Unity (C#).</li>
         </ul>
       </div>
-
-      <h2>Logros y notas</h2>
-      <ul>
-        <li>Cédulas profesionales obtenidas para Preparatoria y TSU.</li>
-        <li>Múltiples proyectos académicos en web, móvil e integraciones con herramientas ITSM.</li>
-      </ul>
     </div>
   </div>
 
   <footer>
     Actualizado: <strong>25 Ago 2025</strong> — © Alan Ulises Sánchez Briones
   </footer>
+
+<script>
+function setLanguage(lang) {
+  if(lang==='es'){
+    document.getElementById('perfil-title').innerText = 'Perfil / Profile';
+    document.getElementById('perfil-text').innerText = 'Desarrollador con formación técnica y universitaria en desarrollo de software. Experiencia práctica en proyectos académicos y personales, incluyendo desarrollo web, aplicaciones móviles, integraciones API, gestión de proyectos y bases de datos. Proactivo, con capacidad de aprendizaje rápido y adaptación a nuevas tecnologías.';
+    document.getElementById('proyectos-title').innerText = 'Proyectos / Projects';
+  } else {
+    document.getElementById('perfil-title').innerText = 'Profile';
+    document.getElementById('perfil-text').innerText = 'Developer with technical and university background in software development. Practical experience in academic and personal projects, including web development, mobile applications, API integrations, project management, and databases. Proactive, quick learner, adaptable to new technologies.';
+    document.getElementById('proyectos-title').innerText = 'Projects';
+  }
+}
+</script>
 </body>
 </html>
