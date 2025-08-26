@@ -3,32 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <title>Currículum Vitae - Alan Ulises Sánchez Briones</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body { font-family: Arial, Helvetica, sans-serif; background:#f7f7fb; color:#222; margin:20px; }
-    .container { max-width:900px; margin:0 auto; background:#fff; padding:22px; border-radius:8px; box-shadow:0 6px 18px rgba(0,0,0,0.06); }
-    header { text-align:center; margin-bottom:14px; }
-    header img { width:120px; height:120px; border-radius:50%; object-fit:cover; margin-bottom:10px; }
-    h1 { margin:6px 0 2px; font-size:26px; letter-spacing:0.2px; }
-    h2 { margin:18px 0 8px; font-size:18px; color:#0b6fb6; }
-    p.lead { margin:6px 0 12px; color:#444; }
-    ul { margin:6px 0 14px 18px; }
-    li { margin:6px 0; line-height:1.4; }
-    .meta { text-align:center; margin-bottom:12px; }
-    .meta a { color:#0b6fb6; text-decoration:none; margin:0 8px; }
-    .section { border-top:1px solid #eef0f5; padding-top:14px; margin-top:8px; }
-    .skills .badge { display:inline-block; margin:6px 6px 0 0; padding:6px 10px; background:#f0f5fb; border-radius:999px; color:#0b4b78; font-size:13px; }
-    .project { margin-bottom:10px; }
-    .buttons { text-align:center; margin:12px 0; }
-    .buttons button { margin:0 6px; padding:6px 12px; border:none; border-radius:4px; cursor:pointer; background:#0b6fb6; color:white; font-weight:bold; }
-    .buttons button:hover { background:#085a9c; }
-    footer { text-align:center; color:#666; font-size:13px; margin-top:18px; }
-    @media print { body { background:#fff } .container { box-shadow:none } }
+    /* Reset y base */
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: 'Roboto', Arial, sans-serif; background:#e8eaf6; color:#333; line-height:1.6; }
+    .container { max-width:900px; margin:20px auto; background:#fff; padding:30px; border-radius:12px; box-shadow:0 8px 25px rgba(0,0,0,0.1); }
+
+    /* Header */
+    header { text-align:center; margin-bottom:25px; }
+    header img { width:130px; height:130px; border-radius:50%; object-fit:cover; border:4px solid #0b6fb6; margin-bottom:15px; }
+    h1 { font-size:28px; font-weight:700; margin-bottom:6px; color:#0b3d91; }
+    p.lead { font-size:16px; color:#555; margin-bottom:12px; }
+
+    /* Contactos */
+    .meta { text-align:center; margin-bottom:20px; font-size:15px; }
+    .meta a { color:#0b6fb6; text-decoration:none; margin:0 10px; transition:color 0.3s; }
+    .meta a:hover { color:#0b3d91; }
+
+    /* Botones */
+    .buttons { text-align:center; margin-bottom:25px; }
+    .buttons button {
+      margin:0 6px;
+      padding:8px 18px;
+      border:none;
+      border-radius:6px;
+      cursor:pointer;
+      background:#0b6fb6;
+      color:white;
+      font-weight:700;
+      font-size:14px;
+      transition:background 0.3s;
+    }
+    .buttons button:hover { background:#083d78; }
+
+    /* Secciones */
+    .section { background:#f5f6fa; border-radius:10px; padding:18px 22px; margin-bottom:18px; box-shadow:0 4px 12px rgba(0,0,0,0.05); }
+    h2 { font-size:20px; color:#0b3d91; margin-bottom:12px; border-bottom:2px solid #cfd8dc; padding-bottom:4px; }
+
+    /* Listas */
+    ul { list-style-type: disc; padding-left:20px; margin-bottom:10px; }
+    li { margin-bottom:6px; }
+
+    /* Badges */
+    .skills .badge { display:inline-block; margin:5px 6px 0 0; padding:6px 12px; background:#d0e1ff; border-radius:20px; color:#0b3d91; font-size:13px; font-weight:500; }
+
+    /* Proyectos */
+    .project { margin-bottom:14px; }
+    .project strong { font-size:16px; color:#0b3d91; }
+
+    /* Footer */
+    footer { text-align:center; color:#666; font-size:13px; margin-top:25px; }
+
+    @media print {
+      body { background:#fff }
+      .container { box-shadow:none }
+      .buttons { display:none; }
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <header>
-      <img src="https://via.placeholder.com/120" alt="Foto Alan Ulises Sánchez Briones">
+      <img src="https://via.placeholder.com/130" alt="Foto Alan Ulises Sánchez Briones">
       <h1>Alan Ulises Sánchez Briones</h1>
       <p id="job-title" class="lead">Desarrollador Full-Stack · Experiencia en Web, Móvil y APIs</p>
       <div class="meta">
@@ -53,8 +90,8 @@
       <h2 id="edu-title">Educación / Education</h2>
       <ul id="education-list">
         <li>Ingeniería en Desarrollo y Gestión de Software — Título en trámite / Software Development and Management Engineering — Degree in process</li>
-        <li>TSU en Desarrollo de Software Multiplataforma — Título y cédula profesional / Multiplatform Software Development TSU — Degree & professional license</li>
-        <li>Preparatoria — Soporte y Mantenimiento de Equipo de Cómputo — Cédula profesional / High School — Computer Support & Maintenance — Professional license</li>
+        <li>TSU en Desarrollo de Software Multiplataforma — Título y cédula profesional / Multiplatform Software Development TSU — Degree & Professional License</li>
+        <li>Preparatoria — Soporte y Mantenimiento de Equipo de Cómputo — Cédula profesional / High School — Computer Support & Maintenance — Professional License</li>
       </ul>
     </div>
 
@@ -148,12 +185,12 @@
 
   <script>
     const titles = {
-      es: { perfil:"Perfil", edu:"Educación / Education", skills:"Habilidades / Skills", interests:"Intereses / Interests", proyectos:"Proyectos" },
-      en: { perfil:"Profile", edu:"Education", skills:"Skills", interests:"Interests", proyectos:"Projects" }
+      es:{perfil:"Perfil", edu:"Educación / Education", skills:"Habilidades / Skills", interests:"Intereses / Interests", proyectos:"Proyectos"},
+      en:{perfil:"Profile", edu:"Education", skills:"Skills", interests:"Interests", proyectos:"Projects"}
     };
 
     const content = {
-      es: {
+      es:{
         job:"Desarrollador Full-Stack · Experiencia en Web, Móvil y APIs",
         perfil:"Desarrollador con formación técnica y universitaria en desarrollo de software. Experiencia práctica en proyectos académicos y personales, incluyendo desarrollo web, aplicaciones móviles, integraciones API, gestión de proyectos y bases de datos. Proactivo, con capacidad de aprendizaje rápido y adaptación a nuevas tecnologías.",
         education:["Ingeniería en Desarrollo y Gestión de Software — Título en trámite","TSU en Desarrollo de Software Multiplataforma — Título y cédula profesional","Preparatoria — Soporte y Mantenimiento de Equipo de Cómputo — Cédula profesional"],
@@ -168,7 +205,7 @@
           {title:"Videojuego (Proyecto escolar)",items:["Desarrollo y publicación de videojuego utilizando Unity (C#)."]}
         ]
       },
-      en: {
+      en:{
         job:"Full-Stack Developer · Web, Mobile & API Experience",
         perfil:"Developer with technical and university training in software development. Practical experience in academic and personal projects, including web development, mobile applications, API integrations, project management, and databases. Proactive, quick learner, and adaptable to new technologies.",
         education:["Software Development and Management Engineering — Degree in process","Multiplatform Software Development TSU — Degree & Professional License","High School — Computer Support & Maintenance — Professional license"],
