@@ -16,7 +16,7 @@
     transition:all 0.3s ease;
   }
 
-  /* Columna izquierda con degradado azul rey */
+  /* Columna izquierda con degradado */
   .left-column {
     text-align:center;
     background: linear-gradient(160deg, #0033cc, #3366ff);
@@ -28,9 +28,9 @@
     width:150px; height:150px;
     border-radius:50%; object-fit:cover;
     border:4px solid #fff; margin-bottom:15px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
-  .left-column img:hover { transform: scale(1.05); }
+  .left-column img:hover { transform: scale(1.05); box-shadow:0 5px 20px rgba(0,0,0,0.3); }
 
   .contact a {
     display:block; color:#fff; text-decoration:none; margin:6px 0;
@@ -110,6 +110,7 @@
       <span class="badge">Flutter</span><span class="badge">Firebase</span><span class="badge">Unity</span>
       <span class="badge">MySQL</span><span class="badge">MongoDB</span><span class="badge">APIs REST</span>
       <span class="badge">Postman</span><span class="badge">ngrok</span><span class="badge">Git & GitHub</span>
+      <span class="badge">C#</span>
     </div>
 
     <div class="interests">
@@ -138,11 +139,11 @@
     </div>
 
     <div class="section">
-      <h2 id="edu-title">Educación / Education</h2>
+      <h2 id="edu-title">Educación</h2>
       <ul id="education-list">
-        <li>Ingeniería en Desarrollo y Gestión de Software — Título en trámite / Software Development and Management Engineering — Degree in process</li>
-        <li>TSU en Desarrollo de Software Multiplataforma — Título y cédula profesional / Multiplatform Software Development TSU — Degree & Professional License</li>
-        <li>Preparatoria — Soporte y Mantenimiento de Equipo de Cómputo — Cédula profesional / High School — Computer Support & Maintenance — Professional License</li>
+        <li>Ingeniería en Desarrollo y Gestión de Software — Título en trámite</li>
+        <li>TSU en Desarrollo de Software Multiplataforma — Título y cédula profesional</li>
+        <li>Preparatoria — Soporte y Mantenimiento de Equipo de Cómputo — Cédula profesional</li>
       </ul>
     </div>
 
@@ -186,7 +187,7 @@
 
 <script>
   const titles = {
-    es:{perfil:"Perfil", edu:"Educación / Education", skills:"Habilidades", interests:"Intereses", proyectos:"Proyectos"},
+    es:{perfil:"Perfil", edu:"Educación", skills:"Habilidades", interests:"Intereses", proyectos:"Proyectos"},
     en:{perfil:"Profile", edu:"Education", skills:"Skills", interests:"Interests", proyectos:"Projects"}
   };
 
@@ -230,7 +231,6 @@
     document.getElementById("proyectos-title").innerText = titles[lang].proyectos;
     document.getElementById("edu-title").innerText = titles[lang].edu;
     document.getElementById("skills-title").innerText = titles[lang].skills;
-    document.getElementById("interest-title").innerText = titles[lang].interests;
 
     // Educación
     const eduList = document.getElementById("education-list");
