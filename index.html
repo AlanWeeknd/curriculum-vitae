@@ -7,36 +7,84 @@
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
   body { font-family:'Roboto', sans-serif; background:#e8f0fe; color:#333; line-height:1.5; }
-  .container { max-width:1000px; margin:30px auto; display:grid; grid-template-columns:1fr 2fr; gap:25px; background:#fff; padding:30px; border-radius:12px; box-shadow:0 8px 25px rgba(0,0,0,0.12); }
 
-  /* Columna izquierda con fondo azul rey */
-  .left-column { text-align:center; background:#0033cc; color:#fff; padding:20px; border-radius:12px; }
-  .left-column img { width:150px; height:150px; border-radius:50%; object-fit:cover; border:4px solid #fff; margin-bottom:15px; }
-  .contact a { display:block; color:#fff; text-decoration:none; margin:5px 0; transition:color 0.3s; }
+  .container {
+    max-width:1000px; margin:30px auto;
+    display:grid; grid-template-columns:1fr 2fr; gap:25px;
+    background:#fff; padding:30px; border-radius:12px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.12);
+    transition:all 0.3s ease;
+  }
+
+  /* Columna izquierda con degradado azul rey */
+  .left-column {
+    text-align:center;
+    background: linear-gradient(160deg, #0033cc, #3366ff);
+    color:#fff; padding:25px; border-radius:12px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.15);
+  }
+
+  .left-column img {
+    width:150px; height:150px;
+    border-radius:50%; object-fit:cover;
+    border:4px solid #fff; margin-bottom:15px;
+    transition: transform 0.3s ease;
+  }
+  .left-column img:hover { transform: scale(1.05); }
+
+  .contact a {
+    display:block; color:#fff; text-decoration:none; margin:6px 0;
+    transition: all 0.3s ease;
+  }
   .contact a:hover { color:#cce0ff; }
-  .skills, .interests { margin-top:20px; text-align:left; }
-  .skills .badge { display:inline-block; margin:5px 6px 0 0; padding:6px 12px; background:#cce0ff; border-radius:20px; color:#0033cc; font-size:13px; font-weight:500; }
+
+  .skills, .interests { margin-top:25px; text-align:left; }
+  .skills .badge {
+    display:inline-block; margin:5px 6px 0 0; padding:6px 12px;
+    background:#cce0ff; border-radius:20px; color:#0033cc;
+    font-size:13px; font-weight:500; transition: transform 0.3s ease, background 0.3s;
+  }
+  .skills .badge:hover { transform: scale(1.1); background:#99c2ff; }
+
   .interests ul { padding-left:20px; }
-  .interests ul li { margin-bottom:6px; list-style:disc; color:#fff; font-weight:500; }
+  .interests ul li {
+    margin-bottom:8px; list-style:disc; color:#fff;
+    font-weight:500; transition: color 0.3s;
+  }
+  .interests ul li:hover { color:#cce0ff; }
 
   /* Columna derecha */
   .right-column { padding-left:20px; }
-  .section { background:#f9fbff; border-radius:10px; padding:20px; margin-bottom:18px; box-shadow:0 4px 12px rgba(0,0,0,0.05); }
-  h2 { font-size:20px; color:#0033cc; margin-bottom:12px; border-bottom:2px solid #d0e0ff; padding-bottom:4px; }
+  .section {
+    background:#f9fbff; border-radius:12px; padding:22px;
+    margin-bottom:20px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .section:hover { transform: translateY(-3px); box-shadow:0 10px 25px rgba(0,0,0,0.08); }
+
+  h2 {
+    font-size:22px; color:#0033cc;
+    margin-bottom:14px; border-bottom:2px solid #d0e0ff; padding-bottom:6px;
+  }
   ul { list-style-type: disc; padding-left:20px; margin-bottom:10px; }
   li { margin-bottom:6px; }
-  .project { margin-bottom:14px; }
-  .project strong { font-size:16px; color:#0033cc; }
+  .project { margin-bottom:16px; }
+  .project strong { font-size:17px; color:#0033cc; }
 
   /* Botones */
-  .buttons { text-align:center; margin-bottom:25px; grid-column:1/-1; }
-  .buttons button { margin:0 6px; padding:8px 18px; border:none; border-radius:6px; cursor:pointer; background:#0033cc; color:white; font-weight:700; font-size:14px; transition:background 0.3s; }
-  .buttons button:hover { background:#002299; }
+  .buttons { text-align:center; margin-bottom:28px; grid-column:1/-1; }
+  .buttons button {
+    margin:0 6px; padding:9px 20px; border:none; border-radius:8px;
+    cursor:pointer; background:#0033cc; color:white; font-weight:700;
+    font-size:14px; transition: background 0.3s, transform 0.3s;
+  }
+  .buttons button:hover { background:#002299; transform: scale(1.05); }
 
   /* Header Job */
-  #job-title { font-size:18px; color:#fff; margin-bottom:12px; font-weight:700; }
+  #job-title { font-size:19px; color:#fff; margin-bottom:14px; font-weight:700; }
 
-  footer { text-align:center; color:#666; font-size:13px; margin-top:25px; grid-column:1/-1; }
+  footer { text-align:center; color:#666; font-size:13px; margin-top:28px; grid-column:1/-1; }
 
   @media print { body { background:#fff } .container { box-shadow:none } .buttons { display:none; } }
   @media (max-width:900px) { .container { grid-template-columns:1fr; padding:15px; } .right-column { padding-left:0; } }
@@ -57,21 +105,11 @@
 
     <div class="skills">
       <h3 id="skills-title">Habilidades</h3>
-      <span class="badge">HTML</span>
-      <span class="badge">CSS</span>
-      <span class="badge">JavaScript</span>
-      <span class="badge">PHP</span>
-      <span class="badge">Laravel</span>
-      <span class="badge">Node.js</span>
-      <span class="badge">Flutter</span>
-      <span class="badge">Firebase</span>
-      <span class="badge">Unity</span>
-      <span class="badge">MySQL</span>
-      <span class="badge">MongoDB</span>
-      <span class="badge">APIs REST</span>
-      <span class="badge">Postman</span>
-      <span class="badge">ngrok</span>
-      <span class="badge">Git & GitHub</span>
+      <span class="badge">HTML</span><span class="badge">CSS</span><span class="badge">JavaScript</span>
+      <span class="badge">PHP</span><span class="badge">Laravel</span><span class="badge">Node.js</span>
+      <span class="badge">Flutter</span><span class="badge">Firebase</span><span class="badge">Unity</span>
+      <span class="badge">MySQL</span><span class="badge">MongoDB</span><span class="badge">APIs REST</span>
+      <span class="badge">Postman</span><span class="badge">ngrok</span><span class="badge">Git & GitHub</span>
     </div>
 
     <div class="interests">
@@ -112,50 +150,31 @@
       <h2 id="proyectos-title">Proyectos</h2>
       <div class="project" id="project1">
         <strong>Integración Jira ⇄ ITSM</strong>
-        <ul>
-          <li>Integración bidireccional entre herramienta de administración de proyectos y módulo de gestión de cambios de ITSM.</li>
-          <li>Sincronización de RFCs con manejo de duplicados.</li>
-          <li>Herramientas: Jira, ngrok, Postman, APIs REST, Node.js/Express.</li>
-        </ul>
+        <ul></ul>
       </div>
       <div class="project" id="project2">
-        <strong>Aplicación móvil tipo Uber</strong>
-        <ul>
-          <li>Desarrollo de app móvil con geolocalización, registro de usuarios y comunicación en tiempo real.</li>
-          <li>Herramientas: Flutter, Firebase (Auth & Realtime/Firestore).</li>
-        </ul>
+        <strong>Aplicación móvil tipo Uber para personas con discapacidad</strong>
+        <ul></ul>
       </div>
       <div class="project" id="project3">
         <strong>Generación de página web / Tienda en línea</strong>
-        <ul>
-          <li>Tienda en línea para citas médicas con frontend (HTML/CSS/JS) y backend (PHP + MySQL).</li>
-          <li>Sistemas de gestión de usuarios y reservas integradas con base de datos.</li>
-        </ul>
+        <ul></ul>
       </div>
       <div class="project" id="project4">
         <strong>Portal inmobiliario (Proyecto escolar)</strong>
-        <ul>
-          <li>Portal con CRUD de inmuebles y panel administrativo.</li>
-          <li>Herramientas: Laravel 8, PHP, MySQL.</li>
-        </ul>
+        <ul></ul>
       </div>
       <div class="project" id="project5">
         <strong>Integración WhatsApp vía API REST</strong>
-        <ul>
-          <li>Diseño de endpoints y flujo para envío/recepción de mensajes y automatización de notificaciones en ITSM.</li>
-        </ul>
+        <ul></ul>
       </div>
       <div class="project" id="project6">
         <strong>Web de control de cero desperdicio</strong>
-        <ul>
-          <li>Dashboard y formularios para registro y visualización de métricas relacionadas con desperdicios.</li>
-        </ul>
+        <ul></ul>
       </div>
       <div class="project" id="project7">
         <strong>Videojuego (Proyecto escolar)</strong>
-        <ul>
-          <li>Desarrollo y publicación de videojuego utilizando Unity (C#).</li>
-        </ul>
+        <ul></ul>
       </div>
     </div>
 
@@ -177,14 +196,30 @@
       perfil:"Desarrollador con formación técnica y universitaria en desarrollo de software. Experiencia práctica en proyectos académicos y personales, incluyendo desarrollo web, aplicaciones móviles, integraciones API, gestión de proyectos y bases de datos. Proactivo, con capacidad de aprendizaje rápido y adaptación a nuevas tecnologías.",
       education:["Ingeniería en Desarrollo y Gestión de Software — Título en trámite","TSU en Desarrollo de Software Multiplataforma — Título y cédula profesional","Preparatoria — Soporte y Mantenimiento de Equipo de Cómputo — Cédula profesional"],
       interests:["Música","Lectura","Tecnología","Videojuegos","Diseño"],
-      projects:[ /* proyectos igual que antes */ ]
+      projects:[
+        {title:"Integración Jira ⇄ ITSM",items:["Integración bidireccional entre herramienta de administración de proyectos y módulo de gestión de cambios de ITSM.","Sincronización de RFCs con manejo de duplicados.","Herramientas: Jira, ngrok, Postman, APIs REST, Node.js/Express."]},
+        {title:"Aplicación móvil tipo Uber para personas con discapacidad",items:["Desarrollo de app móvil con geolocalización, registro de usuarios y comunicación en tiempo real.","Herramientas: Flutter, Firebase (Auth & Realtime/Firestore)."]},
+        {title:"Generación de página web / Tienda en línea",items:["Tienda en línea para citas médicas con frontend (HTML/CSS/JS) y backend (PHP + MySQL).","Sistemas de gestión de usuarios y reservas integradas con base de datos."]},
+        {title:"Portal inmobiliario (Proyecto escolar)",items:["Portal con CRUD de inmuebles y panel administrativo.","Herramientas: Laravel 8, PHP, MySQL."]},
+        {title:"Integración WhatsApp vía API REST",items:["Diseño de endpoints y flujo para envío/recepción de mensajes y automatización de notificaciones en ITSM."]},
+        {title:"Web de control de cero desperdicio",items:["Dashboard y formularios para registro y visualización de métricas relacionadas con desperdicios."]},
+        {title:"Videojuego (Proyecto escolar)",items:["Desarrollo y publicación de videojuego utilizando Unity (C#)."]}
+      ]
     },
     en:{
       job:"Full-Stack Developer · Web, Mobile & API Experience",
       perfil:"Developer with technical and university training in software development. Practical experience in academic and personal projects, including web development, mobile applications, API integrations, project management, and databases. Proactive, quick learner, and adaptable to new technologies.",
       education:["Software Development and Management Engineering — Degree in process","Multiplatform Software Development TSU — Degree & Professional License","High School — Computer Support & Maintenance — Professional License"],
       interests:["Music","Reading","Technology","Video Games","Design"],
-      projects:[ /* proyectos igual que antes */ ]
+      projects:[
+        {title:"Jira ⇄ ITSM Integration",items:["Bidirectional integration between project management tool and ITSM change management module.","RFC synchronization with duplicate handling.","Tools: Jira, ngrok, Postman, REST APIs, Node.js/Express."]},
+        {title:"Uber-like Mobile App for people with disabilities",items:["Mobile app development with geolocation, user registration and real-time communication.","Tools: Flutter, Firebase (Auth & Realtime/Firestore)."]},
+        {title:"Web Page / Online Store",items:["Online store for medical appointments with frontend (HTML/CSS/JS) and backend (PHP + MySQL).","User and booking management systems integrated with database."]},
+        {title:"Real Estate Portal (School Project)",items:["Portal with CRUD of properties and admin panel.","Tools: Laravel 8, PHP, MySQL."]},
+        {title:"WhatsApp API REST Integration",items:["Endpoint and flow design for sending/receiving messages and automating notifications in ITSM."]},
+        {title:"Zero Waste Control Web",items:["Dashboard and forms for recording and visualizing waste-related metrics."]},
+        {title:"Video Game (School Project)",items:["Development and publishing of a video game using Unity (C#)."]}
+      ]
     }
   };
 
@@ -197,6 +232,7 @@
     document.getElementById("skills-title").innerText = titles[lang].skills;
     document.getElementById("interest-title").innerText = titles[lang].interests;
 
+    // Educación
     const eduList = document.getElementById("education-list");
     eduList.innerHTML = "";
     content[lang].education.forEach(item=>{
@@ -205,6 +241,7 @@
       eduList.appendChild(li);
     });
 
+    // Intereses
     const interestsList = document.querySelector(".interests ul");
     interestsList.innerHTML = "";
     content[lang].interests.forEach(item=>{
@@ -213,6 +250,7 @@
       interestsList.appendChild(li);
     });
 
+    // Proyectos
     content[lang].projects.forEach((proj,index)=>{
       const projectDiv = document.getElementById(`project${index+1}`);
       projectDiv.querySelector("strong").innerText = proj.title;
@@ -225,7 +263,11 @@
       });
     });
   }
+
+  // Inicializar en español
+  changeLanguage('es');
 </script>
 </body>
 </html>
+
 
