@@ -5,38 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Currículum Vitae - Alan Ulises Sánchez Briones</title>
 <style>
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f4f6f8;
-    margin: 0;
-    padding: 0;
-    color: #333;
-  }
-  .container {
-    max-width: 900px;
-    margin: 20px auto;
-    background: #fff;
-    display: flex;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  }
-
-  .left {
-    background: #0b3d91;
-    color: #fff;
-    width: 35%;
-    padding: 30px 20px;
-    text-align: center;
-  }
-  .left img {
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #fff;
-    margin-bottom: 15px;
-  }
+  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f4f6f8; margin:0; padding:0; color: #333; }
+  .container { max-width: 900px; margin: 20px auto; background: #fff; display: flex; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.08); }
+  .left { background: #0b3d91; color: #fff; width: 35%; padding: 30px 20px; text-align: center; }
+  .left img { width: 130px; height: 130px; border-radius: 50%; object-fit: cover; border: 3px solid #fff; margin-bottom: 15px; }
   .left h1 { font-size: 22px; margin-bottom: 6px; }
   .left p { font-size: 14px; margin-bottom: 12px; }
   .left a { color: #fff; text-decoration: none; display: block; margin: 4px 0; font-size: 14px; transition: color 0.3s; }
@@ -184,24 +156,64 @@ function setLanguage(lang){
   };
   const email = { es: "✉ alan.sanchez150918@gmail.com", en: "✉ alan.sanchez150918@gmail.com" };
   const phone = { es: "📞 5536093998", en: "📞 +52 5536093998" };
-  const eduES = [
-    "Ingeniería en Desarrollo y Gestión de Software — Título en trámite",
-    "TSU en Desarrollo de Software Multiplataforma — Título y cédula profesional",
-    "Preparatoria — Soporte y Mantenimiento de Equipo de Cómputo — Cédula profesional"
-  ];
-  const eduEN = [
-    "Software Development and Management Engineering — Degree in process",
-    "Multiplatform Software Development TSU — Degree & professional license",
-    "High School — Computer Support & Maintenance — Professional license"
-  ];
-  const perfilES = "Desarrollador con formación técnica y universitaria en desarrollo de software. Experiencia práctica en proyectos académicos y personales, incluyendo desarrollo web, aplicaciones móviles, integraciones API, gestión de proyectos y bases de datos. Proactivo, con capacidad de aprendizaje rápido y adaptación a nuevas tecnologías.";
-  const perfilEN = "Developer with technical and university background in software development. Practical experience in academic and personal projects, including web development, mobile applications, API integrations, project management, and databases. Proactive, quick learner, adaptable to new technologies.";
-  const eduList = lang==='es' ? eduES : eduEN;
+  
+  const eduList = {
+    es: [
+      "Ingeniería en Desarrollo y Gestión de Software — Título en trámite",
+      "TSU en Desarrollo de Software Multiplataforma — Título y cédula profesional",
+      "Preparatoria — Soporte y Mantenimiento de Equipo de Cómputo — Cédula profesional"
+    ],
+    en: [
+      "Software Development and Management Engineering — Degree in process",
+      "Multiplatform Software Development TSU — Degree & professional license",
+      "High School — Computer Support & Maintenance — Professional license"
+    ]
+  };
+
+  const perfilText = {
+    es: "Desarrollador con formación técnica y universitaria en desarrollo de software. Experiencia práctica en proyectos académicos y personales, incluyendo desarrollo web, aplicaciones móviles, integraciones API, gestión de proyectos y bases de datos. Proactivo, con capacidad de aprendizaje rápido y adaptación a nuevas tecnologías.",
+    en: "Developer with technical and university background in software development. Practical experience in academic and personal projects, including web development, mobile applications, API integrations, project management, and databases. Proactive, quick learner, adaptable to new technologies."
+  };
+
+  const proyectosList = {
+    es: [
+      {title: "Integración Jira ⇄ ITSM", items: ["Integración bidireccional entre herramienta de administración de proyectos y módulo de gestión de cambios de ITSM.","Sincronización de RFCs con manejo de duplicados.","Herramientas: Jira, ngrok, Postman, APIs REST, Node.js/Express."]},
+      {title: "Aplicación móvil tipo Uber", items: ["Desarrollo de app móvil con geolocalización, registro de usuarios y comunicación en tiempo real.","Herramientas: Flutter, Firebase (Auth & Realtime/Firestore)."]},
+      {title: "Generación de página web / Tienda en línea", items: ["Tienda en línea para citas médicas con frontend (HTML/CSS/JS) y backend (PHP + MySQL).","Sistemas de gestión de usuarios y reservas integradas con base de datos."]},
+      {title: "Portal inmobiliario (Proyecto escolar)", items: ["Portal con CRUD de inmuebles y panel administrativo.","Herramientas: Laravel 8, PHP, MySQL."]},
+      {title: "Integración WhatsApp vía API REST", items: ["Diseño de endpoints y flujo para envío/recepción de mensajes y automatización de notificaciones en ITSM."]},
+      {title: "Web de control de cero desperdicio", items: ["Dashboard y formularios para registro y visualización de métricas relacionadas con desperdicios."]},
+      {title: "Videojuego (Proyecto escolar)", items: ["Desarrollo y publicación de videojuego utilizando Unity (C#)."]}
+    ],
+    en: [
+      {title: "Jira ⇄ ITSM Integration", items: ["Bidirectional integration between project management tool and ITSM change management module.","RFCs synchronization with duplicate handling.","Tools: Jira, ngrok, Postman, REST APIs, Node.js/Express."]},
+      {title: "Uber-like Mobile App", items: ["Development of mobile app with geolocation, user registration, and real-time communication.","Tools: Flutter, Firebase (Auth & Realtime/Firestore)."]},
+      {title: "Website / Online Store", items: ["Online store for medical appointments with frontend (HTML/CSS/JS) and backend (PHP + MySQL).","User management and bookings integrated with database."]},
+      {title: "Real Estate Portal (School Project)", items: ["Portal with CRUD for properties and admin panel.","Tools: Laravel 8, PHP, MySQL."]},
+      {title: "WhatsApp REST API Integration", items: ["Endpoint design and workflow for sending/receiving messages and automating ITSM notifications."]},
+      {title: "Zero Waste Web Dashboard", items: ["Dashboard and forms for recording and visualizing waste-related metrics."]},
+      {title: "Video Game (School Project)", items: ["Development and publishing of video game using Unity (C#)."]}
+    ]
+  };
+
+  const interestsList = {
+    es: ["Música","Lectura","Tecnología","Videojuegos","Diseño"],
+    en: ["Music","Reading","Technology","Video Games","Design"]
+  };
+
   document.getElementById('job-title').innerText = jobTitle[lang];
   document.getElementById('email-link').innerText = email[lang];
   document.getElementById('phone-link').innerText = phone[lang];
-  document.getElementById('perfil-text').innerText = lang==='es'? perfilES : perfilEN;
-  document.getElementById('education-list').innerHTML = eduList.map(e=>`<li>${e}</li>`).join('');
+  document.getElementById('education-list').innerHTML = eduList[lang].map(e=>`<li>${e}</li>`).join('');
+  document.getElementById('perfil-text').innerText = perfilText[lang];
+  document.getElementById('interests-list').innerHTML = interestsList[lang].map(i=>`<li>${i}</li>`).join('');
+
+  // Actualizar proyectos
+  for(let i=1;i<=7;i++){
+    const proj = proyectosList[lang][i-1];
+    document.getElementById('project'+i).querySelector('strong').innerText = proj.title;
+    document.getElementById('project'+i).querySelector('ul').innerHTML = proj.items.map(it=>`<li>${it}</li>`).join('');
+  }
 }
 </script>
 </body>
