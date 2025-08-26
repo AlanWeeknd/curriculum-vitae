@@ -4,84 +4,72 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Currículum - Alan Ulises Sánchez Briones</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-  body {
-    font-family: 'Roboto', sans-serif;
-    background:#f4f6f8;
-    margin:0; padding:0; color:#333;
-  }
-  .container {
-    max-width: 900px;
-    margin: 40px auto;
-    background: #fff;
-    border-radius: 10px;
-    padding: 30px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-  }
-  header {
-    text-align:center;
-    margin-bottom:30px;
-  }
-  header h1 {
-    margin:0; color:#0b6fb6; font-size:28px;
-  }
-  header h2 {
-    margin:5px 0 15px; font-weight:400; color:#555;
-  }
-  .contact a {
-    display:inline-block;
-    margin:5px 10px;
-    color:#0b6fb6;
-    text-decoration:none;
-    font-weight:500;
-  }
-  .section { margin-bottom:25px; }
-  .section h2 {
-    font-size:20px;
-    color:#0b6fb6;
-    border-bottom:2px solid #0b6fb6;
-    padding-bottom:5px;
-    margin-bottom:15px;
-  }
+  /* Reset y body */
+  body { margin:0; font-family:'Roboto', sans-serif; background:#f4f7fa; color:#333; }
+  a { text-decoration:none; }
   ul { padding-left:20px; }
+
+  /* Contenedor principal */
+  .container { display:flex; max-width:1000px; margin:40px auto; background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 10px 25px rgba(0,0,0,0.1); }
+
+  /* Sidebar */
+  .sidebar { width:300px; background:#0073b1; color:#fff; padding:30px; display:flex; flex-direction:column; align-items:center; transition:all 0.3s; }
+  .sidebar img { width:120px; height:120px; border-radius:50%; object-fit:cover; margin-bottom:20px; border:3px solid #fff; }
+  .sidebar h1 { margin:0; font-size:24px; text-align:center; }
+  .sidebar h2 { margin:5px 0 20px; font-weight:400; font-size:16px; text-align:center; color:#cce0ff; }
+  .sidebar a { color:#cce0ff; margin:5px 0; font-weight:500; transition:0.3s; }
+  .sidebar a:hover { color:#fff; }
+
+  /* Main content */
+  .main { flex:1; padding:30px; }
+
+  /* Secciones */
+  .section { margin-bottom:30px; }
+  .section h2 { font-size:22px; color:#0073b1; border-bottom:2px solid #0073b1; padding-bottom:5px; margin-bottom:15px; }
   li { margin-bottom:8px; line-height:1.5; }
-  .skills .badge {
-    display:inline-block;
-    background:#e1efff;
-    color:#0b4b78;
-    padding:6px 12px;
-    border-radius:50px;
-    font-size:13px;
-    margin:5px 5px 0 0;
-  }
+
+  /* Skills / badges */
+  .skills .badge { display:inline-block; background:#e1f0ff; color:#0073b1; padding:6px 12px; border-radius:50px; font-size:13px; margin:5px 5px 0 0; transition:0.3s; }
+  .skills .badge:hover { background:#0073b1; color:#fff; }
+
+  /* Projects */
   .project { margin-bottom:15px; }
-  .project em { color:#555; }
-  footer {
-    text-align:center;
-    font-size:13px;
-    color:#777;
-    margin-top:30px;
-  }
-  @media print { body { background:#fff; } .container { box-shadow:none; } }
+  .project em { color:#555; font-style:normal; display:block; margin-bottom:5px; }
+
+  /* Botón de descarga PDF */
+  .download { display:inline-block; margin-top:10px; padding:10px 15px; background:#005582; color:#fff; border-radius:6px; font-weight:500; cursor:pointer; transition:0.3s; }
+  .download:hover { background:#003f66; }
+
+  /* Footer */
+  footer { text-align:center; font-size:13px; color:#777; margin-top:20px; }
+
+  /* Responsive */
+  @media(max-width:768px){ .container { flex-direction:column; } .sidebar { width:100%; padding:20px; } .main { padding:20px; } }
+
 </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>Alan Ulises Sánchez Briones</h1>
-      <h2>Ingeniero en Desarrollo y Gestión de Software (título en trámite) · TSU en Desarrollo de Software Multiplataforma</h2>
-      <div class="contact">
-        <a href="mailto:alan.sanchez150918@gmail.com">✉ Email</a> |
-        <a href="tel:+525536093998">📞 Teléfono</a> |
-        <a href="#">LinkedIn</a> |
-        <a href="https://github.com/AlanWeeknd" target="_blank">GitHub</a>
-      </div>
-    </header>
 
+<div class="container">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <img src="https://via.placeholder.com/120" alt="Alan Ulises Sánchez Briones">
+    <h1>Alan Ulises Sánchez Briones</h1>
+    <h2>Desarrollador de Software</h2>
+    <a href="mailto:alan.sanchez150918@gmail.com">✉ Email</a>
+    <a href="tel:+525536093998">📞 Teléfono</a>
+    <a href="#">LinkedIn</a>
+    <a href="https://github.com/AlanWeeknd" target="_blank">GitHub</a>
+    <div class="download" onclick="window.print()">📄 Descargar PDF</div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main">
     <div class="section">
       <h2>Perfil Profesional</h2>
-      <p>Ingeniero en desarrollo de software con experiencia práctica en proyectos académicos y personales. Especialista en integración de sistemas, desarrollo web y aplicaciones móviles, APIs, bases de datos y herramientas de gestión como Jira, Postman y ngrok.</p>
+      <p>Ingeniero en desarrollo de software con experiencia en proyectos académicos y personales, integración de sistemas, desarrollo web y aplicaciones móviles, manejo de APIs, bases de datos y herramientas como Jira, Postman y ngrok.</p>
     </div>
 
     <div class="section">
@@ -94,14 +82,40 @@
     </div>
 
     <div class="section">
-      <h2>Habilidades y Herramientas</h2>
+      <h2>Proyectos Destacados</h2>
+      <div class="project">
+        <strong>Integración Jira ⇄ ITSM</strong>
+        <em>Jira, ngrok, Postman, Node.js/Express</em>
+        <ul>
+          <li>Integración bidireccional entre herramienta de administración de proyectos y módulo de gestión de cambios ITSM.</li>
+          <li>Sincronización de RFCs evitando duplicados.</li>
+        </ul>
+      </div>
+      <div class="project">
+        <strong>Aplicación móvil tipo Uber</strong>
+        <em>Flutter, Firebase</em>
+        <ul>
+          <li>Prototipo de app con geolocalización y comunicación en tiempo real usando Firebase.</li>
+        </ul>
+      </div>
+      <div class="project">
+        <strong>Tienda en línea / Web</strong>
+        <em>HTML, CSS, JS, PHP, MySQL</em>
+        <ul>
+          <li>Tienda en línea para citas médicas con sistema de reservas y gestión de usuarios.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Habilidades</h2>
       <div class="skills">
         <span class="badge">HTML</span>
         <span class="badge">CSS</span>
         <span class="badge">JavaScript</span>
         <span class="badge">PHP</span>
         <span class="badge">Laravel 8</span>
-        <span class="badge">Node.js / Express</span>
+        <span class="badge">Node.js</span>
         <span class="badge">Flutter</span>
         <span class="badge">Firebase</span>
         <span class="badge">Unity</span>
@@ -114,51 +128,11 @@
       </div>
     </div>
 
-    <div class="section">
-      <h2>Proyectos Destacados</h2>
-      <div class="project">
-        <strong>Integración Jira ⇄ ITSM</strong> <br>
-        <em>Jira, ngrok, Postman, Node.js/Express</em>
-        <ul>
-          <li>Integración bidireccional entre herramienta de administración de proyectos y módulo de gestión de cambios ITSM.</li>
-          <li>Sincronización de RFCs con manejo de duplicados.</li>
-        </ul>
-      </div>
-
-      <div class="project">
-        <strong>Aplicación móvil tipo Uber</strong> <br>
-        <em>Flutter, Firebase</em>
-        <ul>
-          <li>Prototipo de app con geolocalización, registro de usuarios y comunicación en tiempo real.</li>
-        </ul>
-      </div>
-
-      <div class="project">
-        <strong>Tienda en línea / Web</strong> <br>
-        <em>HTML, CSS, JS, PHP, MySQL</em>
-        <ul>
-          <li>Tienda en línea para citas médicas con sistema de reservas y gestión de usuarios.</li>
-        </ul>
-      </div>
-
-      <div class="project">
-        <strong>Portal inmobiliario (Laravel 8)</strong>
-        <ul>
-          <li>CRUD de inmuebles y panel administrativo.</li>
-        </ul>
-      </div>
-
-      <div class="project">
-        <strong>Videojuego (Unity)</strong>
-        <ul>
-          <li>Desarrollo y publicación de videojuego escolar.</li>
-        </ul>
-      </div>
-    </div>
-
     <footer>
       Actualizado: <strong>25 Ago 2025</strong> — © Alan Ulises Sánchez Briones
     </footer>
   </div>
+</div>
+
 </body>
 </html>
