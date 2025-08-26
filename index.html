@@ -5,99 +5,56 @@
   <title>Currículum Vitae - Alan Ulises Sánchez Briones</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    /* Reset y base */
     * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family: 'Roboto', Arial, sans-serif; background:#e8eaf6; color:#333; line-height:1.6; }
-    .container { max-width:900px; margin:20px auto; background:#fff; padding:30px; border-radius:12px; box-shadow:0 8px 25px rgba(0,0,0,0.1); }
+    body { font-family:'Roboto', sans-serif; background:#f0f2f5; color:#333; line-height:1.5; }
+    .container { max-width:1000px; margin:30px auto; display:grid; grid-template-columns:1fr 2fr; gap:25px; background:#fff; padding:25px; border-radius:12px; box-shadow:0 8px 25px rgba(0,0,0,0.1); }
 
-    /* Header */
-    header { text-align:center; margin-bottom:25px; }
-    header img { width:130px; height:130px; border-radius:50%; object-fit:cover; border:4px solid #0b6fb6; margin-bottom:15px; }
-    h1 { font-size:28px; font-weight:700; margin-bottom:6px; color:#0b3d91; }
-    p.lead { font-size:16px; color:#555; margin-bottom:12px; }
+    /* Columna izquierda */
+    .left-column { text-align:center; }
+    .left-column img { width:150px; height:150px; border-radius:50%; object-fit:cover; border:4px solid #0b6fb6; margin-bottom:15px; }
+    .contact a { display:block; color:#0b6fb6; text-decoration:none; margin:5px 0; transition:color 0.3s; }
+    .contact a:hover { color:#083d78; }
+    .skills, .interests { margin-top:20px; text-align:left; }
+    .skills .badge, .interests li { display:inline-block; margin:5px 6px 0 0; padding:6px 12px; background:#d0e1ff; border-radius:20px; color:#0b3d91; font-size:13px; font-weight:500; }
 
-    /* Contactos */
-    .meta { text-align:center; margin-bottom:20px; font-size:15px; }
-    .meta a { color:#0b6fb6; text-decoration:none; margin:0 10px; transition:color 0.3s; }
-    .meta a:hover { color:#0b3d91; }
-
-    /* Botones */
-    .buttons { text-align:center; margin-bottom:25px; }
-    .buttons button {
-      margin:0 6px;
-      padding:8px 18px;
-      border:none;
-      border-radius:6px;
-      cursor:pointer;
-      background:#0b6fb6;
-      color:white;
-      font-weight:700;
-      font-size:14px;
-      transition:background 0.3s;
-    }
-    .buttons button:hover { background:#083d78; }
-
-    /* Secciones */
+    /* Columna derecha */
+    .right-column { padding-left:20px; }
     .section { background:#f5f6fa; border-radius:10px; padding:18px 22px; margin-bottom:18px; box-shadow:0 4px 12px rgba(0,0,0,0.05); }
     h2 { font-size:20px; color:#0b3d91; margin-bottom:12px; border-bottom:2px solid #cfd8dc; padding-bottom:4px; }
-
-    /* Listas */
     ul { list-style-type: disc; padding-left:20px; margin-bottom:10px; }
     li { margin-bottom:6px; }
-
-    /* Badges */
-    .skills .badge { display:inline-block; margin:5px 6px 0 0; padding:6px 12px; background:#d0e1ff; border-radius:20px; color:#0b3d91; font-size:13px; font-weight:500; }
-
-    /* Proyectos */
     .project { margin-bottom:14px; }
     .project strong { font-size:16px; color:#0b3d91; }
 
-    /* Footer */
-    footer { text-align:center; color:#666; font-size:13px; margin-top:25px; }
+    /* Botones */
+    .buttons { text-align:center; margin-bottom:25px; grid-column:1/-1; }
+    .buttons button { margin:0 6px; padding:8px 18px; border:none; border-radius:6px; cursor:pointer; background:#0b6fb6; color:white; font-weight:700; font-size:14px; transition:background 0.3s; }
+    .buttons button:hover { background:#083d78; }
 
-    @media print {
-      body { background:#fff }
-      .container { box-shadow:none }
-      .buttons { display:none; }
-    }
+    /* Header Job */
+    #job-title { font-size:18px; color:#555; margin-bottom:12px; }
+
+    footer { text-align:center; color:#666; font-size:13px; margin-top:25px; grid-column:1/-1; }
+
+    @media print { body { background:#fff } .container { box-shadow:none } .buttons { display:none; } }
+    @media (max-width:900px) { .container { grid-template-columns:1fr; padding:15px; } .right-column { padding-left:0; } }
   </style>
 </head>
 <body>
   <div class="container">
-    <header>
-      <img src="https://via.placeholder.com/130" alt="Foto Alan Ulises Sánchez Briones">
-      <h1>Alan Ulises Sánchez Briones</h1>
-      <p id="job-title" class="lead">Desarrollador Full-Stack · Experiencia en Web, Móvil y APIs</p>
-      <div class="meta">
-        <a href="mailto:alan.sanchez150918@gmail.com">✉ alan.sanchez150918@gmail.com</a> |
-        <a href="tel:+525536093998">📞 5536093998</a> |
-        <a href="https://www.linkedin.com/in/alan-ulises-sanchez-briones-7533621b0/" target="_blank">LinkedIn</a> |
+    <!-- Columna izquierda -->
+    <div class="left-column">
+      <img src="https://via.placeholder.com/150" alt="Foto Alan Ulises Sánchez Briones">
+      <p id="job-title">Desarrollador Full-Stack · Experiencia en Web, Móvil y APIs</p>
+      <div class="contact">
+        <a href="mailto:alan.sanchez150918@gmail.com">✉ alan.sanchez150918@gmail.com</a>
+        <a href="tel:+525536093998">📞 5536093998</a>
+        <a href="https://www.linkedin.com/in/alan-ulises-sanchez-briones-7533621b0/" target="_blank">LinkedIn</a>
         <a href="https://github.com/AlanWeeknd" target="_blank">GitHub</a>
       </div>
-      <div class="buttons">
-        <button onclick="changeLanguage('es')">ES</button>
-        <button onclick="changeLanguage('en')">EN</button>
-        <button onclick="window.print()">Imprimir / PDF</button>
-      </div>
-    </header>
 
-    <div class="section">
-      <h2 id="perfil-title">Perfil</h2>
-      <p id="perfil-text">Desarrollador con formación técnica y universitaria en desarrollo de software. Experiencia práctica en proyectos académicos y personales, incluyendo desarrollo web, aplicaciones móviles, integraciones API, gestión de proyectos y bases de datos. Proactivo, con capacidad de aprendizaje rápido y adaptación a nuevas tecnologías.</p>
-    </div>
-
-    <div class="section">
-      <h2 id="edu-title">Educación / Education</h2>
-      <ul id="education-list">
-        <li>Ingeniería en Desarrollo y Gestión de Software — Título en trámite / Software Development and Management Engineering — Degree in process</li>
-        <li>TSU en Desarrollo de Software Multiplataforma — Título y cédula profesional / Multiplatform Software Development TSU — Degree & Professional License</li>
-        <li>Preparatoria — Soporte y Mantenimiento de Equipo de Cómputo — Cédula profesional / High School — Computer Support & Maintenance — Professional License</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2 id="skills-title">Habilidades / Skills</h2>
       <div class="skills">
+        <h3>Habilidades</h3>
         <span class="badge">HTML</span>
         <span class="badge">CSS</span>
         <span class="badge">JavaScript</span>
@@ -114,67 +71,88 @@
         <span class="badge">ngrok</span>
         <span class="badge">Git & GitHub</span>
       </div>
+
+      <div class="interests">
+        <h3>Intereses</h3>
+        <span class="badge">Música</span>
+        <span class="badge">Lectura</span>
+        <span class="badge">Tecnología</span>
+        <span class="badge">Videojuegos</span>
+        <span class="badge">Diseño</span>
+      </div>
     </div>
 
-    <div class="section">
-      <h2 id="interest-title">Intereses / Interests</h2>
-      <ul id="interests-list">
-        <li>Música</li>
-        <li>Lectura</li>
-        <li>Tecnología</li>
-        <li>Videojuegos</li>
-        <li>Diseño</li>
-      </ul>
-    </div>
+    <!-- Columna derecha -->
+    <div class="right-column">
+      <div class="buttons">
+        <button onclick="changeLanguage('es')">ES</button>
+        <button onclick="changeLanguage('en')">EN</button>
+        <button onclick="window.print()">Imprimir / PDF</button>
+      </div>
 
-    <div class="section">
-      <h2 id="proyectos-title">Proyectos</h2>
-      <div class="project" id="project1">
-        <strong>Integración Jira ⇄ ITSM</strong>
-        <ul>
-          <li>Integración bidireccional entre herramienta de administración de proyectos y módulo de gestión de cambios de ITSM.</li>
-          <li>Sincronización de RFCs con manejo de duplicados.</li>
-          <li>Herramientas: Jira, ngrok, Postman, APIs REST, Node.js/Express.</li>
+      <div class="section">
+        <h2 id="perfil-title">Perfil</h2>
+        <p id="perfil-text">Desarrollador con formación técnica y universitaria en desarrollo de software. Experiencia práctica en proyectos académicos y personales, incluyendo desarrollo web, aplicaciones móviles, integraciones API, gestión de proyectos y bases de datos. Proactivo, con capacidad de aprendizaje rápido y adaptación a nuevas tecnologías.</p>
+      </div>
+
+      <div class="section">
+        <h2 id="edu-title">Educación / Education</h2>
+        <ul id="education-list">
+          <li>Ingeniería en Desarrollo y Gestión de Software — Título en trámite / Software Development and Management Engineering — Degree in process</li>
+          <li>TSU en Desarrollo de Software Multiplataforma — Título y cédula profesional / Multiplatform Software Development TSU — Degree & Professional License</li>
+          <li>Preparatoria — Soporte y Mantenimiento de Equipo de Cómputo — Cédula profesional / High School — Computer Support & Maintenance — Professional License</li>
         </ul>
       </div>
-      <div class="project" id="project2">
-        <strong>Aplicación móvil tipo Uber</strong>
-        <ul>
-          <li>Desarrollo de app móvil con geolocalización, registro de usuarios y comunicación en tiempo real.</li>
-          <li>Herramientas: Flutter, Firebase (Auth & Realtime/Firestore).</li>
-        </ul>
-      </div>
-      <div class="project" id="project3">
-        <strong>Generación de página web / Tienda en línea</strong>
-        <ul>
-          <li>Tienda en línea para citas médicas con frontend (HTML/CSS/JS) y backend (PHP + MySQL).</li>
-          <li>Sistemas de gestión de usuarios y reservas integradas con base de datos.</li>
-        </ul>
-      </div>
-      <div class="project" id="project4">
-        <strong>Portal inmobiliario (Proyecto escolar)</strong>
-        <ul>
-          <li>Portal con CRUD de inmuebles y panel administrativo.</li>
-          <li>Herramientas: Laravel 8, PHP, MySQL.</li>
-        </ul>
-      </div>
-      <div class="project" id="project5">
-        <strong>Integración WhatsApp vía API REST</strong>
-        <ul>
-          <li>Diseño de endpoints y flujo para envío/recepción de mensajes y automatización de notificaciones en ITSM.</li>
-        </ul>
-      </div>
-      <div class="project" id="project6">
-        <strong>Web de control de cero desperdicio</strong>
-        <ul>
-          <li>Dashboard y formularios para registro y visualización de métricas relacionadas con desperdicios.</li>
-        </ul>
-      </div>
-      <div class="project" id="project7">
-        <strong>Videojuego (Proyecto escolar)</strong>
-        <ul>
-          <li>Desarrollo y publicación de videojuego utilizando Unity (C#).</li>
-        </ul>
+
+      <div class="section">
+        <h2 id="proyectos-title">Proyectos</h2>
+        <div class="project" id="project1">
+          <strong>Integración Jira ⇄ ITSM</strong>
+          <ul>
+            <li>Integración bidireccional entre herramienta de administración de proyectos y módulo de gestión de cambios de ITSM.</li>
+            <li>Sincronización de RFCs con manejo de duplicados.</li>
+            <li>Herramientas: Jira, ngrok, Postman, APIs REST, Node.js/Express.</li>
+          </ul>
+        </div>
+        <div class="project" id="project2">
+          <strong>Aplicación móvil tipo Uber</strong>
+          <ul>
+            <li>Desarrollo de app móvil con geolocalización, registro de usuarios y comunicación en tiempo real.</li>
+            <li>Herramientas: Flutter, Firebase (Auth & Realtime/Firestore).</li>
+          </ul>
+        </div>
+        <div class="project" id="project3">
+          <strong>Generación de página web / Tienda en línea</strong>
+          <ul>
+            <li>Tienda en línea para citas médicas con frontend (HTML/CSS/JS) y backend (PHP + MySQL).</li>
+            <li>Sistemas de gestión de usuarios y reservas integradas con base de datos.</li>
+          </ul>
+        </div>
+        <div class="project" id="project4">
+          <strong>Portal inmobiliario (Proyecto escolar)</strong>
+          <ul>
+            <li>Portal con CRUD de inmuebles y panel administrativo.</li>
+            <li>Herramientas: Laravel 8, PHP, MySQL.</li>
+          </ul>
+        </div>
+        <div class="project" id="project5">
+          <strong>Integración WhatsApp vía API REST</strong>
+          <ul>
+            <li>Diseño de endpoints y flujo para envío/recepción de mensajes y automatización de notificaciones en ITSM.</li>
+          </ul>
+        </div>
+        <div class="project" id="project6">
+          <strong>Web de control de cero desperdicio</strong>
+          <ul>
+            <li>Dashboard y formularios para registro y visualización de métricas relacionadas con desperdicios.</li>
+          </ul>
+        </div>
+        <div class="project" id="project7">
+          <strong>Videojuego (Proyecto escolar)</strong>
+          <ul>
+            <li>Desarrollo y publicación de videojuego utilizando Unity (C#).</li>
+          </ul>
+        </div>
       </div>
     </div>
 
@@ -239,12 +217,10 @@
         eduList.appendChild(li);
       });
 
-      const interestsList = document.getElementById("interests-list");
-      interestsList.innerHTML = "";
-      content[lang].interests.forEach(item=>{
-        const li=document.createElement("li");
-        li.textContent=item;
-        interestsList.appendChild(li);
+      const interestsList = document.querySelector(".interests");
+      const badges = interestsList.querySelectorAll(".badge");
+      content[lang].interests.forEach((item,i)=>{
+        badges[i].textContent=item;
       });
 
       content[lang].projects.forEach((proj,index)=>{
