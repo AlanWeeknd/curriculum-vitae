@@ -48,6 +48,7 @@
     background:#f9fbff; border-radius:12px; padding:22px;
     margin-bottom:20px; box-shadow:0 6px 18px rgba(0,0,0,0.06);
     page-break-inside: avoid;
+    transition: all 0.3s ease;
   }
 
   h2 {
@@ -69,17 +70,18 @@
 
   footer { text-align:center; color:#666; font-size:13px; margin-top:28px; grid-column:1/-1; }
 
-  /* IMPRESIÓN PDF */
+  /* PDF Web-like */
   @media print {
     body { background:#fff; color:#000; font-size:12pt; }
-    .container { display:block; width:100%; box-shadow:none; padding:0; margin:0; }
-    .left-column, .right-column { width:100%; padding:0; background:#fff; color:#000; }
-    .section { box-shadow:none; margin-bottom:15px; padding:15px 0; border-bottom:1px solid #ccc; page-break-inside: avoid; }
-    h2 { font-size:16pt; color:#000; border-bottom:1px solid #000; }
+    .container { display:grid; grid-template-columns:1fr 2fr; gap:25px; width:100%; box-shadow:none; padding:0; margin:0; }
+    .left-column, .right-column { width:100%; padding:15px; color:#000; }
+    .left-column { background: linear-gradient(160deg, #0033cc, #3366ff); color:#fff; }
+    .section { box-shadow:0 6px 18px rgba(0,0,0,0.06); margin-bottom:15px; padding:15px; border-radius:12px; page-break-inside: avoid; }
+    h2 { font-size:16pt; border-bottom:1px solid #000; }
+    ul, li { font-size:12pt; }
+    footer { font-size:10pt; color:#000; }
     .buttons { display:none; }
     img { width:120px; height:120px; border:none; }
-    ul, li { font-size:12pt; color:#000; }
-    footer { font-size:10pt; color:#000; }
     @page { margin:15mm; }
   }
 
@@ -135,7 +137,7 @@
       <ul id="education-list">
         <li>Ingeniería en Desarrollo y Gestión de Software — Título en trámite</li>
         <li>TSU en Desarrollo de Software Multiplataforma — Título y cédula profesional</li>
-        <li>Preparatoria — Título y cédula profesional</li>
+        <li>Técnico Profesional en Soporte y Mantenimiento de Equipo de Cómputo — Título y cédula profesional</li>
       </ul>
     </div>
 
@@ -164,7 +166,7 @@ const content = {
   es:{
     job:"Desarrollador Full-Stack · Experiencia en Web, Móvil y APIs",
     perfil:"Desarrollador con formación técnica y universitaria en desarrollo de software. Experiencia práctica en proyectos académicos y personales, incluyendo desarrollo web, aplicaciones móviles, integraciones API, gestión de proyectos y bases de datos. Proactivo, con capacidad de aprendizaje rápido y adaptación a nuevas tecnologías.",
-    education:["Ingeniería en Desarrollo y Gestión de Software — Título en trámite","TSU en Desarrollo de Software Multiplataforma — Título y cédula profesional","Preparatoria — Título y cédula profesional"],
+    education:["Ingeniería en Desarrollo y Gestión de Software — Título en trámite","TSU en Desarrollo de Software Multiplataforma — Título y cédula profesional","Técnico Profesional en Soporte y Mantenimiento de Equipo de Cómputo — Título y cédula profesional"],
     interests:["Música","Lectura","Tecnología","Videojuegos","Diseño"],
     projects:[
       {title:"Integración Jira ⇄ ITSM",items:["Integración bidireccional entre herramienta de administración de proyectos y módulo de gestión de cambios de ITSM.","Sincronización de RFCs con manejo de duplicados.","Herramientas: Jira, ngrok, Postman, APIs REST, Node.js/Express."]},
@@ -179,7 +181,7 @@ const content = {
   en:{
     job:"Full-Stack Developer · Web, Mobile & API Experience",
     perfil:"Developer with technical and university training in software development. Practical experience in academic and personal projects, including web development, mobile applications, API integrations, project management, and databases. Proactive, quick learner, and adaptable to new technologies.",
-    education:["Software Development and Management Engineering — Degree in process","Multiplatform Software Development TSU — Degree & Professional License","High School — Degree & Professional License"],
+    education:["Software Development and Management Engineering — Degree in process","Multiplatform Software Development TSU — Degree & Professional License","Professional Technician in Computer Support & Maintenance — Degree & Professional License"],
     interests:["Music","Reading","Technology","Video Games","Design"],
     projects:[
       {title:"Jira ⇄ ITSM Integration",items:["Bidirectional integration between project management tool and ITSM change management module.","RFC synchronization with duplicate handling.","Tools: Jira, ngrok, Postman, REST APIs, Node.js/Express."]},
@@ -234,4 +236,3 @@ changeLanguage('es');
 </script>
 </body>
 </html>
-
