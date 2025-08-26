@@ -22,7 +22,6 @@
     box-shadow: 0 10px 25px rgba(0,0,0,0.08);
   }
 
-  /* Columna izquierda */
   .left {
     background: #0b3d91;
     color: #fff;
@@ -38,255 +37,172 @@
     border: 3px solid #fff;
     margin-bottom: 15px;
   }
-  .left h1 {
-    font-size: 22px;
-    margin-bottom: 6px;
-  }
-  .left p {
-    font-size: 14px;
-    margin-bottom: 12px;
-  }
-  .left a {
-    color: #fff;
-    text-decoration: none;
-    display: block;
-    margin: 4px 0;
-    font-size: 14px;
-    transition: color 0.3s;
-  }
-  .left a:hover {
-    color: #ffd700;
-  }
-  .left h3 {
-    margin-top: 20px;
-    border-bottom: 1px solid #fff;
-    padding-bottom: 4px;
-    margin-bottom: 10px;
-    font-size: 16px;
-  }
-  .badge {
-    display: inline-block;
-    background: #1f5cbf;
-    color: #fff;
-    border-radius: 20px;
-    padding: 4px 10px;
-    margin: 4px 4px 4px 0;
-    font-size: 12px;
-  }
-  .left ul {
-    list-style: none;
-    padding-left: 0;
-    text-align: left;
-    font-size: 14px;
-  }
-  .left ul li {
-    margin-bottom: 6px;
-  }
+  .left h1 { font-size: 22px; margin-bottom: 6px; }
+  .left p { font-size: 14px; margin-bottom: 12px; }
+  .left a { color: #fff; text-decoration: none; display: block; margin: 4px 0; font-size: 14px; transition: color 0.3s; }
+  .left a:hover { color: #ffd700; }
+  .left h3 { margin-top: 20px; border-bottom: 1px solid #fff; padding-bottom: 4px; margin-bottom: 10px; font-size: 16px; }
+  .badge { display: inline-block; background: #1f5cbf; color: #fff; border-radius: 20px; padding: 4px 10px; margin: 4px 4px 4px 0; font-size: 12px; }
+  .left ul { list-style: none; padding-left: 0; text-align: left; font-size: 14px; }
+  .left ul li { margin-bottom: 6px; }
 
-  /* Columna derecha */
-  .right {
-    width: 65%;
-    padding: 30px 25px;
-  }
-  .right h2 {
-    color: #0b3d91;
-    border-bottom: 2px solid #0b3d91;
-    padding-bottom: 4px;
-    margin-bottom: 12px;
-    font-size: 20px;
-  }
-  .right p, .right ul li {
-    font-size: 14px;
-    line-height: 1.5;
-  }
-  .project, .education-item {
-    margin-bottom: 14px;
-  }
+  .right { width: 65%; padding: 30px 25px; }
+  .right h2 { color: #0b3d91; border-bottom: 2px solid #0b3d91; padding-bottom: 4px; margin-bottom: 12px; font-size: 20px; }
+  .right p, .right ul li { font-size: 14px; line-height: 1.5; }
+  .project, .education-item { margin-bottom: 14px; }
 
-  /* Botones */
-  .buttons {
-    margin-bottom: 15px;
-  }
-  .buttons button {
-    background: #0b3d91;
-    color: #fff;
-    border: none;
-    padding: 6px 12px;
-    margin: 0 5px 5px 0;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-  }
-  .buttons button:hover {
-    background: #1f5cbf;
-  }
+  .buttons { margin-bottom: 15px; }
+  .buttons button { background: #0b3d91; color: #fff; border: none; padding: 6px 12px; margin: 0 5px 5px 0; border-radius: 4px; cursor: pointer; font-size: 14px; }
+  .buttons button:hover { background: #1f5cbf; }
 
-  footer {
-    text-align: center;
-    font-size: 12px;
-    color: #666;
-    margin-top: 20px;
-  }
+  footer { text-align: center; font-size: 12px; color: #666; margin-top: 20px; }
 
-  @media print {
-    body { background: #fff; }
-    .container { box-shadow: none; display: block; }
-    .left, .right { width: 100%; padding: 15px; }
-    .buttons { display: none; }
-  }
-
-  @media (max-width: 800px) {
-    .container { flex-direction: column; }
-    .left, .right { width: 100%; }
-  }
+  @media print { body { background: #fff; } .container { box-shadow: none; display: block; } .left, .right { width: 100%; padding: 15px; } .buttons { display: none; } }
+  @media (max-width: 800px) { .container { flex-direction: column; } .left, .right { width: 100%; } }
 </style>
 </head>
 <body>
-  <div class="container">
-    <!-- Columna izquierda -->
-    <div class="left">
-      <img src="https://via.placeholder.com/130" alt="Foto Alan Ulises Sánchez Briones">
-      <h1>Alan Ulises Sánchez Briones</h1>
-      <p id="job-title">Desarrollador Full-Stack · Experiencia en Web, Móvil y APIs</p>
+<div class="container">
+  <div class="left">
+    <img src="https://via.placeholder.com/130" alt="Foto Alan Ulises Sánchez Briones">
+    <h1>Alan Ulises Sánchez Briones</h1>
+    <p id="job-title">Desarrollador Full-Stack · Experiencia en Web, Móvil y APIs</p>
 
-      <a href="mailto:alan.sanchez150918@gmail.com">✉ alan.sanchez150918@gmail.com</a>
-      <a href="tel:+525536093998">📞 5536093998</a>
-      <a href="https://www.linkedin.com/in/alan-ulises-sanchez-briones-7533621b0/" target="_blank">LinkedIn</a>
-      <a href="https://github.com/AlanWeeknd" target="_blank">GitHub</a>
+    <a id="email-link" href="mailto:alan.sanchez150918@gmail.com">✉ alan.sanchez150918@gmail.com</a>
+    <a id="phone-link" href="tel:+525536093998">📞 5536093998</a>
+    <a href="https://www.linkedin.com/in/alan-ulises-sanchez-briones-7533621b0/" target="_blank">LinkedIn</a>
+    <a href="https://github.com/AlanWeeknd" target="_blank">GitHub</a>
 
-      <h3>Educación / Education</h3>
-      <ul id="education-list">
-        <li>Ingeniería en Desarrollo y Gestión de Software — Título en trámite</li>
-        <li>TSU en Desarrollo de Software Multiplataforma — Título y cédula profesional</li>
-        <li>Preparatoria — Soporte y Mantenimiento de Equipo de Cómputo — Cédula profesional</li>
-      </ul>
+    <h3 id="edu-title">Educación / Education</h3>
+    <ul id="education-list">
+      <li>Ingeniería en Desarrollo y Gestión de Software — Título en trámite</li>
+      <li>TSU en Desarrollo de Software Multiplataforma — Título y cédula profesional</li>
+      <li>Preparatoria — Soporte y Mantenimiento de Equipo de Cómputo — Cédula profesional</li>
+    </ul>
 
-      <h3>Habilidades / Skills</h3>
-      <div id="skills-list">
-        <span class="badge">HTML</span>
-        <span class="badge">CSS</span>
-        <span class="badge">JavaScript</span>
-        <span class="badge">PHP</span>
-        <span class="badge">Laravel</span>
-        <span class="badge">Node.js</span>
-        <span class="badge">Flutter</span>
-        <span class="badge">Firebase</span>
-        <span class="badge">Unity</span>
-        <span class="badge">MySQL</span>
-        <span class="badge">MongoDB</span>
-      </div>
-
-      <h3>Intereses / Interests</h3>
-      <ul id="interests-list">
-        <li>Música</li>
-        <li>Lectura</li>
-        <li>Tecnología</li>
-        <li>Videojuegos</li>
-        <li>Diseño</li>
-      </ul>
+    <h3 id="skills-title">Habilidades / Skills</h3>
+    <div id="skills-list">
+      <span class="badge">HTML</span>
+      <span class="badge">CSS</span>
+      <span class="badge">JavaScript</span>
+      <span class="badge">PHP</span>
+      <span class="badge">Laravel</span>
+      <span class="badge">Node.js</span>
+      <span class="badge">Flutter</span>
+      <span class="badge">Firebase</span>
+      <span class="badge">Unity</span>
+      <span class="badge">MySQL</span>
+      <span class="badge">MongoDB</span>
     </div>
 
-    <!-- Columna derecha -->
-    <div class="right">
-      <div class="buttons">
-        <button onclick="setLanguage('es')">ES</button>
-        <button onclick="setLanguage('en')">EN</button>
-        <button onclick="window.print()">Imprimir / PDF</button>
-      </div>
-
-      <h2 id="perfil-title">Perfil</h2>
-      <p id="perfil-text">Desarrollador con formación técnica y universitaria en desarrollo de software. Experiencia práctica en proyectos académicos y personales, incluyendo desarrollo web, aplicaciones móviles, integraciones API, gestión de proyectos y bases de datos. Proactivo, con capacidad de aprendizaje rápido y adaptación a nuevas tecnologías.</p>
-
-      <h2 id="proyectos-title">Proyectos</h2>
-
-      <div class="project" id="project1">
-        <strong>Integración Jira ⇄ ITSM</strong>
-        <ul>
-          <li>Integración bidireccional entre herramienta de administración de proyectos y módulo de gestión de cambios de ITSM.</li>
-          <li>Sincronización de RFCs con manejo de duplicados.</li>
-          <li>Herramientas: Jira, ngrok, Postman, APIs REST, Node.js/Express.</li>
-        </ul>
-      </div>
-
-      <div class="project" id="project2">
-        <strong>Aplicación móvil tipo Uber</strong>
-        <ul>
-          <li>Desarrollo de app móvil con geolocalización, registro de usuarios y comunicación en tiempo real.</li>
-          <li>Herramientas: Flutter, Firebase (Auth & Realtime/Firestore).</li>
-        </ul>
-      </div>
-
-      <div class="project" id="project3">
-        <strong>Generación de página web / Tienda en línea</strong>
-        <ul>
-          <li>Tienda en línea para citas médicas con frontend (HTML/CSS/JS) y backend (PHP + MySQL).</li>
-          <li>Sistemas de gestión de usuarios y reservas integradas con base de datos.</li>
-        </ul>
-      </div>
-
-      <div class="project" id="project4">
-        <strong>Portal inmobiliario (Proyecto escolar)</strong>
-        <ul>
-          <li>Portal con CRUD de inmuebles y panel administrativo.</li>
-          <li>Herramientas: Laravel 8, PHP, MySQL.</li>
-        </ul>
-      </div>
-
-      <div class="project" id="project5">
-        <strong>Integración WhatsApp vía API REST</strong>
-        <ul>
-          <li>Diseño de endpoints y flujo para envío/recepción de mensajes y automatización de notificaciones en ITSM.</li>
-        </ul>
-      </div>
-
-      <div class="project" id="project6">
-        <strong>Web de control de cero desperdicio</strong>
-        <ul>
-          <li>Dashboard y formularios para registro y visualización de métricas relacionadas con desperdicios.</li>
-        </ul>
-      </div>
-
-      <div class="project" id="project7">
-        <strong>Videojuego (Proyecto escolar)</strong>
-        <ul>
-          <li>Desarrollo y publicación de videojuego utilizando Unity (C#).</li>
-        </ul>
-      </div>
-    </div>
+    <h3 id="interest-title">Intereses / Interests</h3>
+    <ul id="interests-list">
+      <li>Música</li>
+      <li>Lectura</li>
+      <li>Tecnología</li>
+      <li>Videojuegos</li>
+      <li>Diseño</li>
+    </ul>
   </div>
 
-  <footer>
-    Actualizado: <strong>25 Ago 2025</strong> — © Alan Ulises Sánchez Briones
-  </footer>
+  <div class="right">
+    <div class="buttons">
+      <button onclick="setLanguage('es')">ES</button>
+      <button onclick="setLanguage('en')">EN</button>
+      <button onclick="window.print()">Imprimir / PDF</button>
+    </div>
+
+    <h2 id="perfil-title">Perfil</h2>
+    <p id="perfil-text">Desarrollador con formación técnica y universitaria en desarrollo de software. Experiencia práctica en proyectos académicos y personales, incluyendo desarrollo web, aplicaciones móviles, integraciones API, gestión de proyectos y bases de datos. Proactivo, con capacidad de aprendizaje rápido y adaptación a nuevas tecnologías.</p>
+
+    <h2 id="proyectos-title">Proyectos</h2>
+    <div class="project" id="project1">
+      <strong>Integración Jira ⇄ ITSM</strong>
+      <ul>
+        <li>Integración bidireccional entre herramienta de administración de proyectos y módulo de gestión de cambios de ITSM.</li>
+        <li>Sincronización de RFCs con manejo de duplicados.</li>
+        <li>Herramientas: Jira, ngrok, Postman, APIs REST, Node.js/Express.</li>
+      </ul>
+    </div>
+
+    <div class="project" id="project2">
+      <strong>Aplicación móvil tipo Uber</strong>
+      <ul>
+        <li>Desarrollo de app móvil con geolocalización, registro de usuarios y comunicación en tiempo real.</li>
+        <li>Herramientas: Flutter, Firebase (Auth & Realtime/Firestore).</li>
+      </ul>
+    </div>
+
+    <div class="project" id="project3">
+      <strong>Generación de página web / Tienda en línea</strong>
+      <ul>
+        <li>Tienda en línea para citas médicas con frontend (HTML/CSS/JS) y backend (PHP + MySQL).</li>
+        <li>Sistemas de gestión de usuarios y reservas integradas con base de datos.</li>
+      </ul>
+    </div>
+
+    <div class="project" id="project4">
+      <strong>Portal inmobiliario (Proyecto escolar)</strong>
+      <ul>
+        <li>Portal con CRUD de inmuebles y panel administrativo.</li>
+        <li>Herramientas: Laravel 8, PHP, MySQL.</li>
+      </ul>
+    </div>
+
+    <div class="project" id="project5">
+      <strong>Integración WhatsApp vía API REST</strong>
+      <ul>
+        <li>Diseño de endpoints y flujo para envío/recepción de mensajes y automatización de notificaciones en ITSM.</li>
+      </ul>
+    </div>
+
+    <div class="project" id="project6">
+      <strong>Web de control de cero desperdicio</strong>
+      <ul>
+        <li>Dashboard y formularios para registro y visualización de métricas relacionadas con desperdicios.</li>
+      </ul>
+    </div>
+
+    <div class="project" id="project7">
+      <strong>Videojuego (Proyecto escolar)</strong>
+      <ul>
+        <li>Desarrollo y publicación de videojuego utilizando Unity (C#).</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<footer>
+  Actualizado: <strong>25 Ago 2025</strong> — © Alan Ulises Sánchez Briones
+</footer>
 
 <script>
 function setLanguage(lang){
-  const educationES = [
+  const jobTitle = {
+    es: "Desarrollador Full-Stack · Experiencia en Web, Móvil y APIs",
+    en: "Full-Stack Developer · Web, Mobile & API Experience"
+  };
+  const email = { es: "✉ alan.sanchez150918@gmail.com", en: "✉ alan.sanchez150918@gmail.com" };
+  const phone = { es: "📞 5536093998", en: "📞 +52 5536093998" };
+  const eduES = [
     "Ingeniería en Desarrollo y Gestión de Software — Título en trámite",
     "TSU en Desarrollo de Software Multiplataforma — Título y cédula profesional",
     "Preparatoria — Soporte y Mantenimiento de Equipo de Cómputo — Cédula profesional"
   ];
-  const educationEN = [
+  const eduEN = [
     "Software Development and Management Engineering — Degree in process",
     "Multiplatform Software Development TSU — Degree & professional license",
     "High School — Computer Support & Maintenance — Professional license"
   ];
   const perfilES = "Desarrollador con formación técnica y universitaria en desarrollo de software. Experiencia práctica en proyectos académicos y personales, incluyendo desarrollo web, aplicaciones móviles, integraciones API, gestión de proyectos y bases de datos. Proactivo, con capacidad de aprendizaje rápido y adaptación a nuevas tecnologías.";
   const perfilEN = "Developer with technical and university background in software development. Practical experience in academic and personal projects, including web development, mobile applications, API integrations, project management, and databases. Proactive, quick learner, adaptable to new technologies.";
-
-  const projectsES = ["Proyectos"];
-  const projectsEN = ["Projects"];
-
-  document.getElementById('education-list').innerHTML = lang==='es' ?
-    educationES.map(e => `<li>${e}</li>`).join('') :
-    educationEN.map(e => `<li>${e}</li>`).join('');
-
-  document.getElementById('perfil-title').innerText = lang==='es' ? "Perfil" : "Profile";
-  document.getElementById('perfil-text').innerText = lang==='es' ? perfilES : perfilEN;
-
-  document.getElementById('proyectos-title').innerText = lang==='es' ? "Proyectos" : "Projects";
+  const eduList = lang==='es' ? eduES : eduEN;
+  document.getElementById('job-title').innerText = jobTitle[lang];
+  document.getElementById('email-link').innerText = email[lang];
+  document.getElementById('phone-link').innerText = phone[lang];
+  document.getElementById('perfil-text').innerText = lang==='es'? perfilES : perfilEN;
+  document.getElementById('education-list').innerHTML = eduList.map(e=>`<li>${e}</li>`).join('');
 }
 </script>
 </body>
 </html>
-
