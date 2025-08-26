@@ -9,7 +9,9 @@
   body { margin:0; font-family:'Roboto', sans-serif; background:#f4f7fa; color:#333; }
   a { text-decoration:none; }
   ul { padding-left:20px; }
-  .container { display:flex; max-width:1000px; margin:40px auto; background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 10px 25px rgba(0,0,0,0.1); }
+  .language { text-align:right; margin:20px; font-size:14px; }
+  .language a { color:#0073b1; margin:0 5px; font-weight:500; }
+  .container { display:flex; max-width:1000px; margin:0 auto 40px auto; background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 10px 25px rgba(0,0,0,0.1); }
   .sidebar { width:300px; background:#0073b1; color:#fff; padding:30px; display:flex; flex-direction:column; align-items:center; transition:all 0.3s; }
   .sidebar img { width:120px; height:120px; border-radius:50%; object-fit:cover; margin-bottom:20px; border:3px solid #fff; }
   .sidebar h1 { margin:0; font-size:24px; text-align:center; }
@@ -31,6 +33,12 @@
 </style>
 </head>
 <body>
+
+<!-- Opciones de idioma -->
+<div class="language">
+  <a href="#">ES</a> | 
+  <a href="#">EN</a>
+</div>
 
 <div class="container">
   <!-- Sidebar -->
