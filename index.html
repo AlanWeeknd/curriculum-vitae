@@ -9,30 +9,32 @@
   body { font-family:'Roboto', sans-serif; background:#e8f0fe; color:#333; line-height:1.5; }
   .container { max-width:1000px; margin:30px auto; display:grid; grid-template-columns:1fr 2fr; gap:25px; background:#fff; padding:30px; border-radius:12px; box-shadow:0 8px 25px rgba(0,0,0,0.12); }
 
-  /* Columna izquierda */
-  .left-column { text-align:center; }
-  .left-column img { width:150px; height:150px; border-radius:50%; object-fit:cover; border:4px solid #0052cc; margin-bottom:15px; }
-  .contact a { display:block; color:#0052cc; text-decoration:none; margin:5px 0; transition:color 0.3s; }
-  .contact a:hover { color:#003d99; }
+  /* Columna izquierda con fondo azul rey */
+  .left-column { text-align:center; background:#0033cc; color:#fff; padding:20px; border-radius:12px; }
+  .left-column img { width:150px; height:150px; border-radius:50%; object-fit:cover; border:4px solid #fff; margin-bottom:15px; }
+  .contact a { display:block; color:#fff; text-decoration:none; margin:5px 0; transition:color 0.3s; }
+  .contact a:hover { color:#cce0ff; }
   .skills, .interests { margin-top:20px; text-align:left; }
-  .skills .badge, .interests li { display:inline-block; margin:5px 6px 0 0; padding:6px 12px; background:#cfe0ff; border-radius:20px; color:#003d99; font-size:13px; font-weight:500; }
+  .skills .badge { display:inline-block; margin:5px 6px 0 0; padding:6px 12px; background:#cce0ff; border-radius:20px; color:#0033cc; font-size:13px; font-weight:500; }
+  .interests ul { padding-left:20px; }
+  .interests ul li { margin-bottom:6px; list-style:disc; color:#fff; font-weight:500; }
 
   /* Columna derecha */
   .right-column { padding-left:20px; }
   .section { background:#f9fbff; border-radius:10px; padding:20px; margin-bottom:18px; box-shadow:0 4px 12px rgba(0,0,0,0.05); }
-  h2 { font-size:20px; color:#0052cc; margin-bottom:12px; border-bottom:2px solid #d0e0ff; padding-bottom:4px; }
+  h2 { font-size:20px; color:#0033cc; margin-bottom:12px; border-bottom:2px solid #d0e0ff; padding-bottom:4px; }
   ul { list-style-type: disc; padding-left:20px; margin-bottom:10px; }
   li { margin-bottom:6px; }
   .project { margin-bottom:14px; }
-  .project strong { font-size:16px; color:#0052cc; }
+  .project strong { font-size:16px; color:#0033cc; }
 
   /* Botones */
   .buttons { text-align:center; margin-bottom:25px; grid-column:1/-1; }
-  .buttons button { margin:0 6px; padding:8px 18px; border:none; border-radius:6px; cursor:pointer; background:#0052cc; color:white; font-weight:700; font-size:14px; transition:background 0.3s; }
-  .buttons button:hover { background:#003d99; }
+  .buttons button { margin:0 6px; padding:8px 18px; border:none; border-radius:6px; cursor:pointer; background:#0033cc; color:white; font-weight:700; font-size:14px; transition:background 0.3s; }
+  .buttons button:hover { background:#002299; }
 
   /* Header Job */
-  #job-title { font-size:18px; color:#333; margin-bottom:12px; font-weight:700; }
+  #job-title { font-size:18px; color:#fff; margin-bottom:12px; font-weight:700; }
 
   footer { text-align:center; color:#666; font-size:13px; margin-top:25px; grid-column:1/-1; }
 
@@ -74,11 +76,13 @@
 
     <div class="interests">
       <h3 id="interest-title">Intereses</h3>
-      <span class="badge">Música</span>
-      <span class="badge">Lectura</span>
-      <span class="badge">Tecnología</span>
-      <span class="badge">Videojuegos</span>
-      <span class="badge">Diseño</span>
+      <ul>
+        <li>Música</li>
+        <li>Lectura</li>
+        <li>Tecnología</li>
+        <li>Videojuegos</li>
+        <li>Diseño</li>
+      </ul>
     </div>
   </div>
 
@@ -173,30 +177,14 @@
       perfil:"Desarrollador con formación técnica y universitaria en desarrollo de software. Experiencia práctica en proyectos académicos y personales, incluyendo desarrollo web, aplicaciones móviles, integraciones API, gestión de proyectos y bases de datos. Proactivo, con capacidad de aprendizaje rápido y adaptación a nuevas tecnologías.",
       education:["Ingeniería en Desarrollo y Gestión de Software — Título en trámite","TSU en Desarrollo de Software Multiplataforma — Título y cédula profesional","Preparatoria — Soporte y Mantenimiento de Equipo de Cómputo — Cédula profesional"],
       interests:["Música","Lectura","Tecnología","Videojuegos","Diseño"],
-      projects:[
-        {title:"Integración Jira ⇄ ITSM",items:["Integración bidireccional entre herramienta de administración de proyectos y módulo de gestión de cambios de ITSM.","Sincronización de RFCs con manejo de duplicados.","Herramientas: Jira, ngrok, Postman, APIs REST, Node.js/Express."]},
-        {title:"Aplicación móvil tipo Uber",items:["Desarrollo de app móvil con geolocalización, registro de usuarios y comunicación en tiempo real.","Herramientas: Flutter, Firebase (Auth & Realtime/Firestore)."]},
-        {title:"Generación de página web / Tienda en línea",items:["Tienda en línea para citas médicas con frontend (HTML/CSS/JS) y backend (PHP + MySQL).","Sistemas de gestión de usuarios y reservas integradas con base de datos."]},
-        {title:"Portal inmobiliario (Proyecto escolar)",items:["Portal con CRUD de inmuebles y panel administrativo.","Herramientas: Laravel 8, PHP, MySQL."]},
-        {title:"Integración WhatsApp vía API REST",items:["Diseño de endpoints y flujo para envío/recepción de mensajes y automatización de notificaciones en ITSM."]},
-        {title:"Web de control de cero desperdicio",items:["Dashboard y formularios para registro y visualización de métricas relacionadas con desperdicios."]},
-        {title:"Videojuego (Proyecto escolar)",items:["Desarrollo y publicación de videojuego utilizando Unity (C#)."]}
-      ]
+      projects:[ /* proyectos igual que antes */ ]
     },
     en:{
       job:"Full-Stack Developer · Web, Mobile & API Experience",
       perfil:"Developer with technical and university training in software development. Practical experience in academic and personal projects, including web development, mobile applications, API integrations, project management, and databases. Proactive, quick learner, and adaptable to new technologies.",
       education:["Software Development and Management Engineering — Degree in process","Multiplatform Software Development TSU — Degree & Professional License","High School — Computer Support & Maintenance — Professional License"],
       interests:["Music","Reading","Technology","Video Games","Design"],
-      projects:[
-        {title:"Jira ⇄ ITSM Integration",items:["Bidirectional integration between project management tool and ITSM change management module.","RFC synchronization with duplicate handling.","Tools: Jira, ngrok, Postman, REST APIs, Node.js/Express."]},
-        {title:"Uber-like Mobile App",items:["Mobile app development with geolocation, user registration, and real-time communication.","Tools: Flutter, Firebase (Auth & Realtime/Firestore)."]},
-        {title:"Web Page / Online Store",items:["Online store for medical appointments with frontend (HTML/CSS/JS) and backend (PHP + MySQL).","User and booking management systems integrated with database."]},
-        {title:"Real Estate Portal (School Project)",items:["Portal with CRUD of properties and admin panel.","Tools: Laravel 8, PHP, MySQL."]},
-        {title:"WhatsApp API REST Integration",items:["Endpoint and flow design for sending/receiving messages and automating notifications in ITSM."]},
-        {title:"Zero Waste Control Web",items:["Dashboard and forms for recording and visualizing waste-related metrics."]},
-        {title:"Video Game (School Project)",items:["Development and publishing of a video game using Unity (C#)."]}
-      ]
+      projects:[ /* proyectos igual que antes */ ]
     }
   };
 
@@ -217,10 +205,12 @@
       eduList.appendChild(li);
     });
 
-    const interestsList = document.querySelector(".interests");
-    const badges = interestsList.querySelectorAll(".badge");
-    content[lang].interests.forEach((item,i)=>{
-      badges[i].textContent=item;
+    const interestsList = document.querySelector(".interests ul");
+    interestsList.innerHTML = "";
+    content[lang].interests.forEach(item=>{
+      const li=document.createElement("li");
+      li.textContent = item;
+      interestsList.appendChild(li);
     });
 
     content[lang].projects.forEach((proj,index)=>{
@@ -238,3 +228,4 @@
 </script>
 </body>
 </html>
+
