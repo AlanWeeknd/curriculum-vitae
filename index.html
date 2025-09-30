@@ -109,10 +109,26 @@
             color: white;
             text-decoration: none;
             transition: var(--transition);
+            padding: 5px 10px;
+            border-radius: 4px;
         }
 
         .contact-item a:hover {
             color: var(--secondary-color);
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-clickable {
+            cursor: pointer;
+            transition: var(--transition);
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        .contact-clickable:hover {
+            color: var(--secondary-color);
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
         }
 
         .controls {
@@ -527,6 +543,13 @@
             .no-print {
                 display: none !important;
             }
+            
+            /* Mostrar URLs en impresión */
+            .contact-item a[href]:after {
+                content: " (" attr(href) ")";
+                font-size: 10pt;
+                color: #666;
+            }
         }
 
         .fade-out {
@@ -537,6 +560,27 @@
         .fade-in {
             opacity: 1;
             transition: opacity 0.3s ease;
+        }
+
+        /* Toast de confirmación */
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary-color);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            z-index: 1000;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
         }
     </style>
 </head>
@@ -549,19 +593,19 @@
                 <div class="contact-info">
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
-                        <span>alan.sanchez150918@gmail.com</span>
+                        <a href="mailto:alan.sanchez150918@gmail.com" class="contact-clickable" id="email-link">alan.sanchez150918@gmail.com</a>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-phone"></i>
-                        <span>5536093998</span>
+                        <a href="tel:+525536093998" class="contact-clickable" id="phone-link">5536093998</a>
                     </div>
                     <div class="contact-item">
                         <i class="fab fa-linkedin"></i>
-                        <a href="https://www.linkedin.com/in/alan-ulises-sanchez-briones-7533621b0/">LinkedIn</a>
+                        <a href="https://www.linkedin.com/in/alan-ulises-sanchez-briones-7533621b0/" target="_blank">LinkedIn</a>
                     </div>
                     <div class="contact-item">
                         <i class="fab fa-github"></i>
-                        <a href="https://github.com/AlanWeeknd">GitHub</a>
+                        <a href="https://github.com/AlanWeeknd" target="_blank">GitHub</a>
                     </div>
                 </div>
             </div>
@@ -679,6 +723,9 @@
         </div>
     </div>
 
+    <!-- Toast de confirmación -->
+    <div class="toast" id="toast"></div>
+
     <script>
         // Textos en español
         const esTexts = {
@@ -714,7 +761,9 @@
             project6Title: "Web de control de cero desperdicio",
             project6Desc: "Dashboard y formularios para registro y visualización de métricas relacionadas con desperdicios.",
             project7Title: "Videojuego (Proyecto escolar)",
-            project7Desc: "Desarrollo y publicación de videojuego utilizando Unity (C#)."
+            project7Desc: "Desarrollo y publicación de videojuego utilizando Unity (C#).",
+            emailToast: "Abriendo cliente de correo...",
+            phoneToast: "Preparando llamada telefónica..."
         };
 
         // Textos en inglés
@@ -751,8 +800,13 @@
             project6Title: "Zero waste control web",
             project6Desc: "Dashboard and forms for recording and visualizing metrics related to waste.",
             project7Title: "Video game (School project)",
-            project7Desc: "Development and publication of a video game using Unity (C#)."
+            project7Desc: "Development and publication of a video game using Unity (C#).",
+            emailToast: "Opening email client...",
+            phoneToast: "Preparing phone call..."
         };
+
+        // Variable para el idioma actual
+        let currentLanguage = 'es';
 
         // Funcionalidad para cambiar idioma
         document.getElementById('btn-es').addEventListener('click', function() {
@@ -769,6 +823,7 @@
 
         // Función para cambiar el idioma
         function changeLanguage(lang) {
+            currentLanguage = lang;
             const texts = lang === 'es' ? esTexts : enTexts;
             
             // Aplicar efecto de fade out
@@ -838,6 +893,41 @@
                 printBtn.innerHTML = '<i class="fas fa-print"></i> Print / PDF';
             }
         }
+
+        // Función para mostrar toast
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // Funcionalidad para el correo electrónico
+        document.getElementById('email-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            const texts = currentLanguage === 'es' ? esTexts : enTexts;
+            showToast(texts.emailToast);
+            
+            // Abrir cliente de correo después de un breve delay
+            setTimeout(() => {
+                window.location.href = 'mailto:alan.sanchez150918@gmail.com';
+            }, 500);
+        });
+
+        // Funcionalidad para el número de teléfono
+        document.getElementById('phone-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            const texts = currentLanguage === 'es' ? esTexts : enTexts;
+            showToast(texts.phoneToast);
+            
+            // Iniciar llamada después de un breve delay
+            setTimeout(() => {
+                window.location.href = 'tel:+525536093998';
+            }, 500);
+        });
 
         // Inicializar con español
         changeLanguage('es');
