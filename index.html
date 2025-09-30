@@ -395,28 +395,137 @@
             }
         }
 
+        /* ESTILOS PARA IMPRESIÓN */
         @media print {
-            .controls {
-                display: none;
-            }
-            
             body {
-                background-color: white;
-                padding: 0;
+                background: white !important;
+                color: black !important;
+                font-size: 12pt;
+                line-height: 1.4;
+                padding: 0 !important;
+                margin: 0 !important;
             }
             
             .container {
-                max-width: 100%;
-                padding: 0;
+                max-width: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                box-shadow: none !important;
             }
             
-            header, .sidebar, .main-content {
-                box-shadow: none;
-                border-radius: 0;
+            header {
+                background: #2c3e50 !important;
+                color: white !important;
+                padding: 20px 0 !important;
+                border-radius: 0 !important;
+                box-shadow: none !important;
+                margin-bottom: 20px;
             }
             
-            .sidebar:hover, .main-content:hover {
-                transform: none;
+            .controls {
+                display: none !important;
+            }
+            
+            .content {
+                display: block !important;
+                gap: 0 !important;
+            }
+            
+            .sidebar, .main-content {
+                box-shadow: none !important;
+                border-radius: 0 !important;
+                padding: 15px !important;
+                margin-bottom: 0 !important;
+                page-break-inside: avoid;
+            }
+            
+            .sidebar {
+                border-right: none !important;
+                border-bottom: 2px solid #3498db;
+                margin-bottom: 20px;
+            }
+            
+            h1 {
+                font-size: 24pt !important;
+                color: white !important;
+            }
+            
+            h2 {
+                font-size: 16pt !important;
+                color: #2c3e50 !important;
+                border-bottom: 1px solid #3498db !important;
+                padding-bottom: 5px !important;
+                margin-bottom: 15px !important;
+            }
+            
+            .contact-info {
+                justify-content: space-between !important;
+                gap: 10px !important;
+            }
+            
+            .contact-item a {
+                color: white !important;
+                text-decoration: underline !important;
+            }
+            
+            .skill-tag {
+                background: #f8f9fa !important;
+                color: black !important;
+                border: 1px solid #dee2e6 !important;
+                padding: 4px 8px !important;
+                margin: 2px !important;
+            }
+            
+            .project-item, .education-item {
+                margin-bottom: 15px !important;
+                padding-bottom: 10px !important;
+                border-bottom: 1px solid #eee !important;
+            }
+            
+            .project-tools {
+                background: #f8f9fa !important;
+                color: #555 !important;
+                font-size: 10pt !important;
+            }
+            
+            .interests-list li {
+                margin-bottom: 8px !important;
+                padding: 0 !important;
+            }
+            
+            /* Evitar que se corten elementos entre páginas */
+            .project-item, .education-item {
+                page-break-inside: avoid;
+            }
+            
+            /* Mejorar espaciado para impresión */
+            p, li, .project-description, .education-details {
+                margin-bottom: 8px !important;
+            }
+            
+            /* Ocultar elementos decorativos para impresión */
+            .sidebar:hover, .main-content:hover,
+            .skill-tag:hover, .project-item:hover,
+            .education-item:hover, .interests-list li:hover {
+                transform: none !important;
+            }
+            
+            h2::after, header::before {
+                display: none !important;
+            }
+            
+            /* Asegurar buen contraste */
+            .subtitle, .education-details, .project-tools {
+                color: #555 !important;
+            }
+            
+            /* Optimizar para ahorro de tinta */
+            a {
+                color: #2c3e50 !important;
+            }
+            
+            .no-print {
+                display: none !important;
             }
         }
 
@@ -458,7 +567,7 @@
             </div>
         </header>
 
-        <div class="controls">
+        <div class="controls no-print">
             <div class="language-toggle">
                 <button class="lang-btn active" id="btn-es">
                     <i class="fas fa-flag"></i> Español
@@ -703,6 +812,9 @@
                 document.getElementById('project-6-desc').textContent = texts.project6Desc;
                 document.getElementById('project-7-title').textContent = texts.project7Title;
                 document.getElementById('project-7-desc').textContent = texts.project7Desc;
+                
+                // Actualizar texto del botón de impresión
+                updatePrintButtonText(lang);
                 
                 // Aplicar efecto de fade in
                 sections.forEach(section => {
