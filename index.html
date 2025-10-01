@@ -4,7 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alan Ulises Sánchez Briones - CV</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --text-color: #333;
+            --light-bg: #f5f5f5;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -13,9 +24,10 @@
         }
 
         body {
-            background-color: #f5f5f5;
-            color: #333;
+            background-color: var(--light-bg);
+            color: var(--text-color);
             line-height: 1.6;
+            transition: var(--transition);
         }
 
         .container {
@@ -24,14 +36,58 @@
             padding: 20px;
         }
 
+        .header-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .language-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .btn-print {
+            background: var(--accent-color);
+        }
+
+        .btn-print:hover {
+            background: #c0392b;
+        }
+
         .header {
-            background: linear-gradient(135deg, #2c3e50, #3498db);
-            color: white;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
             padding: 40px 0;
             text-align: center;
             border-radius: 10px;
             margin-bottom: 30px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: var(--transition);
+        }
+
+        .header:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
         }
 
         .header h1 {
@@ -57,22 +113,66 @@
             display: flex;
             align-items: center;
             gap: 8px;
+            padding: 8px 15px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 20px;
+            transition: var(--transition);
+        }
+
+        .contact-item:hover {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.05);
+        }
+
+        .contact-item a {
+            color: var(--white);
+            text-decoration: none;
         }
 
         .section {
-            background: white;
+            background: var(--white);
             padding: 30px;
             margin-bottom: 25px;
             border-radius: 10px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 3px;
+            background: var(--secondary-color);
+            transition: var(--transition);
+        }
+
+        .section:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .section:hover::before {
+            left: 0;
         }
 
         .section-title {
-            color: #2c3e50;
-            border-bottom: 2px solid #3498db;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
             padding-bottom: 10px;
             margin-bottom: 20px;
             font-size: 1.5em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title i {
+            color: var(--secondary-color);
         }
 
         .skills-grid {
@@ -86,7 +186,7 @@
         }
 
         .skill-category h4 {
-            color: #2c3e50;
+            color: var(--primary-color);
             margin-bottom: 8px;
         }
 
@@ -99,13 +199,26 @@
             padding: 8px 12px;
             margin-bottom: 5px;
             border-radius: 5px;
-            border-left: 4px solid #3498db;
+            border-left: 4px solid var(--secondary-color);
+            transition: var(--transition);
+        }
+
+        .skill-list li:hover {
+            background: #d5dbdb;
+            transform: translateX(5px);
         }
 
         .project-item, .experience-item {
             margin-bottom: 25px;
             padding-bottom: 20px;
             border-bottom: 1px solid #ecf0f1;
+            transition: var(--transition);
+        }
+
+        .project-item:hover, .experience-item:hover {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
         }
 
         .project-item:last-child, .experience-item:last-child {
@@ -113,9 +226,16 @@
         }
 
         .project-title, .experience-title {
-            color: #2c3e50;
+            color: var(--primary-color);
             font-size: 1.2em;
             margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .project-title i, .experience-title i {
+            color: var(--secondary-color);
         }
 
         .project-description, .experience-description {
@@ -126,6 +246,10 @@
         .tools {
             font-style: italic;
             color: #7f8c8d;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 10px;
         }
 
         .certification-item {
@@ -134,11 +258,23 @@
             background: #f8f9fa;
             border-radius: 8px;
             border-left: 4px solid #27ae60;
+            transition: var(--transition);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .certification-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
         }
 
         .certification-item a {
             color: #2980b9;
             text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
 
         .certification-item a:hover {
@@ -152,11 +288,20 @@
 
         .language-item {
             flex: 1;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .language-item:hover {
+            background: #e9ecef;
+            transform: translateY(-3px);
         }
 
         .language-name {
             font-weight: bold;
-            color: #2c3e50;
+            color: var(--primary-color);
         }
 
         .interests-grid, .skills-personal {
@@ -169,11 +314,18 @@
             background: #f8f9fa;
             padding: 20px;
             border-radius: 8px;
-            border-left: 4px solid #3498db;
+            border-left: 4px solid var(--secondary-color);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .interest-item:hover, .personal-skill:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
         .interest-item h4, .personal-skill h4 {
-            color: #2c3e50;
+            color: var(--primary-color);
             margin-bottom: 8px;
             font-size: 1.1em;
         }
@@ -190,6 +342,11 @@
             border-radius: 8px;
             margin-top: 15px;
             border-left: 4px solid #27ae60;
+            transition: var(--transition);
+        }
+
+        .achievement:hover {
+            background: #d1ecf1;
         }
 
         .achievement ul {
@@ -203,6 +360,11 @@
             padding: 10px;
             background: #f8f9fa;
             border-radius: 5px;
+            transition: var(--transition);
+        }
+
+        .company-context:hover {
+            background: #e9ecef;
         }
 
         @media (max-width: 768px) {
@@ -227,221 +389,369 @@
             .interests-grid, .skills-personal {
                 grid-template-columns: 1fr;
             }
+            
+            .header-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .language-buttons {
+                justify-content: center;
+            }
+        }
+
+        @media print {
+            .header-buttons {
+                display: none;
+            }
+            
+            .section {
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+            
+            .btn {
+                display: none;
+            }
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <div class="header-buttons">
+            <div class="language-buttons">
+                <button class="btn" id="btn-es">
+                    <i class="fas fa-flag"></i> Español
+                </button>
+                <button class="btn" id="btn-en">
+                    <i class="fas fa-flag-usa"></i> English
+                </button>
+            </div>
+            <button class="btn btn-print" id="btn-print">
+                <i class="fas fa-print"></i> Imprimir/PDF
+            </button>
+        </div>
+
         <header class="header">
             <h1>ALAN ULISES SÁNCHEZ BRIONES</h1>
             <h2>Ingeniero en Desarrollo de Software | Full-Stack</h2>
             <div class="contact-info">
                 <div class="contact-item">
-                    <span>📧</span>
-                    <span>alan.sanchez150918@gmail.com</span>
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:alan.sanchez150918@gmail.com">alan.sanchez150918@gmail.com</a>
                 </div>
                 <div class="contact-item">
-                    <span>📱</span>
-                    <span>5536093998</span>
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:5536093998">5536093998</a>
                 </div>
                 <div class="contact-item">
-                    <span>🔗</span>
-                    <span>LinkedIn | GitHub</span>
+                    <i class="fab fa-linkedin"></i>
+                    <a href="https://www.linkedin.com/in/alan-ulises-sanchez-briones-7533621b0/" target="_blank">LinkedIn</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <a href="https://github.com/AlanWeeknd" target="_blank">GitHub</a>
                 </div>
             </div>
         </header>
 
-        <section class="section">
-            <h3 class="section-title">PERFIL PROFESIONAL</h3>
-            <p>Ingeniero en Desarrollo de Software recién egresado con experiencia práctica en desarrollo full-stack adquirida mediante proyectos académicos y estadía profesional. Especializado en creación de aplicaciones web, móviles e integración de APIs. Certificado en AWS Cloud Foundations con habilidades sólidas en Node.js, Flutter y gestión de bases de datos. Busco mi primera oportunidad profesional para aplicar mis conocimientos y contribuir al éxito de proyectos tecnológicos.</p>
-        </section>
+        <!-- CONTENIDO EN ESPAÑOL -->
+        <div id="content-es">
+            <section class="section fade-in">
+                <h3 class="section-title"><i class="fas fa-user"></i> PERFIL PROFESIONAL</h3>
+                <p>Ingeniero en Desarrollo de Software recién egresado con experiencia práctica en desarrollo full-stack adquirida mediante proyectos académicos y estadía profesional. Especializado en creación de aplicaciones web, móviles e integración de APIs. Certificado en AWS Cloud Foundations con habilidades sólidas en Node.js, Flutter y gestión de bases de datos. Busco mi primera oportunidad profesional para aplicar mis conocimientos y contribuir al éxito de proyectos tecnológicos.</p>
+            </section>
 
-        <section class="section">
-            <h3 class="section-title">EXPERIENCIA PROFESIONAL</h3>
-            <div class="experience-item">
-                <div class="company-context">
-                    <strong>Bigg Practices</strong> - Empresa especializada en soluciones ITSM y gestión de servicios tecnológicos
+            <section class="section fade-in">
+                <h3 class="section-title"><i class="fas fa-briefcase"></i> EXPERIENCIA PROFESIONAL</h3>
+                <div class="experience-item">
+                    <div class="company-context">
+                        <strong>Bigg Practices</strong> - Empresa especializada en soluciones ITSM y gestión de servicios tecnológicos
+                    </div>
+                    <div class="experience-title"><i class="fas fa-laptop-code"></i> Desarrollador Full-Stack (Estadía)</div>
+                    <div class="experience-description">
+                        <p><strong>Integración Jira ⇄ ITSM:</strong> Colaboré en el diseño y desarrollo de una integración bidireccional con Node.js/Express para sincronizar RFCs entre Jira y el módulo de gestión de cambios del ITSM.</p>
+                        <p><strong>Integración WhatsApp vía API REST:</strong> Participé en el diseño de endpoints y flujos para automatización de notificaciones dentro del sistema ITSM.</p>
+                    </div>
+                    <div class="achievement">
+                        <h4><i class="fas fa-trophy"></i> Contribuciones Destacadas:</h4>
+                        <ul>
+                            <li>Implementé validaciones que redujeron errores de duplicación en sincronización de datos</li>
+                            <li>Automaticé flujos de notificación mejorando la comunicación con usuarios finales</li>
+                            <li>Mantuve documentación técnica actualizada del proyecto</li>
+                        </ul>
+                    </div>
+                    <div class="tools"><i class="fas fa-tools"></i> Herramientas: Jira, ngrok, Postman, APIs REST, Node.js/Express</div>
                 </div>
-                <div class="experience-title">Desarrollador Full-Stack (Estadía)</div>
-                <div class="experience-description">
-                    <p><strong>Integración Jira ⇄ ITSM:</strong> Colaboré en el diseño y desarrollo de una integración bidireccional con Node.js/Express para sincronizar RFCs entre Jira y el módulo de gestión de cambios del ITSM.</p>
-                    <p><strong>Integración WhatsApp vía API REST:</strong> Participé en el diseño de endpoints y flujos para automatización de notificaciones dentro del sistema ITSM.</p>
-                </div>
-                <div class="achievement">
-                    <h4>🔧 Contribuciones Destacadas:</h4>
-                    <ul>
-                        <li>Implementé validaciones que redujeron errores de duplicación en sincronización de datos</li>
-                        <li>Automaticé flujos de notificación mejorando la comunicación con usuarios finales</li>
-                        <li>Mantuve documentación técnica actualizada del proyecto</li>
-                    </ul>
-                </div>
-                <div class="tools">Herramientas: Jira, ngrok, Postman, APIs REST, Node.js/Express</div>
-            </div>
-        </section>
+            </section>
 
-        <section class="section">
-            <h3 class="section-title">CERTIFICACIONES</h3>
-            <div class="certification-item">
-                <strong>AWS Academy Graduate - AWS Academy Cloud Foundations</strong><br>
-                <a href="https://www.credly.com/badges/3059d233-9fc9-4201-82b7-0bc39e91d538" target="_blank">Ver credencial</a>
-            </div>
-            <div class="certification-item">
-                <strong>Cisco - Python Essentials 1</strong><br>
-                <a href="https://www.credly.com/badges/7b753a5f-3c57-49c7-8dd1-5ded4cd82809" target="_blank">Ver credencial</a>
-            </div>
-        </section>
+            <section class="section fade-in">
+                <h3 class="section-title"><i class="fas fa-certificate"></i> CERTIFICACIONES</h3>
+                <div class="certification-item">
+                    <div>
+                        <strong>AWS Academy Graduate - AWS Academy Cloud Foundations</strong>
+                    </div>
+                    <a href="https://www.credly.com/badges/3059d233-9fc9-4201-82b7-0bc39e91d538" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Ver credencial
+                    </a>
+                </div>
+                <div class="certification-item">
+                    <div>
+                        <strong>Cisco - Python Essentials 1</strong>
+                    </div>
+                    <a href="https://www.credly.com/badges/7b753a5f-3c57-49c7-8dd1-5ded4cd82809" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Ver credencial
+                    </a>
+                </div>
+            </section>
 
-        <section class="section">
-            <h3 class="section-title">PROYECTOS ACADÉMICOS</h3>
-            
-            <div class="project-item">
-                <div class="project-title">Aplicación móvil tipo Uber para personas con discapacidad</div>
-                <div class="project-description">Desarrollo completo de app móvil con Flutter implementando geolocalización, autenticación de usuarios y base de datos en tiempo real con Firebase.</div>
-                <div class="tools">Herramientas: Flutter, Firebase (Auth & Realtime/Firestore)</div>
-            </div>
+            <section class="section fade-in">
+                <h3 class="section-title"><i class="fas fa-project-diagram"></i> PROYECTOS ACADÉMICOS</h3>
+                
+                <div class="project-item">
+                    <div class="project-title"><i class="fas fa-mobile-alt"></i> Aplicación móvil tipo Uber para personas con discapacidad</div>
+                    <div class="project-description">Desarrollo completo de app móvil con Flutter implementando geolocalización, autenticación de usuarios y base de datos en tiempo real con Firebase.</div>
+                    <div class="tools"><i class="fas fa-tools"></i> Herramientas: Flutter, Firebase (Auth & Realtime/Firestore)</div>
+                </div>
 
-            <div class="project-item">
-                <div class="project-title">Sistema web de citas médicas</div>
-                <div class="project-description">Tienda en línea para agendar citas médicas con frontend (HTML/CSS/JS) y backend (PHP + MySQL). Incluye sistemas de gestión de usuarios y reservas.</div>
-                <div class="tools">Herramientas: HTML, CSS, JavaScript, PHP, MySQL</div>
-            </div>
+                <div class="project-item">
+                    <div class="project-title"><i class="fas fa-calendar-check"></i> Sistema web de citas médicas</div>
+                    <div class="project-description">Tienda en línea para agendar citas médicas con frontend (HTML/CSS/JS) y backend (PHP + MySQL). Incluye sistemas de gestión de usuarios y reservas.</div>
+                    <div class="tools"><i class="fas fa-tools"></i> Herramientas: HTML, CSS, JavaScript, PHP, MySQL</div>
+                </div>
 
-            <div class="project-item">
-                <div class="project-title">Portal inmobiliario</div>
-                <div class="project-description">Portal web con CRUD completo de inmuebles y panel administrativo desarrollado como proyecto escolar.</div>
-                <div class="tools">Herramientas: Laravel 8, PHP, MySQL</div>
-            </div>
+                <div class="project-item">
+                    <div class="project-title"><i class="fas fa-home"></i> Portal inmobiliario</div>
+                    <div class="project-description">Portal web con CRUD completo de inmuebles y panel administrativo desarrollado como proyecto escolar.</div>
+                    <div class="tools"><i class="fas fa-tools"></i> Herramientas: Laravel 8, PHP, MySQL</div>
+                </div>
 
-            <div class="project-item">
-                <div class="project-title">Videojuego educativo</div>
-                <div class="project-description">Desarrollo y publicación de videojuego utilizando Unity (C#) como proyecto de fin de curso.</div>
-                <div class="tools">Herramientas: Unity, C#</div>
-            </div>
-        </section>
+                <div class="project-item">
+                    <div class="project-title"><i class="fas fa-gamepad"></i> Videojuego educativo</div>
+                    <div class="project-description">Desarrollo y publicación de videojuego utilizando Unity (C#) como proyecto de fin de curso.</div>
+                    <div class="tools"><i class="fas fa-tools"></i> Herramientas: Unity, C#</div>
+                </div>
+            </section>
 
-        <section class="section">
-            <h3 class="section-title">HABILIDADES PERSONALES</h3>
-            <div class="skills-personal">
-                <div class="personal-skill">
-                    <h4>🤝 Trabajo en Equipo</h4>
-                    <p>Colaboración efectiva en proyectos grupales utilizando metodologías ágiles</p>
+            <section class="section fade-in">
+                <h3 class="section-title"><i class="fas fa-users"></i> HABILIDADES PERSONALES</h3>
+                <div class="skills-personal">
+                    <div class="personal-skill">
+                        <h4>🤝 Trabajo en Equipo</h4>
+                        <p>Colaboración efectiva en proyectos grupales utilizando metodologías ágiles</p>
+                    </div>
+                    <div class="personal-skill">
+                        <h4>💡 Resolución de Problemas</h4>
+                        <p>Capacidad para analizar desafíos técnicos y proponer soluciones prácticas</p>
+                    </div>
+                    <div class="personal-skill">
+                        <h4>🚀 Aprendizaje Continuo</h4>
+                        <p>Autodidacta con certificaciones técnicas completadas de forma independiente</p>
+                    </div>
+                    <div class="personal-skill">
+                        <h4>⏰ Gestión del Tiempo</h4>
+                        <p>Coordinación exitosa de múltiples proyectos académicos simultáneamente</p>
+                    </div>
                 </div>
-                <div class="personal-skill">
-                    <h4>💡 Resolución de Problemas</h4>
-                    <p>Capacidad para analizar desafíos técnicos y proponer soluciones prácticas</p>
-                </div>
-                <div class="personal-skill">
-                    <h4>🚀 Aprendizaje Continuo</h4>
-                    <p>Autodidacta con certificaciones técnicas completadas de forma independiente</p>
-                </div>
-                <div class="personal-skill">
-                    <h4>⏰ Gestión del Tiempo</h4>
-                    <p>Coordinación exitosa de múltiples proyectos académicos simultáneamente</p>
-                </div>
-            </div>
-        </section>
+            </section>
 
-        <section class="section">
-            <h3 class="section-title">INTERESES</h3>
-            <div class="interests-grid">
-                <div class="interest-item">
-                    <h4>🎵 Música</h4>
-                    <p>Exploración de diferentes géneros y creación de piezas musicales</p>
+            <section class="section fade-in">
+                <h3 class="section-title"><i class="fas fa-heart"></i> INTERESES</h3>
+                <div class="interests-grid">
+                    <div class="interest-item">
+                        <h4>🎵 Música</h4>
+                        <p>Exploración de diferentes géneros y creación de piezas musicales</p>
+                    </div>
+                    <div class="interest-item">
+                        <h4>🚀 Tecnología e Innovación</h4>
+                        <p>Seguimiento de tendencias tecnológicas y asistencia a eventos del sector</p>
+                    </div>
+                    <div class="interest-item">
+                        <h4>🎮 Desarrollo de Videojuegos</h4>
+                        <p>Diseño de mecánicas y prototipado en Unity</p>
+                    </div>
+                    <div class="interest-item">
+                        <h4>🎨 Diseño</h4>
+                        <p>Creación de interfaces y experiencias de usuario atractivas</p>
+                    </div>
                 </div>
-                <div class="interest-item">
-                    <h4>🚀 Tecnología e Innovación</h4>
-                    <p>Seguimiento de tendencias tecnológicas y asistencia a eventos del sector</p>
-                </div>
-                <div class="interest-item">
-                    <h4>🎮 Desarrollo de Videojuegos</h4>
-                    <p>Diseño de mecánicas y prototipado en Unity</p>
-                </div>
-                <div class="interest-item">
-                    <h4>🎨 Diseño</h4>
-                    <p>Creación de interfaces y experiencias de usuario atractivas</p>
-                </div>
-            </div>
-        </section>
+            </section>
 
-        <section class="section">
-            <h3 class="section-title">EDUCACIÓN</h3>
-            <div class="project-item">
-                <div class="project-title">Ingeniería en Desarrollo y Gestión de Software</div>
-                <div class="project-description">Título en trámite | Enfocado en desarrollo full-stack, bases de datos y gestión de proyectos software</div>
-            </div>
-            <div class="project-item">
-                <div class="project-title">Técnico Profesional en Soporte y Mantenimiento de Equipo de Cómputo</div>
-                <div class="project-description">Título y cédula profesional | Base sólida en hardware y soporte técnico</div>
-            </div>
-        </section>
+            <section class="section fade-in">
+                <h3 class="section-title"><i class="fas fa-graduation-cap"></i> EDUCACIÓN</h3>
+                <div class="project-item">
+                    <div class="project-title"><i class="fas fa-university"></i> Ingeniería en Desarrollo y Gestión de Software</div>
+                    <div class="project-description">Título en trámite | Enfocado en desarrollo full-stack, bases de datos y gestión de proyectos software</div>
+                </div>
+                <div class="project-item">
+                    <div class="project-title"><i class="fas fa-tools"></i> Técnico Profesional en Soporte y Mantenimiento de Equipo de Cómputo</div>
+                    <div class="project-description">Título y cédula profesional | Base sólida en hardware y soporte técnico</div>
+                </div>
+            </section>
 
-        <section class="section">
-            <h3 class="section-title">HABILIDADES TÉCNICAS</h3>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h4>Lenguajes</h4>
-                    <ul class="skill-list">
-                        <li>JavaScript</li>
-                        <li>PHP</li>
-                        <li>C#</li>
-                        <li>Dart</li>
-                        <li>Python</li>
-                    </ul>
+            <section class="section fade-in">
+                <h3 class="section-title"><i class="fas fa-code"></i> HABILIDADES TÉCNICAS</h3>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Lenguajes</h4>
+                        <ul class="skill-list">
+                            <li>JavaScript</li>
+                            <li>PHP</li>
+                            <li>C#</li>
+                            <li>Dart</li>
+                            <li>Python</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Frontend</h4>
+                        <ul class="skill-list">
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>Flutter</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Backend</h4>
+                        <ul class="skill-list">
+                            <li>Node.js</li>
+                            <li>Express</li>
+                            <li>Laravel</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Bases de Datos</h4>
+                        <ul class="skill-list">
+                            <li>MySQL</li>
+                            <li>MongoDB</li>
+                            <li>Firebase Firestore</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Cloud & DevOps</h4>
+                        <ul class="skill-list">
+                            <li>AWS Cloud</li>
+                            <li>Git & GitHub</li>
+                            <li>APIs REST</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Herramientas</h4>
+                        <ul class="skill-list">
+                            <li>Postman</li>
+                            <li>Unity</li>
+                            <li>Jira</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="skill-category">
-                    <h4>Frontend</h4>
-                    <ul class="skill-list">
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>Flutter</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h4>Backend</h4>
-                    <ul class="skill-list">
-                        <li>Node.js</li>
-                        <li>Express</li>
-                        <li>Laravel</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h4>Bases de Datos</h4>
-                    <ul class="skill-list">
-                        <li>MySQL</li>
-                        <li>MongoDB</li>
-                        <li>Firebase Firestore</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h4>Cloud & DevOps</h4>
-                    <ul class="skill-list">
-                        <li>AWS Cloud</li>
-                        <li>Git & GitHub</li>
-                        <li>APIs REST</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h4>Herramientas</h4>
-                    <ul class="skill-list">
-                        <li>Postman</li>
-                        <li>Unity</li>
-                        <li>Jira</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+            </section>
 
-        <section class="section">
-            <h3 class="section-title">IDIOMAS</h3>
-            <div class="languages">
-                <div class="language-item">
-                    <span class="language-name">Español:</span> Nativo
+            <section class="section fade-in">
+                <h3 class="section-title"><i class="fas fa-language"></i> IDIOMAS</h3>
+                <div class="languages">
+                    <div class="language-item">
+                        <span class="language-name">Español:</span> Nativo
+                    </div>
+                    <div class="language-item">
+                        <span class="language-name">Inglés:</span> Intermedio (B1/B2) - Capacidad para leer documentación técnica y comunicarme en entornos laborales
+                    </div>
                 </div>
-                <div class="language-item">
-                    <span class="language-name">Inglés:</span> Intermedio (B1/B2) - Capacidad para leer documentación técnica y comunicarme en entornos laborales
+            </section>
+        </div>
+
+        <!-- CONTENIDO EN INGLÉS (OCULTO INICIALMENTE) -->
+        <div id="content-en" class="hidden">
+            <!-- El contenido en inglés iría aquí -->
+            <section class="section fade-in">
+                <h3 class="section-title"><i class="fas fa-user"></i> PROFESSIONAL PROFILE</h3>
+                <p>Recently graduated Software Development Engineer with practical experience in full-stack development acquired through academic projects and professional internship. Specialized in creating web applications, mobile apps, and API integration. AWS Cloud Foundations certified with solid skills in Node.js, Flutter, and database management. Seeking my first professional opportunity to apply my knowledge and contribute to the success of technological projects.</p>
+            </section>
+
+            <section class="section fade-in">
+                <h3 class="section-title"><i class="fas fa-briefcase"></i> PROFESSIONAL EXPERIENCE</h3>
+                <div class="experience-item">
+                    <div class="company-context">
+                        <strong>Bigg Practices</strong> - Company specialized in ITSM solutions and technology service management
+                    </div>
+                    <div class="experience-title"><i class="fas fa-laptop-code"></i> Full-Stack Developer (Internship)</div>
+                    <div class="experience-description">
+                        <p><strong>Jira ⇄ ITSM Integration:</strong> Collaborated in the design and development of a bidirectional integration with Node.js/Express to synchronize RFCs between Jira and the ITSM change management module.</p>
+                        <p><strong>WhatsApp API REST Integration:</strong> Participated in designing endpoints and flows for notification automation within the ITSM system.</p>
+                    </div>
+                    <div class="achievement">
+                        <h4><i class="fas fa-trophy"></i> Key Contributions:</h4>
+                        <ul>
+                            <li>Implemented validations that reduced data synchronization duplication errors</li>
+                            <li>Automated notification flows improving communication with end users</li>
+                            <li>Maintained updated technical documentation for the project</li>
+                        </ul>
+                    </div>
+                    <div class="tools"><i class="fas fa-tools"></i> Tools: Jira, ngrok, Postman, REST APIs, Node.js/Express</div>
                 </div>
-            </div>
-        </section>
+            </section>
+
+            <!-- Resto del contenido en inglés... -->
+        </div>
     </div>
+
+    <script>
+        // Funcionalidad de idiomas
+        document.getElementById('btn-es').addEventListener('click', function() {
+            document.getElementById('content-es').classList.remove('hidden');
+            document.getElementById('content-en').classList.add('hidden');
+            document.getElementById('btn-es').style.background = '#3498db';
+            document.getElementById('btn-en').style.background = '#2c3e50';
+        });
+
+        document.getElementById('btn-en').addEventListener('click', function() {
+            document.getElementById('content-en').classList.remove('hidden');
+            document.getElementById('content-es').classList.add('hidden');
+            document.getElementById('btn-en').style.background = '#3498db';
+            document.getElementById('btn-es').style.background = '#2c3e50';
+        });
+
+        // Funcionalidad de impresión
+        document.getElementById('btn-print').addEventListener('click', function() {
+            window.print();
+        });
+
+        // Efectos de hover mejorados
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                });
+                section.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+
+            // Inicializar botón español como activo
+            document.getElementById('btn-es').style.background = '#3498db';
+        });
+
+        // Smooth scroll para anchors
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
