@@ -3,21 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - Alan Ulises Sánchez Briones</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Alan Ulises Sánchez Briones - CV</title>
     <style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --accent-color: #e74c3c;
-            --light-color: #ecf0f1;
-            --dark-color: #2c3e50;
-            --text-color: #333;
-            --bg-color: #fff;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s ease;
-        }
-
         * {
             margin: 0;
             padding: 0;
@@ -26,911 +13,335 @@
         }
 
         body {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            color: var(--text-color);
+            background-color: #f5f5f5;
+            color: #333;
             line-height: 1.6;
-            min-height: 100vh;
-            padding: 20px;
         }
 
         .container {
             max-width: 1000px;
             margin: 0 auto;
-            animation: fadeIn 0.8s ease;
+            padding: 20px;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        header {
-            background: linear-gradient(135deg, var(--primary-color) 0%, #1a2530 100%);
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
             color: white;
             padding: 40px 0;
             text-align: center;
-            border-radius: 10px 10px 0 0;
-            box-shadow: var(--shadow);
-            position: relative;
-            overflow: hidden;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
-        }
-
-        .header-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        h1 {
-            font-size: 2.5rem;
+        .header h1 {
+            font-size: 2.5em;
             margin-bottom: 10px;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
         }
 
-        .subtitle {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            color: var(--light-color);
+        .header h2 {
+            font-size: 1.3em;
             font-weight: 300;
+            margin-bottom: 20px;
         }
 
         .contact-info {
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
-            gap: 25px;
-            margin-top: 20px;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 15px;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
             gap: 8px;
-            transition: var(--transition);
         }
 
-        .contact-item:hover {
-            transform: translateY(-3px);
-        }
-
-        .contact-item a {
-            color: white;
-            text-decoration: none;
-            transition: var(--transition);
-            padding: 5px 10px;
-            border-radius: 4px;
-        }
-
-        .contact-item a:hover {
-            color: var(--secondary-color);
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-
-        .contact-clickable {
-            cursor: pointer;
-            transition: var(--transition);
-            padding: 5px 10px;
-            border-radius: 4px;
-        }
-
-        .contact-clickable:hover {
-            color: var(--secondary-color);
-            background-color: rgba(255, 255, 255, 0.1);
-            transform: translateY(-2px);
-        }
-
-        .controls {
-            display: flex;
-            justify-content: space-between;
-            margin: 20px 0;
-            padding: 20px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-            animation: slideDown 0.5s ease;
-        }
-
-        @keyframes slideDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .btn {
-            padding: 12px 25px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--secondary-color) 0%, #2980b9 100%);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        .btn-secondary {
-            background: linear-gradient(135deg, var(--accent-color) 0%, #c0392b 100%);
-            color: white;
-        }
-
-        .btn-secondary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        .language-toggle {
-            display: flex;
-            gap: 10px;
-            background: var(--light-color);
-            padding: 5px;
-            border-radius: 6px;
-        }
-
-        .lang-btn {
-            padding: 10px 20px;
-            border: none;
-            background-color: transparent;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: var(--transition);
-            font-weight: 600;
-        }
-
-        .lang-btn.active {
-            background-color: var(--primary-color);
-            color: white;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .content {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 30px;
-            animation: fadeIn 1s ease;
-        }
-
-        .sidebar {
-            background-color: white;
+        .section {
+            background: white;
             padding: 30px;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-
-        .sidebar:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-
-        .main-content {
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-
-        .main-content:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-
-        h2 {
-            color: var(--primary-color);
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--secondary-color);
-            position: relative;
-        }
-
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 50px;
-            height: 2px;
-            background-color: var(--accent-color);
-        }
-
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 15px;
-        }
-
-        .skill-tag {
-            background: linear-gradient(135deg, var(--light-color) 0%, #dde4e8 100%);
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            transition: var(--transition);
-            border: 1px solid #e0e0e0;
-        }
-
-        .skill-tag:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-            background: linear-gradient(135deg, var(--secondary-color) 0%, #2980b9 100%);
-            color: white;
-        }
-
-        .interests-list {
-            list-style-type: none;
-            margin-top: 15px;
-        }
-
-        .interests-list li {
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            transition: var(--transition);
-            padding: 8px;
-            border-radius: 5px;
-        }
-
-        .interests-list li:hover {
-            background-color: var(--light-color);
-            transform: translateX(5px);
-        }
-
-        .interests-list li:before {
-            content: "•";
-            color: var(--secondary-color);
-            font-weight: bold;
-            margin-right: 10px;
-            font-size: 1.5rem;
-        }
-
-        .project-item {
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 1px dashed #e0e0e0;
-            transition: var(--transition);
-        }
-
-        .project-item:hover {
-            transform: translateX(5px);
-        }
-
-        .project-item:last-child {
-            border-bottom: none;
-        }
-
-        .project-title {
-            font-weight: bold;
-            color: var(--primary-color);
-            margin-bottom: 8px;
-            font-size: 1.1rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .project-title i {
-            color: var(--secondary-color);
-        }
-
-        .project-description {
-            margin-bottom: 10px;
-            line-height: 1.7;
-        }
-
-        .project-tools {
-            font-style: italic;
-            color: #666;
-            background-color: var(--light-color);
-            padding: 8px 12px;
-            border-radius: 5px;
-            display: inline-block;
-            font-size: 0.9rem;
-        }
-
-        .education-item {
             margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 1px dashed #e0e0e0;
-            transition: var(--transition);
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
-        .education-item:hover {
-            transform: translateX(5px);
+        .section-title {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.5em;
         }
 
-        .education-item:last-child {
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .skill-category {
+            margin-bottom: 15px;
+        }
+
+        .skill-category h4 {
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            background: #ecf0f1;
+            padding: 8px 12px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+            border-left: 4px solid #3498db;
+        }
+
+        .project-item, .experience-item {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .project-item:last-child, .experience-item:last-child {
             border-bottom: none;
         }
 
-        .education-title {
-            font-weight: bold;
-            color: var(--primary-color);
-            margin-bottom: 5px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+        .project-title, .experience-title {
+            color: #2c3e50;
+            font-size: 1.2em;
+            margin-bottom: 8px;
         }
 
-        .education-title i {
-            color: var(--secondary-color);
+        .project-description, .experience-description {
+            color: #555;
+            margin-bottom: 10px;
         }
 
-        .education-details {
-            color: #666;
+        .tools {
             font-style: italic;
+            color: #7f8c8d;
         }
 
-        .section-content {
-            animation: fadeIn 0.5s ease;
+        .certification-item {
+            margin-bottom: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #27ae60;
+        }
+
+        .certification-item a {
+            color: #2980b9;
+            text-decoration: none;
+        }
+
+        .certification-item a:hover {
+            text-decoration: underline;
+        }
+
+        .languages {
+            display: flex;
+            gap: 30px;
+        }
+
+        .language-item {
+            flex: 1;
+        }
+
+        .language-name {
+            font-weight: bold;
+            color: #2c3e50;
         }
 
         @media (max-width: 768px) {
-            .content {
-                grid-template-columns: 1fr;
+            .header h1 {
+                font-size: 2em;
             }
             
             .contact-info {
                 flex-direction: column;
                 align-items: center;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .languages {
+                flex-direction: column;
                 gap: 15px;
             }
-            
-            .controls {
-                flex-direction: column;
-                gap: 20px;
-            }
-            
-            .language-toggle {
-                justify-content: center;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-        }
-
-        /* ESTILOS PARA IMPRESIÓN */
-        @media print {
-            body {
-                background: white !important;
-                color: black !important;
-                font-size: 12pt;
-                line-height: 1.4;
-                padding: 0 !important;
-                margin: 0 !important;
-            }
-            
-            .container {
-                max-width: 100% !important;
-                margin: 0 !important;
-                padding: 0 !important;
-                box-shadow: none !important;
-            }
-            
-            header {
-                background: #2c3e50 !important;
-                color: white !important;
-                padding: 20px 0 !important;
-                border-radius: 0 !important;
-                box-shadow: none !important;
-                margin-bottom: 20px;
-            }
-            
-            .controls {
-                display: none !important;
-            }
-            
-            .content {
-                display: block !important;
-                gap: 0 !important;
-            }
-            
-            .sidebar, .main-content {
-                box-shadow: none !important;
-                border-radius: 0 !important;
-                padding: 15px !important;
-                margin-bottom: 0 !important;
-                page-break-inside: avoid;
-            }
-            
-            .sidebar {
-                border-right: none !important;
-                border-bottom: 2px solid #3498db;
-                margin-bottom: 20px;
-            }
-            
-            h1 {
-                font-size: 24pt !important;
-                color: white !important;
-            }
-            
-            h2 {
-                font-size: 16pt !important;
-                color: #2c3e50 !important;
-                border-bottom: 1px solid #3498db !important;
-                padding-bottom: 5px !important;
-                margin-bottom: 15px !important;
-            }
-            
-            .contact-info {
-                justify-content: space-between !important;
-                gap: 10px !important;
-            }
-            
-            .contact-item a {
-                color: white !important;
-                text-decoration: underline !important;
-            }
-            
-            .skill-tag {
-                background: #f8f9fa !important;
-                color: black !important;
-                border: 1px solid #dee2e6 !important;
-                padding: 4px 8px !important;
-                margin: 2px !important;
-            }
-            
-            .project-item, .education-item {
-                margin-bottom: 15px !important;
-                padding-bottom: 10px !important;
-                border-bottom: 1px solid #eee !important;
-            }
-            
-            .project-tools {
-                background: #f8f9fa !important;
-                color: #555 !important;
-                font-size: 10pt !important;
-            }
-            
-            .interests-list li {
-                margin-bottom: 8px !important;
-                padding: 0 !important;
-            }
-            
-            /* Evitar que se corten elementos entre páginas */
-            .project-item, .education-item {
-                page-break-inside: avoid;
-            }
-            
-            /* Mejorar espaciado para impresión */
-            p, li, .project-description, .education-details {
-                margin-bottom: 8px !important;
-            }
-            
-            /* Ocultar elementos decorativos para impresión */
-            .sidebar:hover, .main-content:hover,
-            .skill-tag:hover, .project-item:hover,
-            .education-item:hover, .interests-list li:hover {
-                transform: none !important;
-            }
-            
-            h2::after, header::before {
-                display: none !important;
-            }
-            
-            /* Asegurar buen contraste */
-            .subtitle, .education-details, .project-tools {
-                color: #555 !important;
-            }
-            
-            /* Optimizar para ahorro de tinta */
-            a {
-                color: #2c3e50 !important;
-            }
-            
-            .no-print {
-                display: none !important;
-            }
-            
-            /* Mostrar URLs en impresión */
-            .contact-item a[href]:after {
-                content: " (" attr(href) ")";
-                font-size: 10pt;
-                color: #666;
-            }
-        }
-
-        .fade-out {
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .fade-in {
-            opacity: 1;
-            transition: opacity 0.3s ease;
-        }
-
-        /* Toast de confirmación */
-        .toast {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: var(--primary-color);
-            color: white;
-            padding: 15px 25px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-            z-index: 1000;
-            transform: translateY(100px);
-            opacity: 0;
-            transition: all 0.3s ease;
-        }
-
-        .toast.show {
-            transform: translateY(0);
-            opacity: 1;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <header>
-            <div class="header-content">
-                <h1>ALAN ULISES SÁNCHEZ BRIONES</h1>
-                <div class="subtitle" id="subtitle">Desarrollador Full-Stack · Experiencia en Web, Móvil y APIs</div>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <a href="mailto:alan.sanchez150918@gmail.com" class="contact-clickable" id="email-link">alan.sanchez150918@gmail.com</a>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <a href="tel:+525536093998" class="contact-clickable" id="phone-link">5536093998</a>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-linkedin"></i>
-                        <a href="https://www.linkedin.com/in/alan-ulises-sanchez-briones-7533621b0/" target="_blank">LinkedIn</a>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-github"></i>
-                        <a href="https://github.com/AlanWeeknd" target="_blank">GitHub</a>
-                    </div>
+        <header class="header">
+            <h1>ALAN ULISES SÁNCHEZ BRIONES</h1>
+            <h2>Ingeniero en Desarrollo de Software | Full-Stack</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📧</span>
+                    <span>alan.sanchez150918@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <span>📱</span>
+                    <span>5536093998</span>
+                </div>
+                <div class="contact-item">
+                    <span>🔗</span>
+                    <span>LinkedIn | GitHub</span>
                 </div>
             </div>
         </header>
 
-        <div class="controls no-print">
-            <div class="language-toggle">
-                <button class="lang-btn active" id="btn-es">
-                    <i class="fas fa-flag"></i> Español
-                </button>
-                <button class="lang-btn" id="btn-en">
-                    <i class="fas fa-flag-usa"></i> English
-                </button>
+        <section class="section">
+            <h3 class="section-title">PERFIL PROFESIONAL</h3>
+            <p>Ingeniero en Desarrollo de Software con experiencia en el ciclo completo de desarrollo de aplicaciones web, móviles e integración de APIs. Certificado en AWS Cloud Foundations, lo que respalda mis conocimientos en infraestructura cloud. Apasionado por crear soluciones eficientes y escalables, con habilidades demostradas en la integración de sistemas que optimizan procesos.</p>
+        </section>
+
+        <section class="section">
+            <h3 class="section-title">EXPERIENCIA PROFESIONAL</h3>
+            <div class="experience-item">
+                <div class="experience-title">Desarrollador Full-Stack (Estadía) - Bigg Practices</div>
+                <div class="experience-description">
+                    <p><strong>Integración Jira ⇄ ITSM:</strong> Diseñé y desarrollé una integración bidireccional con Node.js/Express para sincronizar RFCs entre Jira y el módulo de gestión de cambios del ITSM, implementando lógica para el manejo eficiente de duplicados.</p>
+                    <p><strong>Integración WhatsApp vía API REST:</strong> Diseñé los endpoints y flujos para la automatización de notificaciones dentro del ITSM, permitiendo el envío y recepción de mensajes de WhatsApp para mejorar la comunicación con los usuarios finales.</p>
+                </div>
+                <div class="tools">Herramientas: Jira, ngrok, Postman, APIs REST, Node.js/Express</div>
             </div>
-            <button class="btn btn-secondary" id="btn-print">
-                <i class="fas fa-print"></i> Imprimir / PDF
-            </button>
-        </div>
+        </section>
 
-        <div class="content">
-            <div class="sidebar">
-                <section id="skills">
-                    <h2><i class="fas fa-code"></i> <span id="skills-title">Habilidades</span></h2>
-                    <div class="skills-list">
-                        <span class="skill-tag">HTML</span>
-                        <span class="skill-tag">CSS</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">PHP</span>
-                        <span class="skill-tag">Laravel</span>
-                        <span class="skill-tag">Node.js</span>
-                        <span class="skill-tag">Flutter</span>
-                        <span class="skill-tag">Firebase</span>
-                        <span class="skill-tag">Unity</span>
-                        <span class="skill-tag">MySQL</span>
-                        <span class="skill-tag">MongoDB</span>
-                        <span class="skill-tag">APIs REST</span>
-                        <span class="skill-tag">Postman</span>
-                        <span class="skill-tag">ngrok</span>
-                        <span class="skill-tag">Git & GitHub</span>
-                        <span class="skill-tag">C#</span>
-                    </div>
-                </section>
+        <section class="section">
+            <h3 class="section-title">CERTIFICACIONES</h3>
+            <div class="certification-item">
+                <strong>AWS Academy Graduate - AWS Academy Cloud Foundations</strong><br>
+                <a href="https://www.credly.com/badges/3059d233-9fc9-4201-82b7-0bc39e91d538" target="_blank">Ver credencial</a>
+            </div>
+            <div class="certification-item">
+                <strong>Cisco - Python Essentials 1</strong><br>
+                <a href="https://www.credly.com/badges/7b753a5f-3c57-49c7-8dd1-5ded4cd82809" target="_blank">Ver credencial</a>
+            </div>
+        </section>
 
-                <section id="interests">
-                    <h2><i class="fas fa-heart"></i> <span id="interests-title">Intereses</span></h2>
-                    <ul class="interests-list">
-                        <li><span id="interest-1">Música</span></li>
-                        <li><span id="interest-2">Lectura</span></li>
-                        <li><span id="interest-3">Tecnología</span></li>
-                        <li><span id="interest-4">Videojuegos</span></li>
-                        <li><span id="interest-5">Diseño</span></li>
+        <section class="section">
+            <h3 class="section-title">PROYECTOS</h3>
+            
+            <div class="project-item">
+                <div class="project-title">Aplicación móvil tipo Uber para personas con discapacidad</div>
+                <div class="project-description">Desarrollo de app móvil con geolocalización, registro de usuarios y comunicación en tiempo real.</div>
+                <div class="tools">Herramientas: Flutter, Firebase (Auth & Realtime/Firestore)</div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-title">Generación de sistema web / Citas médicas</div>
+                <div class="project-description">Tienda en línea para citas médicas con frontend (HTML/CSS/JS) y backend (PHP + MySQL). Sistemas de gestión de usuarios y reservas integradas con base de datos.</div>
+                <div class="tools">Herramientas: HTML, CSS, JavaScript, PHP, MySQL</div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-title">Portal inmobiliario (Proyecto escolar)</div>
+                <div class="project-description">Portal con CRUD de inmuebles y panel administrativo.</div>
+                <div class="tools">Herramientas: Laravel 8, PHP, MySQL</div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-title">Web de control de cero desperdicio</div>
+                <div class="project-description">Dashboard y formularios para registro y visualización de métricas relacionadas con desperdicios.</div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-title">Videojuego (Proyecto escolar)</div>
+                <div class="project-description">Desarrollo y publicación de videojuego utilizando Unity (C#).</div>
+                <div class="tools">Herramientas: Unity, C#</div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h3 class="section-title">EDUCACIÓN</h3>
+            <div class="project-item">
+                <div class="project-title">Ingeniería en Desarrollo y Gestión de Software</div>
+                <div class="project-description">Título en trámite</div>
+            </div>
+            <div class="project-item">
+                <div class="project-title">Técnico Profesional en Soporte y Mantenimiento de Equipo de Cómputo</div>
+                <div class="project-description">Título y cédula profesional</div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h3 class="section-title">HABILIDADES TÉCNICAS</h3>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Lenguajes</h4>
+                    <ul class="skill-list">
+                        <li>JavaScript</li>
+                        <li>PHP</li>
+                        <li>C#</li>
+                        <li>Dart</li>
+                        <li>Python</li>
                     </ul>
-                </section>
+                </div>
+                <div class="skill-category">
+                    <h4>Frontend</h4>
+                    <ul class="skill-list">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>Flutter</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Backend</h4>
+                    <ul class="skill-list">
+                        <li>Node.js</li>
+                        <li>Express</li>
+                        <li>Laravel</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Bases de Datos</h4>
+                    <ul class="skill-list">
+                        <li>MySQL</li>
+                        <li>MongoDB</li>
+                        <li>Firebase Firestore</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Cloud & DevOps</h4>
+                    <ul class="skill-list">
+                        <li>AWS Cloud</li>
+                        <li>ngrok</li>
+                        <li>Git & GitHub</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>APIs & Herramientas</h4>
+                    <ul class="skill-list">
+                        <li>APIs REST</li>
+                        <li>Postman</li>
+                        <li>Unity</li>
+                    </ul>
+                </div>
             </div>
+        </section>
 
-            <div class="main-content">
-                <section id="profile">
-                    <h2><i class="fas fa-user"></i> <span id="profile-title">Perfil</span></h2>
-                    <div class="section-content">
-                        <p id="profile-text">Desarrollador con formación técnica y universitaria en desarrollo de software. Experiencia práctica en proyectos académicos y personales, incluyendo desarrollo web, aplicaciones móviles, integraciones API, gestión de proyectos y bases de datos. Proactivo, con capacidad de aprendizaje rápido y adaptación a nuevas tecnologías.</p>
-                    </div>
-                </section>
-
-                <section id="education">
-                    <h2><i class="fas fa-graduation-cap"></i> <span id="education-title">Educación</span></h2>
-                    <div class="section-content">
-                        <div class="education-item">
-                            <div class="education-title"><i class="fas fa-university"></i> <span id="education-1-title">Ingeniería en Desarrollo y Gestión de Software</span></div>
-                            <div class="education-details" id="education-1-detail">Título en trámite</div>
-                        </div>
-                        <div class="education-item">
-                            <div class="education-title"><i class="fas fa-certificate"></i> <span id="education-2-title">Técnico Profesional en Soporte y Mantenimiento de Equipo de Cómputo</span></div>
-                            <div class="education-details" id="education-2-detail">Título y cédula profesional</div>
-                        </div>
-                    </div>
-                </section>
-
-                <section id="projects">
-                    <h2><i class="fas fa-project-diagram"></i> <span id="projects-title">Proyectos</span></h2>
-                    <div class="section-content">
-                        <div class="project-item">
-                            <div class="project-title"><i class="fas fa-exchange-alt"></i> <span id="project-1-title">Integración Jira ⇄ ITSM</span></div>
-                            <div class="project-description" id="project-1-desc">Integración bidireccional entre herramienta de administración de proyectos y módulo de gestión de cambios de ITSM. Sincronización de RFCs con manejo de duplicados.</div>
-                            <div class="project-tools" id="project-1-tools">Herramientas: Jira, ngrok, Postman, APIs REST, Node.js/Express.</div>
-                        </div>
-                        <div class="project-item">
-                            <div class="project-title"><i class="fas fa-mobile-alt"></i> <span id="project-2-title">Aplicación móvil tipo Uber para personas con discapacidad</span></div>
-                            <div class="project-description" id="project-2-desc">Desarrollo de app móvil con geolocalización, registro de usuarios y comunicación en tiempo real.</div>
-                            <div class="project-tools" id="project-2-tools">Herramientas: Flutter, Firebase (Auth & Realtime/Firestore).</div>
-                        </div>
-                        <div class="project-item">
-                            <div class="project-title"><i class="fas fa-calendar-check"></i> <span id="project-3-title">Generación de sistema web / Citas médicas</span></div>
-                            <div class="project-description" id="project-3-desc">Tienda en línea para citas médicas con frontend (HTML/CSS/JS) y backend (PHP + MySQL). Sistemas de gestión de usuarios y reservas integradas con base de datos.</div>
-                        </div>
-                        <div class="project-item">
-                            <div class="project-title"><i class="fas fa-home"></i> <span id="project-4-title">Portal inmobiliario (Proyecto escolar)</span></div>
-                            <div class="project-description" id="project-4-desc">Portal con CRUD de inmuebles y panel administrativo.</div>
-                            <div class="project-tools" id="project-4-tools">Herramientas: Laravel 8, PHP, MySQL.</div>
-                        </div>
-                        <div class="project-item">
-                            <div class="project-title"><i class="fab fa-whatsapp"></i> <span id="project-5-title">Integración WhatsApp vía API REST</span></div>
-                            <div class="project-description" id="project-5-desc">Diseño de endpoints y flujo para envío/recepción de mensajes y automatización de notificaciones en ITSM.</div>
-                        </div>
-                        <div class="project-item">
-                            <div class="project-title"><i class="fas fa-recycle"></i> <span id="project-6-title">Web de control de cero desperdicio</span></div>
-                            <div class="project-description" id="project-6-desc">Dashboard y formularios para registro y visualización de métricas relacionadas con desperdicios.</div>
-                        </div>
-                        <div class="project-item">
-                            <div class="project-title"><i class="fas fa-gamepad"></i> <span id="project-7-title">Videojuego (Proyecto escolar)</span></div>
-                            <div class="project-description" id="project-7-desc">Desarrollo y publicación de videojuego utilizando Unity (C#).</div>
-                        </div>
-                    </div>
-                </section>
+        <section class="section">
+            <h3 class="section-title">IDIOMAS</h3>
+            <div class="languages">
+                <div class="language-item">
+                    <span class="language-name">Español:</span> Nativo
+                </div>
+                <div class="language-item">
+                    <span class="language-name">Inglés:</span> Intermedio (B1/B2)
+                </div>
             </div>
-        </div>
+        </section>
     </div>
-
-    <!-- Toast de confirmación -->
-    <div class="toast" id="toast"></div>
-
-    <script>
-        // Textos en español
-        const esTexts = {
-            subtitle: "Desarrollador Full-Stack · Experiencia en Web, Móvil y APIs",
-            skillsTitle: "Habilidades",
-            interestsTitle: "Intereses",
-            interest1: "Música",
-            interest2: "Lectura",
-            interest3: "Tecnología",
-            interest4: "Videojuegos",
-            interest5: "Diseño",
-            profileTitle: "Perfil",
-            profileText: "Desarrollador con formación técnica y universitaria en desarrollo de software. Experiencia práctica en proyectos académicos y personales, incluyendo desarrollo web, aplicaciones móviles, integraciones API, gestión de proyectos y bases de datos. Proactivo, con capacidad de aprendizaje rápido y adaptación a nuevas tecnologías.",
-            educationTitle: "Educación",
-            education1Title: "Ingeniería en Desarrollo y Gestión de Software",
-            education1Detail: "Título en trámite",
-            education2Title: "Técnico Profesional en Soporte y Mantenimiento de Equipo de Cómputo",
-            education2Detail: "Título y cédula profesional",
-            projectsTitle: "Proyectos",
-            project1Title: "Integración Jira ⇄ ITSM",
-            project1Desc: "Integración bidireccional entre herramienta de administración de proyectos y módulo de gestión de cambios de ITSM. Sincronización de RFCs con manejo de duplicados.",
-            project1Tools: "Herramientas: Jira, ngrok, Postman, APIs REST, Node.js/Express.",
-            project2Title: "Aplicación móvil tipo Uber para personas con discapacidad",
-            project2Desc: "Desarrollo de app móvil con geolocalización, registro de usuarios y comunicación en tiempo real.",
-            project2Tools: "Herramientas: Flutter, Firebase (Auth & Realtime/Firestore).",
-            project3Title: "Generación de sistema web / Citas médicas",
-            project3Desc: "Tienda en línea para citas médicas con frontend (HTML/CSS/JS) y backend (PHP + MySQL). Sistemas de gestión de usuarios y reservas integradas con base de datos.",
-            project4Title: "Portal inmobiliario (Proyecto escolar)",
-            project4Desc: "Portal con CRUD de inmuebles y panel administrativo.",
-            project4Tools: "Herramientas: Laravel 8, PHP, MySQL.",
-            project5Title: "Integración WhatsApp vía API REST",
-            project5Desc: "Diseño de endpoints y flujo para envío/recepción de mensajes y automatización de notificaciones en ITSM.",
-            project6Title: "Web de control de cero desperdicio",
-            project6Desc: "Dashboard y formularios para registro y visualización de métricas relacionadas con desperdicios.",
-            project7Title: "Videojuego (Proyecto escolar)",
-            project7Desc: "Desarrollo y publicación de videojuego utilizando Unity (C#).",
-            emailToast: "Abriendo cliente de correo...",
-            phoneToast: "Preparando llamada telefónica..."
-        };
-
-        // Textos en inglés
-        const enTexts = {
-            subtitle: "Full-Stack Developer · Experience in Web, Mobile and APIs",
-            skillsTitle: "Skills",
-            interestsTitle: "Interests",
-            interest1: "Music",
-            interest2: "Reading",
-            interest3: "Technology",
-            interest4: "Video Games",
-            interest5: "Design",
-            profileTitle: "Profile",
-            profileText: "Developer with technical and university training in software development. Practical experience in academic and personal projects, including web development, mobile applications, API integrations, project management and databases. Proactive, with fast learning ability and adaptation to new technologies.",
-            educationTitle: "Education",
-            education1Title: "Software Development and Management Engineering",
-            education1Detail: "Degree in process",
-            education2Title: "Professional Technician in Computer Equipment Support and Maintenance",
-            education2Detail: "Degree and professional license",
-            projectsTitle: "Projects",
-            project1Title: "Jira ⇄ ITSM Integration",
-            project1Desc: "Bidirectional integration between project management tool and ITSM change management module. RFC synchronization with duplicate handling.",
-            project1Tools: "Tools: Jira, ngrok, Postman, REST APIs, Node.js/Express.",
-            project2Title: "Uber-like mobile app for people with disabilities",
-            project2Desc: "Mobile app development with geolocation, user registration and real-time communication.",
-            project2Tools: "Tools: Flutter, Firebase (Auth & Realtime/Firestore).",
-            project3Title: "Web system generation / Medical appointments",
-            project3Desc: "Online store for medical appointments with frontend (HTML/CSS/JS) and backend (PHP + MySQL). Integrated user and reservation management systems with database.",
-            project4Title: "Real estate portal (School project)",
-            project4Desc: "Portal with property CRUD and administrative panel.",
-            project4Tools: "Tools: Laravel 8, PHP, MySQL.",
-            project5Title: "WhatsApp integration via REST API",
-            project5Desc: "Endpoint design and flow for sending/receiving messages and automation of ITSM notifications.",
-            project6Title: "Zero waste control web",
-            project6Desc: "Dashboard and forms for recording and visualizing metrics related to waste.",
-            project7Title: "Video game (School project)",
-            project7Desc: "Development and publication of a video game using Unity (C#).",
-            emailToast: "Opening email client...",
-            phoneToast: "Preparing phone call..."
-        };
-
-        // Variable para el idioma actual
-        let currentLanguage = 'es';
-
-        // Funcionalidad para cambiar idioma
-        document.getElementById('btn-es').addEventListener('click', function() {
-            changeLanguage('es');
-            document.getElementById('btn-es').classList.add('active');
-            document.getElementById('btn-en').classList.remove('active');
-        });
-
-        document.getElementById('btn-en').addEventListener('click', function() {
-            changeLanguage('en');
-            document.getElementById('btn-en').classList.add('active');
-            document.getElementById('btn-es').classList.remove('active');
-        });
-
-        // Función para cambiar el idioma
-        function changeLanguage(lang) {
-            currentLanguage = lang;
-            const texts = lang === 'es' ? esTexts : enTexts;
-            
-            // Aplicar efecto de fade out
-            const sections = document.querySelectorAll('.section-content');
-            sections.forEach(section => {
-                section.classList.add('fade-out');
-            });
-            
-            // Cambiar textos después de un breve delay
-            setTimeout(() => {
-                document.getElementById('subtitle').textContent = texts.subtitle;
-                document.getElementById('skills-title').textContent = texts.skillsTitle;
-                document.getElementById('interests-title').textContent = texts.interestsTitle;
-                document.getElementById('interest-1').textContent = texts.interest1;
-                document.getElementById('interest-2').textContent = texts.interest2;
-                document.getElementById('interest-3').textContent = texts.interest3;
-                document.getElementById('interest-4').textContent = texts.interest4;
-                document.getElementById('interest-5').textContent = texts.interest5;
-                document.getElementById('profile-title').textContent = texts.profileTitle;
-                document.getElementById('profile-text').textContent = texts.profileText;
-                document.getElementById('education-title').textContent = texts.educationTitle;
-                document.getElementById('education-1-title').textContent = texts.education1Title;
-                document.getElementById('education-1-detail').textContent = texts.education1Detail;
-                document.getElementById('education-2-title').textContent = texts.education2Title;
-                document.getElementById('education-2-detail').textContent = texts.education2Detail;
-                document.getElementById('projects-title').textContent = texts.projectsTitle;
-                document.getElementById('project-1-title').textContent = texts.project1Title;
-                document.getElementById('project-1-desc').textContent = texts.project1Desc;
-                document.getElementById('project-1-tools').textContent = texts.project1Tools;
-                document.getElementById('project-2-title').textContent = texts.project2Title;
-                document.getElementById('project-2-desc').textContent = texts.project2Desc;
-                document.getElementById('project-2-tools').textContent = texts.project2Tools;
-                document.getElementById('project-3-title').textContent = texts.project3Title;
-                document.getElementById('project-3-desc').textContent = texts.project3Desc;
-                document.getElementById('project-4-title').textContent = texts.project4Title;
-                document.getElementById('project-4-desc').textContent = texts.project4Desc;
-                document.getElementById('project-4-tools').textContent = texts.project4Tools;
-                document.getElementById('project-5-title').textContent = texts.project5Title;
-                document.getElementById('project-5-desc').textContent = texts.project5Desc;
-                document.getElementById('project-6-title').textContent = texts.project6Title;
-                document.getElementById('project-6-desc').textContent = texts.project6Desc;
-                document.getElementById('project-7-title').textContent = texts.project7Title;
-                document.getElementById('project-7-desc').textContent = texts.project7Desc;
-                
-                // Actualizar texto del botón de impresión
-                updatePrintButtonText(lang);
-                
-                // Aplicar efecto de fade in
-                sections.forEach(section => {
-                    section.classList.remove('fade-out');
-                    section.classList.add('fade-in');
-                });
-            }, 300);
-        }
-
-        // Funcionalidad para imprimir/descargar PDF
-        document.getElementById('btn-print').addEventListener('click', function() {
-            window.print();
-        });
-
-        // Actualizar texto del botón de impresión según el idioma
-        function updatePrintButtonText(lang) {
-            const printBtn = document.getElementById('btn-print');
-            if (lang === 'es') {
-                printBtn.innerHTML = '<i class="fas fa-print"></i> Imprimir / PDF';
-            } else {
-                printBtn.innerHTML = '<i class="fas fa-print"></i> Print / PDF';
-            }
-        }
-
-        // Función para mostrar toast
-        function showToast(message) {
-            const toast = document.getElementById('toast');
-            toast.textContent = message;
-            toast.classList.add('show');
-            
-            setTimeout(() => {
-                toast.classList.remove('show');
-            }, 3000);
-        }
-
-        // Funcionalidad para el correo electrónico
-        document.getElementById('email-link').addEventListener('click', function(e) {
-            e.preventDefault();
-            const texts = currentLanguage === 'es' ? esTexts : enTexts;
-            showToast(texts.emailToast);
-            
-            // Abrir cliente de correo después de un breve delay
-            setTimeout(() => {
-                window.location.href = 'mailto:alan.sanchez150918@gmail.com';
-            }, 500);
-        });
-
-        // Funcionalidad para el número de teléfono
-        document.getElementById('phone-link').addEventListener('click', function(e) {
-            e.preventDefault();
-            const texts = currentLanguage === 'es' ? esTexts : enTexts;
-            showToast(texts.phoneToast);
-            
-            // Iniciar llamada después de un breve delay
-            setTimeout(() => {
-                window.location.href = 'tel:+525536093998';
-            }, 500);
-        });
-
-        // Inicializar con español
-        changeLanguage('es');
-    </script>
 </body>
 </html>
