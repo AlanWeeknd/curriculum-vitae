@@ -66,6 +66,10 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
 
+        .btn-active {
+            background: var(--secondary-color) !important;
+        }
+
         .btn-print {
             background: var(--accent-color);
         }
@@ -433,7 +437,7 @@
     <div class="container">
         <div class="header-buttons">
             <div class="language-buttons">
-                <button class="btn" id="btn-es">
+                <button class="btn btn-active" id="btn-es">
                     <i class="fas fa-flag"></i> Español
                 </button>
                 <button class="btn" id="btn-en">
@@ -441,35 +445,35 @@
                 </button>
             </div>
             <button class="btn btn-print" id="btn-print">
-                <i class="fas fa-print"></i> Imprimir/PDF
+                <i class="fas fa-print"></i> <span class="print-text">Imprimir/PDF</span>
             </button>
         </div>
 
-        <header class="header">
-            <h1>ALAN ULISES SÁNCHEZ BRIONES</h1>
-            <h2>Ingeniero en Desarrollo de Software | Full-Stack</h2>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <a href="mailto:alan.sanchez150918@gmail.com">alan.sanchez150918@gmail.com</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <a href="tel:5536093998">5536093998</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-linkedin"></i>
-                    <a href="https://www.linkedin.com/in/alan-ulises-sanchez-briones-7533621b0/" target="_blank">LinkedIn</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-github"></i>
-                    <a href="https://github.com/AlanWeeknd" target="_blank">GitHub</a>
-                </div>
-            </div>
-        </header>
-
         <!-- CONTENIDO EN ESPAÑOL -->
         <div id="content-es">
+            <header class="header">
+                <h1>ALAN ULISES SÁNCHEZ BRIONES</h1>
+                <h2>Ingeniero en Desarrollo de Software | Full-Stack</h2>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:alan.sanchez150918@gmail.com">alan.sanchez150918@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:5536093998">5536093998</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <a href="https://www.linkedin.com/in/alan-ulises-sanchez-briones-7533621b0/" target="_blank">LinkedIn</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <a href="https://github.com/AlanWeeknd" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </header>
+
             <section class="section fade-in">
                 <h3 class="section-title"><i class="fas fa-user"></i> PERFIL PROFESIONAL</h3>
                 <p>Ingeniero en Desarrollo de Software recién egresado con experiencia práctica en desarrollo full-stack adquirida mediante proyectos académicos y estadía profesional. Especializado en creación de aplicaciones web, móviles e integración de APIs. Certificado en AWS Cloud Foundations con habilidades sólidas en Node.js, Flutter y gestión de bases de datos. Busco mi primera oportunidad profesional para aplicar mis conocimientos y contribuir al éxito de proyectos tecnológicos.</p>
@@ -671,9 +675,31 @@
             </section>
         </div>
 
-        <!-- CONTENIDO EN INGLÉS (OCULTO INICIALMENTE) -->
+        <!-- CONTENIDO EN INGLÉS -->
         <div id="content-en" class="hidden">
-            <!-- El contenido en inglés iría aquí -->
+            <header class="header">
+                <h1>ALAN ULISES SÁNCHEZ BRIONES</h1>
+                <h2>Software Development Engineer | Full-Stack</h2>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:alan.sanchez150918@gmail.com">alan.sanchez150918@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:5536093998">5536093998</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <a href="https://www.linkedin.com/in/alan-ulises-sanchez-briones-7533621b0/" target="_blank">LinkedIn</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <a href="https://github.com/AlanWeeknd" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </header>
+
             <section class="section fade-in">
                 <h3 class="section-title"><i class="fas fa-user"></i> PROFESSIONAL PROFILE</h3>
                 <p>Recently graduated Software Development Engineer with practical experience in full-stack development acquired through academic projects and professional internship. Specialized in creating web applications, mobile apps, and API integration. AWS Cloud Foundations certified with solid skills in Node.js, Flutter, and database management. Seeking my first professional opportunity to apply my knowledge and contribute to the success of technological projects.</p>
@@ -702,7 +728,177 @@
                 </div>
             </section>
 
-            <!-- Resto del contenido en inglés... -->
+            <section class="section fade-in">
+                <h3 class="section-title"><i class="fas fa-certificate"></i> CERTIFICATIONS</h3>
+                <div class="certification-item">
+                    <div>
+                        <strong>AWS Academy Graduate - AWS Academy Cloud Foundations</strong>
+                    </div>
+                    <a href="https://www.credly.com/badges/3059d233-9fc9-4201-82b7-0bc39e91d538" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> View credential
+                    </a>
+                </div>
+                <div class="certification-item">
+                    <div>
+                        <strong>Cisco - Python Essentials 1</strong>
+                    </div>
+                    <a href="https://www.credly.com/badges/7b753a5f-3c57-49c7-8dd1-5ded4cd82809" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> View credential
+                    </a>
+                </div>
+            </section>
+
+            <section class="section fade-in">
+                <h3 class="section-title"><i class="fas fa-project-diagram"></i> ACADEMIC PROJECTS</h3>
+                
+                <div class="project-item">
+                    <div class="project-title"><i class="fas fa-mobile-alt"></i> Uber-like Mobile App for People with Disabilities</div>
+                    <div class="project-description">Complete development of a mobile app with Flutter implementing geolocation, user authentication, and real-time database with Firebase.</div>
+                    <div class="tools"><i class="fas fa-tools"></i> Tools: Flutter, Firebase (Auth & Realtime/Firestore)</div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-title"><i class="fas fa-calendar-check"></i> Medical Appointment Web System</div>
+                    <div class="project-description">Online store for scheduling medical appointments with frontend (HTML/CSS/JS) and backend (PHP + MySQL). Includes user management and booking systems.</div>
+                    <div class="tools"><i class="fas fa-tools"></i> Tools: HTML, CSS, JavaScript, PHP, MySQL</div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-title"><i class="fas fa-home"></i> Real Estate Portal</div>
+                    <div class="project-description">Web portal with complete CRUD for properties and administrative panel developed as a school project.</div>
+                    <div class="tools"><i class="fas fa-tools"></i> Tools: Laravel 8, PHP, MySQL</div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-title"><i class="fas fa-gamepad"></i> Educational Video Game</div>
+                    <div class="project-description">Development and publication of a video game using Unity (C#) as a final course project.</div>
+                    <div class="tools"><i class="fas fa-tools"></i> Tools: Unity, C#</div>
+                </div>
+            </section>
+
+            <section class="section fade-in">
+                <h3 class="section-title"><i class="fas fa-users"></i> PERSONAL SKILLS</h3>
+                <div class="skills-personal">
+                    <div class="personal-skill">
+                        <h4>🤝 Teamwork</h4>
+                        <p>Effective collaboration in group projects using agile methodologies</p>
+                    </div>
+                    <div class="personal-skill">
+                        <h4>💡 Problem Solving</h4>
+                        <p>Ability to analyze technical challenges and propose practical solutions</p>
+                    </div>
+                    <div class="personal-skill">
+                        <h4>🚀 Continuous Learning</h4>
+                        <p>Self-taught with technical certifications completed independently</p>
+                    </div>
+                    <div class="personal-skill">
+                        <h4>⏰ Time Management</h4>
+                        <p>Successful coordination of multiple academic projects simultaneously</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section fade-in">
+                <h3 class="section-title"><i class="fas fa-heart"></i> INTERESTS</h3>
+                <div class="interests-grid">
+                    <div class="interest-item">
+                        <h4>🎵 Music</h4>
+                        <p>Exploring different genres and creating musical pieces</p>
+                    </div>
+                    <div class="interest-item">
+                        <h4>🚀 Technology & Innovation</h4>
+                        <p>Following technology trends and attending sector events</p>
+                    </div>
+                    <div class="interest-item">
+                        <h4>🎮 Game Development</h4>
+                        <p>Designing mechanics and prototyping in Unity</p>
+                    </div>
+                    <div class="interest-item">
+                        <h4>🎨 Design</h4>
+                        <p>Creating attractive interfaces and user experiences</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section fade-in">
+                <h3 class="section-title"><i class="fas fa-graduation-cap"></i> EDUCATION</h3>
+                <div class="project-item">
+                    <div class="project-title"><i class="fas fa-university"></i> Software Development and Management Engineering</div>
+                    <div class="project-description">Degree in process | Focused on full-stack development, databases, and software project management</div>
+                </div>
+                <div class="project-item">
+                    <div class="project-title"><i class="fas fa-tools"></i> Professional Technician in Computer Equipment Support and Maintenance</div>
+                    <div class="project-description">Professional title and license | Solid foundation in hardware and technical support</div>
+                </div>
+            </section>
+
+            <section class="section fade-in">
+                <h3 class="section-title"><i class="fas fa-code"></i> TECHNICAL SKILLS</h3>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Languages</h4>
+                        <ul class="skill-list">
+                            <li>JavaScript</li>
+                            <li>PHP</li>
+                            <li>C#</li>
+                            <li>Dart</li>
+                            <li>Python</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Frontend</h4>
+                        <ul class="skill-list">
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>Flutter</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Backend</h4>
+                        <ul class="skill-list">
+                            <li>Node.js</li>
+                            <li>Express</li>
+                            <li>Laravel</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Databases</h4>
+                        <ul class="skill-list">
+                            <li>MySQL</li>
+                            <li>MongoDB</li>
+                            <li>Firebase Firestore</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Cloud & DevOps</h4>
+                        <ul class="skill-list">
+                            <li>AWS Cloud</li>
+                            <li>Git & GitHub</li>
+                            <li>REST APIs</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Tools</h4>
+                        <ul class="skill-list">
+                            <li>Postman</li>
+                            <li>Unity</li>
+                            <li>Jira</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section fade-in">
+                <h3 class="section-title"><i class="fas fa-language"></i> LANGUAGES</h3>
+                <div class="languages">
+                    <div class="language-item">
+                        <span class="language-name">Spanish:</span> Native
+                    </div>
+                    <div class="language-item">
+                        <span class="language-name">English:</span> Intermediate (B1/B2) - Ability to read technical documentation and communicate in work environments
+                    </div>
+                </div>
+            </section>
         </div>
     </div>
 
@@ -711,15 +907,19 @@
         document.getElementById('btn-es').addEventListener('click', function() {
             document.getElementById('content-es').classList.remove('hidden');
             document.getElementById('content-en').classList.add('hidden');
-            document.getElementById('btn-es').style.background = '#3498db';
-            document.getElementById('btn-en').style.background = '#2c3e50';
+            document.getElementById('btn-es').classList.add('btn-active');
+            document.getElementById('btn-en').classList.remove('btn-active');
+            document.querySelector('.print-text').textContent = 'Imprimir/PDF';
+            document.title = 'Alan Ulises Sánchez Briones - CV';
         });
 
         document.getElementById('btn-en').addEventListener('click', function() {
             document.getElementById('content-en').classList.remove('hidden');
             document.getElementById('content-es').classList.add('hidden');
-            document.getElementById('btn-en').style.background = '#3498db';
-            document.getElementById('btn-es').style.background = '#2c3e50';
+            document.getElementById('btn-en').classList.add('btn-active');
+            document.getElementById('btn-es').classList.remove('btn-active');
+            document.querySelector('.print-text').textContent = 'Print/PDF';
+            document.title = 'Alan Ulises Sánchez Briones - Resume';
         });
 
         // Funcionalidad de impresión
@@ -738,9 +938,6 @@
                     this.style.transform = 'translateY(0)';
                 });
             });
-
-            // Inicializar botón español como activo
-            document.getElementById('btn-es').style.background = '#3498db';
         });
 
         // Smooth scroll para anchors
