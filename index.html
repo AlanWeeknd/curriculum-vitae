@@ -159,6 +159,31 @@
             color: #2c3e50;
         }
 
+        .interests-grid, .skills-personal {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .interest-item, .personal-skill {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+
+        .interest-item h4, .personal-skill h4 {
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        .interest-item p, .personal-skill p {
+            color: #555;
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+
         @media (max-width: 768px) {
             .header h1 {
                 font-size: 2em;
@@ -176,6 +201,10 @@
             .languages {
                 flex-direction: column;
                 gap: 15px;
+            }
+            
+            .interests-grid, .skills-personal {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -241,7 +270,7 @@
 
             <div class="project-item">
                 <div class="project-title">Generación de sistema web / Citas médicas</div>
-                <div class="project-description">Tienda en línea para citas médicas con frontend (HTML/CSS/JS) y backend (PHP + MySQL). Sistemas de gestión de usuarios y reservas integradas con base de datos.</div>
+                <div class="project-description">Tienda en línea para agendar citas médicas con frontend (HTML/CSS/JS) y backend (PHP + MySQL). Sistemas de gestión de usuarios y reservas integradas con base de datos.</div>
                 <div class="tools">Herramientas: HTML, CSS, JavaScript, PHP, MySQL</div>
             </div>
 
@@ -249,6 +278,11 @@
                 <div class="project-title">Portal inmobiliario (Proyecto escolar)</div>
                 <div class="project-description">Portal con CRUD de inmuebles y panel administrativo.</div>
                 <div class="tools">Herramientas: Laravel 8, PHP, MySQL</div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-title">Integración WhatsApp vía API REST</div>
+                <div class="project-description">Diseño de endpoints y flujo para envío/recepción de mensajes y automatización de notificaciones en ITSM.</div>
             </div>
 
             <div class="project-item">
@@ -260,6 +294,54 @@
                 <div class="project-title">Videojuego (Proyecto escolar)</div>
                 <div class="project-description">Desarrollo y publicación de videojuego utilizando Unity (C#).</div>
                 <div class="tools">Herramientas: Unity, C#</div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h3 class="section-title">HABILIDADES PERSONALES</h3>
+            <div class="skills-personal">
+                <div class="personal-skill">
+                    <h4>🤝 Trabajo en Equipo</h4>
+                    <p>Colaboración efectiva en 5+ proyectos escolares utilizando metodologías ágiles</p>
+                </div>
+                <div class="personal-skill">
+                    <h4>💡 Resolución de Problemas</h4>
+                    <p>Capacidad para analizar desafíos técnicos y implementar soluciones eficientes</p>
+                </div>
+                <div class="personal-skill">
+                    <h4>🚀 Aprendizaje Rápido</h4>
+                    <p>Autodidacta con 3 certificaciones técnicas completadas de forma independiente</p>
+                </div>
+                <div class="personal-skill">
+                    <h4>📊 Comunicación Técnica</h4>
+                    <p>Habilidad para explicar conceptos complejos a audiencias no técnicas</p>
+                </div>
+                <div class="personal-skill">
+                    <h4>⏰ Gestión del Tiempo</h4>
+                    <p>Coordinación exitosa de múltiples proyectos académicos simultáneamente</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h3 class="section-title">INTERESES</h3>
+            <div class="interests-grid">
+                <div class="interest-item">
+                    <h4>🎵 Música</h4>
+                    <p>Exploración de diferentes géneros y creación de piezas musicales</p>
+                </div>
+                <div class="interest-item">
+                    <h4>🚀 Tecnología e Innovación</h4>
+                    <p>Seguimiento de tendencias tecnológicas y asistencia a eventos del sector</p>
+                </div>
+                <div class="interest-item">
+                    <h4>🎮 Desarrollo de Videojuegos</h4>
+                    <p>Diseño de mecánicas y prototipado en Unity</p>
+                </div>
+                <div class="interest-item">
+                    <h4>🎨 Diseño</h4>
+                    <p>Creación de interfaces y experiencias de usuario atractivas</p>
+                </div>
             </div>
         </section>
 
