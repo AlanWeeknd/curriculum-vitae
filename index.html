@@ -184,6 +184,27 @@
             line-height: 1.4;
         }
 
+        .achievement {
+            background: #e8f4f8;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            border-left: 4px solid #27ae60;
+        }
+
+        .achievement ul {
+            margin-left: 20px;
+        }
+
+        .company-context {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-bottom: 15px;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+
         @media (max-width: 768px) {
             .header h1 {
                 font-size: 2em;
@@ -232,16 +253,27 @@
 
         <section class="section">
             <h3 class="section-title">PERFIL PROFESIONAL</h3>
-            <p>Ingeniero en Desarrollo de Software con experiencia en el ciclo completo de desarrollo de aplicaciones web, móviles e integración de APIs. Certificado en AWS Cloud Foundations, lo que respalda mis conocimientos en infraestructura cloud. Apasionado por crear soluciones eficientes y escalables, con habilidades demostradas en la integración de sistemas que optimizan procesos.</p>
+            <p>Ingeniero en Desarrollo de Software recién egresado con experiencia práctica en desarrollo full-stack adquirida mediante proyectos académicos y estadía profesional. Especializado en creación de aplicaciones web, móviles e integración de APIs. Certificado en AWS Cloud Foundations con habilidades sólidas en Node.js, Flutter y gestión de bases de datos. Busco mi primera oportunidad profesional para aplicar mis conocimientos y contribuir al éxito de proyectos tecnológicos.</p>
         </section>
 
         <section class="section">
             <h3 class="section-title">EXPERIENCIA PROFESIONAL</h3>
             <div class="experience-item">
-                <div class="experience-title">Desarrollador Full-Stack (Estadía) - Bigg Practices</div>
+                <div class="company-context">
+                    <strong>Bigg Practices</strong> - Empresa especializada en soluciones ITSM y gestión de servicios tecnológicos
+                </div>
+                <div class="experience-title">Desarrollador Full-Stack (Estadía)</div>
                 <div class="experience-description">
-                    <p><strong>Integración Jira ⇄ ITSM:</strong> Diseñé y desarrollé una integración bidireccional con Node.js/Express para sincronizar RFCs entre Jira y el módulo de gestión de cambios del ITSM, implementando lógica para el manejo eficiente de duplicados.</p>
-                    <p><strong>Integración WhatsApp vía API REST:</strong> Diseñé los endpoints y flujos para la automatización de notificaciones dentro del ITSM, permitiendo el envío y recepción de mensajes de WhatsApp para mejorar la comunicación con los usuarios finales.</p>
+                    <p><strong>Integración Jira ⇄ ITSM:</strong> Colaboré en el diseño y desarrollo de una integración bidireccional con Node.js/Express para sincronizar RFCs entre Jira y el módulo de gestión de cambios del ITSM.</p>
+                    <p><strong>Integración WhatsApp vía API REST:</strong> Participé en el diseño de endpoints y flujos para automatización de notificaciones dentro del sistema ITSM.</p>
+                </div>
+                <div class="achievement">
+                    <h4>🔧 Contribuciones Destacadas:</h4>
+                    <ul>
+                        <li>Implementé validaciones que redujeron errores de duplicación en sincronización de datos</li>
+                        <li>Automaticé flujos de notificación mejorando la comunicación con usuarios finales</li>
+                        <li>Mantuve documentación técnica actualizada del proyecto</li>
+                    </ul>
                 </div>
                 <div class="tools">Herramientas: Jira, ngrok, Postman, APIs REST, Node.js/Express</div>
             </div>
@@ -260,39 +292,29 @@
         </section>
 
         <section class="section">
-            <h3 class="section-title">PROYECTOS</h3>
+            <h3 class="section-title">PROYECTOS ACADÉMICOS</h3>
             
             <div class="project-item">
                 <div class="project-title">Aplicación móvil tipo Uber para personas con discapacidad</div>
-                <div class="project-description">Desarrollo de app móvil con geolocalización, registro de usuarios y comunicación en tiempo real.</div>
+                <div class="project-description">Desarrollo completo de app móvil con Flutter implementando geolocalización, autenticación de usuarios y base de datos en tiempo real con Firebase.</div>
                 <div class="tools">Herramientas: Flutter, Firebase (Auth & Realtime/Firestore)</div>
             </div>
 
             <div class="project-item">
-                <div class="project-title">Generación de sistema web / Citas médicas</div>
-                <div class="project-description">Tienda en línea para agendar citas médicas con frontend (HTML/CSS/JS) y backend (PHP + MySQL). Sistemas de gestión de usuarios y reservas integradas con base de datos.</div>
+                <div class="project-title">Sistema web de citas médicas</div>
+                <div class="project-description">Tienda en línea para agendar citas médicas con frontend (HTML/CSS/JS) y backend (PHP + MySQL). Incluye sistemas de gestión de usuarios y reservas.</div>
                 <div class="tools">Herramientas: HTML, CSS, JavaScript, PHP, MySQL</div>
             </div>
 
             <div class="project-item">
-                <div class="project-title">Portal inmobiliario (Proyecto escolar)</div>
-                <div class="project-description">Portal con CRUD de inmuebles y panel administrativo.</div>
+                <div class="project-title">Portal inmobiliario</div>
+                <div class="project-description">Portal web con CRUD completo de inmuebles y panel administrativo desarrollado como proyecto escolar.</div>
                 <div class="tools">Herramientas: Laravel 8, PHP, MySQL</div>
             </div>
 
             <div class="project-item">
-                <div class="project-title">Integración WhatsApp vía API REST</div>
-                <div class="project-description">Diseño de endpoints y flujo para envío/recepción de mensajes y automatización de notificaciones en ITSM.</div>
-            </div>
-
-            <div class="project-item">
-                <div class="project-title">Web de control de cero desperdicio</div>
-                <div class="project-description">Dashboard y formularios para registro y visualización de métricas relacionadas con desperdicios.</div>
-            </div>
-
-            <div class="project-item">
-                <div class="project-title">Videojuego (Proyecto escolar)</div>
-                <div class="project-description">Desarrollo y publicación de videojuego utilizando Unity (C#).</div>
+                <div class="project-title">Videojuego educativo</div>
+                <div class="project-description">Desarrollo y publicación de videojuego utilizando Unity (C#) como proyecto de fin de curso.</div>
                 <div class="tools">Herramientas: Unity, C#</div>
             </div>
         </section>
@@ -302,19 +324,15 @@
             <div class="skills-personal">
                 <div class="personal-skill">
                     <h4>🤝 Trabajo en Equipo</h4>
-                    <p>Colaboración efectiva en 5+ proyectos escolares utilizando metodologías ágiles</p>
+                    <p>Colaboración efectiva en proyectos grupales utilizando metodologías ágiles</p>
                 </div>
                 <div class="personal-skill">
                     <h4>💡 Resolución de Problemas</h4>
-                    <p>Capacidad para analizar desafíos técnicos y implementar soluciones eficientes</p>
+                    <p>Capacidad para analizar desafíos técnicos y proponer soluciones prácticas</p>
                 </div>
                 <div class="personal-skill">
-                    <h4>🚀 Aprendizaje Rápido</h4>
-                    <p>Autodidacta con 3 certificaciones técnicas completadas de forma independiente</p>
-                </div>
-                <div class="personal-skill">
-                    <h4>📊 Comunicación Técnica</h4>
-                    <p>Habilidad para explicar conceptos complejos a audiencias no técnicas</p>
+                    <h4>🚀 Aprendizaje Continuo</h4>
+                    <p>Autodidacta con certificaciones técnicas completadas de forma independiente</p>
                 </div>
                 <div class="personal-skill">
                     <h4>⏰ Gestión del Tiempo</h4>
@@ -349,11 +367,11 @@
             <h3 class="section-title">EDUCACIÓN</h3>
             <div class="project-item">
                 <div class="project-title">Ingeniería en Desarrollo y Gestión de Software</div>
-                <div class="project-description">Título en trámite</div>
+                <div class="project-description">Título en trámite | Enfocado en desarrollo full-stack, bases de datos y gestión de proyectos software</div>
             </div>
             <div class="project-item">
                 <div class="project-title">Técnico Profesional en Soporte y Mantenimiento de Equipo de Cómputo</div>
-                <div class="project-description">Título y cédula profesional</div>
+                <div class="project-description">Título y cédula profesional | Base sólida en hardware y soporte técnico</div>
             </div>
         </section>
 
@@ -398,16 +416,16 @@
                     <h4>Cloud & DevOps</h4>
                     <ul class="skill-list">
                         <li>AWS Cloud</li>
-                        <li>ngrok</li>
                         <li>Git & GitHub</li>
+                        <li>APIs REST</li>
                     </ul>
                 </div>
                 <div class="skill-category">
-                    <h4>APIs & Herramientas</h4>
+                    <h4>Herramientas</h4>
                     <ul class="skill-list">
-                        <li>APIs REST</li>
                         <li>Postman</li>
                         <li>Unity</li>
+                        <li>Jira</li>
                     </ul>
                 </div>
             </div>
@@ -420,7 +438,7 @@
                     <span class="language-name">Español:</span> Nativo
                 </div>
                 <div class="language-item">
-                    <span class="language-name">Inglés:</span> Intermedio (B1/B2)
+                    <span class="language-name">Inglés:</span> Intermedio (B1/B2) - Capacidad para leer documentación técnica y comunicarme en entornos laborales
                 </div>
             </div>
         </section>
